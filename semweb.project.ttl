@@ -58,6 +58,10 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:President_of_Parliament
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Member_of_Parliament ;
+.
 :Prime_Minister
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Minister ;
