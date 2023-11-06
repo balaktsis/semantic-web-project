@@ -1,0 +1,68 @@
+# baseURI: http://semweb.project.rdfs
+
+@prefix : <http://semweb.project.rdfs#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://semweb.project.rdfs>
+  rdf:type owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:Council_for_Foreign_Affairs_and_Defence
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Executive
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Republic_Authority ;
+.
+:Government
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Head_of_Government
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Hellenic_Republic
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Judiciary
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Republic_Authority ;
+.
+:Legislative
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Republic_Authority ;
+.
+:Member_of_Parliament
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Minister
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Ministry
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Parliament
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:President
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Prime_Minister
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Minister ;
+.
+:Republic_Authority
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
