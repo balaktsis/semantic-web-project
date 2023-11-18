@@ -46,10 +46,169 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+
+# MINISTRIES
 :Ministry
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:Hellenic_Ministry
+  rdf:type :Ministry ;
+.
+
+:Ministry_of_Citizen_Protection
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Citizen_Protection
+  rdf:type :Ministry_of_Citizen_Protection ;
+.
+
+:Ministry_of_Culture
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Culture
+  rdf:type :Ministry_of_Culture ;
+.
+
+:Ministry_of_Development
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Development
+  rdf:type :Ministry_of_Development ;
+.
+
+:Ministry_of_Digital_Governance
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Digital_Governance
+  rdf:type :Ministry_of_Digital_Governance ;
+.
+
+:Ministry_of_Economy
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_National_Economy_And_Finance
+  rdf:type :Ministry_of_Economy ;
+.
+
+:Ministry_of_Education
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Education_Religious_Affairs_Culture_and_Sports
+  rdf:type :Ministry_of_Education ;
+.
+
+:Ministry_of_Environment
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Environment_Energy_and_Climate_Change
+  rdf:type :Ministry_of_Environment ;
+.
+
+:Ministry_of_Foreign_Affairs
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Foreign_Affairs
+  rdf:type :Ministry_of_Foreign_Affairs ;
+.
+
+:Ministry_of_Health
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Health
+  rdf:type :Ministry_of_Health ;
+.
+
+:Ministry_of_Infrastructure
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Infrastructure_and_Transport
+  rdf:type :Ministry_of_Infrastructure ;
+.
+
+:Ministry_of_Interior
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Interior
+  rdf:type :Ministry_of_Interior ;
+.
+
+:Ministry_of_Justice
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Justice
+  rdf:type :Ministry_of_Justice ;
+.
+
+:Ministry_of_Labour
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Labour_and_Social_Insurance
+  rdf:type :Ministry_of_Labour ;
+.
+
+:Ministry_of_Migration
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Migration_and_Asylum
+  rdf:type :Ministry_of_Migration ;
+.
+
+:Ministry_of_National_Defence
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_National_Defence
+  rdf:type :Ministry_of_National_Defence ;
+.
+
+:Ministry_of_Rural_Development_and_food
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Rural_Development_and_Food
+  rdf:type :Ministry_of_Rural_Development_and_food ;
+.
+
+:Ministry_of_Shipping
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Maritime_Affairs_and_Island_Policy
+  rdf:type :Ministry_of_Shipping ;
+.
+
+:Ministry_of_State
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_State
+  rdf:type :Ministry_of_State ;
+.
+
+:Ministry_of_Tourism
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Ministry ;
+.
+:Hellenic_Ministry_of_Tourism
+  rdf:type :Ministry_of_Tourism ;
+.
+# /MINISTRIES
+
 :Parliament
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
