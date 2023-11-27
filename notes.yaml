@@ -1,0 +1,97 @@
+Υπουργειο:
+  partof: A: Κυβερνηση
+  budget: T: Προϋπολογισμος
+Προεδρος:
+  hasTerm: T: Θητεια
+
+
+Πολιτικό κομμα
+Κοινοβούλιο 
+Γραφείο Πρωθυπουργου
+Προεδρια της Δημοκρατιας
+Συμβουλιο Ασφαλειας
+Κυβερνηση
+Αξιωματικη Αντιπολιτευση
+Αντιπολιτευση
+Συμβουλιο της Επικρατειας
+Εθνικος Οργανισμός
+  Τραπεζα της Ελλαδος
+  Εθνική Επιτροπή Επικοινωνιών και Πληροφορικής
+  Εθνικός Οργανισμός Δημόσιας Υγείας
+Συμβουλιο Πολιτικων Αρχηγών
+Λογιστήριο του Κράτους
+Άτομο
+  Πολιτης
+    Μέλος κόμματος
+      Πολιτικός Αρχηγός
+    Κυβερνητης της Τραπεζας της Ελλαδος
+    Μελος κυβερνησης
+      Υπουργος
+        Πρωθυπουργος
+        Υφυπουργος
+        Υφυπουργος επικρατείας
+        Αναπληρωτης Υπουργος
+      Γραμματεας
+      Εκπροσωπος
+    Μέλος βουλής
+      Προεδρος βουλής
+      Αντιπροεδρος βουλής
+      Πρόεδρος Κοινοβουλευτικής Ομάδας
+Νόμος
+  Ανακήρυξη εκλογων
+(o)Προϋπολογισμός
+
+ObjectProperty: 
+  partof:
+    partofGovernment:
+      MinistryPartofGovernment: Υπουργειο -> Κυβερνηση
+      MemberPartOfGovernment: Μέλος κυβερνησης -> Κυβερνηση
+      PMOfficePartOfGovernment: Γραφείο Πρωθυπουργου -> Κυβερνηση
+    partofParliament:
+      ParliamentMemberPartOfParliament: Μέλος βουλής -> Κοινοβούλιο
+      PoliticalPartyPartOfParliament: Πολιτικό κομμα -> Κοινοβούλιο
+      CouncilOfPartyLeadersPartOfParliament: Συμβουλιο πολιτικών αρχηγών -> Κοινοβούλιο
+      GovernmentPartOfParliament: Κυβερνηση -> Κοινοβούλιο
+      OppositionPartOfParliament: Αντιπολιτευση -> Κοινοβούλιο
+  represents:
+    representativeRepresentsGovernment: Εκπρόσωπος -> Κυβερνηση
+    representativeRepresentsParty: Πολιτικός Αρχηγός -> Πολιτικό κομμα
+  headOf:
+    PMHeadOfGovernment: Πρωθυπουργός -> Κυβερνηση
+    PresidentHeadOfState: Πρόεδρος -> Προεδρια της Δημοκρατιας
+    ParliamentSpeakerHeadOfParliament: Πρόεδρος Βουλής -> Κοινοβούλιο
+    ministerHeadOfMinistry: Υπουργός -> Υπουργειο
+  subheadOf:
+    vicePresidentSubheadOfState: Αντιπρόεδρος -> Προεδρια της Δημοκρατιας
+    viceMinisterSubheadOfMinistry: Υφυπουργός -> Υπουργειο
+  lawSuggestedByMinistry: Νόμος -> Υπουργειο
+  lawIssuedByParliament: Νόμος -> Κοινοβούλιο
+  (o)LedgerIssuesBudget: Λογιστήριο του Κράτους -> Προϋπολογισμος
+
+
+ValueProperty:
+  hasTerm:
+    memberOfGovernmentHasTerm: Μέλος κυβερνησης -> Θητεια
+    memberOfParliamentHasTerm: Μέλος βουλής -> Θητεια
+    presidentHasTerm: Πρόεδρος -> Θητεια
+    primeMinisterHasTerm: Πρωθυπουργός -> Θητεια
+    presidentOfBankHasTerm: Κυβερνητης της Τραπεζας της Ελλαδος -> Θητεια
+  gender: Άτομο -> Φύλο
+  (leaders only)age: Άτομο -> Ηλικία
+  (leaders only)birthDate: Άτομο -> Ημερομηνία Γέννησης
+  (leaders only)birthPlace: Άτομο -> Τόπος Γέννησης
+  (leaders only)termStart: Άτομο -> Ημερομηνία Έναρξης Θητείας
+  leaning: Πολιτικό κομμα -> Πολιτική Προσανατολισμός
+  colour: Πολιτικό κομμα -> Χρώμα
+  numberOfPartyMembers: Πολιτικό κομμα -> Αριθμός Μελών
+  numberOfParliamentSeats: Πολιτικό κομμα -> Αριθμός Εδρών
+  (leaders only)alive: Άτομο -> Εν Ζωή
+  (leaders only)responsibilities: Άτομο -> Αρμοδιότητες
+  numberOfEmployees: Γραφείο πρωθυπουργού -> Αριθμός Υπαλλήλων
+  (leaders only)wage: Άτομο -> Μισθός
+  budget: Λογιστήριο του κράτους -> Προϋπολογισμος
+  (leaders only)OfficialPronoun: Άτομο -> Επίσημο Αντωνυμία
+  numberOfHospitals: Εθνικός Οργανισμός Δημόσιας Υγείας -> Αριθμός Νοσοκομείων
+  lastMeeting: Συμβουλιο της Επικρατειας -> Ημερομηνία Τελευταίας Συνεδρίασης
+  dateOfElection: any (κοιβέρνηση ή κοινοβούλιο) -> Ημερομηνία Εκλογών
+  termEndDate: any -> Ημερομηνία Λήξης Θητείας
