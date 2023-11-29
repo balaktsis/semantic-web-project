@@ -10,25 +10,51 @@
   rdf:type owl:Ontology ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-
-# Persons
-:Person
+:Associate_Minister
   rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf :Minister ;
+.
+:Bank_of_Greece
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :National_Organization ;
 .
 :Citizen
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Person ;
 .
-:Party_Member
+:Council_of_Party_Leaders
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Council_of_State
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Deputy_Minister
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Minister ;
+.
+:General_Ledger_of_State
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Government
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Government_Official
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Citizen ;
 .
-:Party_Leader
+:Government_Representative
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Party_Member ;
+  rdfs:subClassOf :Government_Official ;
 .
-:Government_Official
+:Law
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Member_of_Parliament
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Citizen ;
 .
@@ -36,55 +62,87 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Government_Official ;
 .
-:Deputy_Minister
+:Ministry
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Minister ;
+  rdfs:subClassOf rdfs:Resource ;
 .
-:Associate_Minister
+:National_Commission_for_Communications_and_IT
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Minister ;
+  rdfs:subClassOf :National_Organization ;
 .
-:Prime_Minister
+:National_Organization
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Minister ;
+  rdfs:subClassOf rdfs:Resource ;
 .
-:State_Minister
+:National_Public_Health_Organization
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Minister ;
+  rdfs:subClassOf :National_Organization ;
 .
-:Secretary_General
+:National_Security_Council
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Government_Official ;
+  rdfs:subClassOf rdfs:Resource ;
 .
-:Government_Representative
+:Official_Opposition
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Government_Official ;
+  rdfs:subClassOf :Opposition ;
 .
-:Member_of_Parliament
+:Opposition
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Citizen ;
+  rdfs:subClassOf rdfs:Resource ;
 .
-:President_of_Parliament
+:Parliament
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Member_of_Parliament ;
-.
-:Vice_President_of_Parliament
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Member_of_Parliament ;
+  rdfs:subClassOf rdfs:Resource ;
 .
 :Parliamentary_Group_Representative
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Member_of_Parliament ;
 .
-
-# / Persons
-
-# Laws
-
-:Law
+:Party
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
-
-# / Laws
-
+:Party_Leader
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Party_Member ;
+.
+:Party_Member
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Citizen ;
+.
+:Person
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Presidency_of_the_Republic
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:President
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:President_of_Parliament
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Member_of_Parliament ;
+.
+:Prime_Minister
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Minister ;
+.
+:Prime_Minister_Office
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+:Secretary_General
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Government_Official ;
+.
+:State_Minister
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Minister ;
+.
+:Vice_President_of_Parliament
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Member_of_Parliament ;
+.
