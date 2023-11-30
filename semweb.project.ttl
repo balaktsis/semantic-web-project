@@ -327,9 +327,6 @@
 .
 :partOfGovernment
   rdf:type rdf:Property ;
-  rdfs:domain :Member_of_Government ;
-  rdfs:domain :Ministry ;
-  rdfs:domain :Prime_Minister_Office ;
   rdfs:range :Government ;
 .
 :partOfParliament
