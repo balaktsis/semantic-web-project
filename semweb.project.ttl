@@ -18,6 +18,10 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :National_Organization ;
 .
+:Budget
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
 :Citizen
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Person ;
@@ -42,17 +46,17 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
-:Government_Official
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Citizen ;
-.
 :Government_Representative
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Government_Official ;
+  rdfs:subClassOf :Member_of_Government ;
 .
 :Law
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
+.
+:Member_of_Government
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Citizen ;
 .
 :Member_of_Parliament
   rdf:type rdfs:Class ;
@@ -60,7 +64,7 @@
 .
 :Minister
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Government_Official ;
+  rdfs:subClassOf :Member_of_Government ;
 .
 :Ministry
   rdf:type rdfs:Class ;
@@ -114,13 +118,9 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
-:Presidency_of_the_Republic
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
 :President
   rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
+  rdfs:subClassOf :Citizen ;
 .
 :President_of_Parliament
   rdf:type rdfs:Class ;
@@ -134,13 +134,21 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:Republic
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf rdfs:Resource ;
+.
 :Secretary_General
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Government_Official ;
+  rdfs:subClassOf :Member_of_Government ;
 .
 :State_Minister
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Minister ;
+.
+:Vice_President
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :President ;
 .
 :Vice_President_of_Parliament
   rdf:type rdfs:Class ;
@@ -158,9 +166,41 @@
   rdfs:range :Parliament ;
   rdfs:subPropertyOf :partOfParliament ;
 .
+:headOf
+  rdf:type rdf:Property ;
+.
+:headOfGovernment
+  rdf:type rdf:Property ;
+  rdfs:domain :Prime_Minister ;
+  rdfs:range :Government ;
+  rdfs:subPropertyOf :headOf ;
+.
+:headOfMinistry
+  rdf:type rdf:Property ;
+  rdfs:domain :Minister ;
+  rdfs:range :Ministry ;
+  rdfs:subPropertyOf :headOf ;
+.
+:headOfParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :President_of_Parliament ;
+  rdfs:range :Parliament ;
+  rdfs:subPropertyOf :headOf ;
+.
+:headOfState
+  rdf:type rdf:Property ;
+  rdfs:domain :President ;
+  rdfs:range :Republic ;
+  rdfs:subPropertyOf :headOf ;
+.
+:issuedBy
+  rdf:type rdf:Property ;
+  rdfs:domain :Budget ;
+  rdfs:range :General_Ledger_of_State ;
+.
 :memberOfGovernment
   rdf:type rdf:Property ;
-  rdfs:domain :Government_Official ;
+  rdfs:domain :Member_of_Government ;
   rdfs:range :Government ;
   rdfs:subPropertyOf :partOfGovernment ;
 .
@@ -188,18 +228,13 @@
 .
 :partOfGovernment
   rdf:type rdf:Property ;
-  rdfs:domain :Government_Official ;
+  rdfs:domain :Member_of_Government ;
   rdfs:domain :Ministry ;
   rdfs:domain :Prime_Minister_Office ;
   rdfs:range :Government ;
 .
 :partOfParliament
   rdf:type rdf:Property ;
-  rdfs:domain :Council_of_Party_Leaders ;
-  rdfs:domain :Government ;
-  rdfs:domain :Member_of_Parliament ;
-  rdfs:domain :Opposition ;
-  rdfs:domain :Party ;
   rdfs:range :Parliament ;
 .
 :partyOfParliament
@@ -222,4 +257,24 @@
   rdfs:domain :Party_Leader ;
   rdfs:range :Party ;
   rdfs:subPropertyOf :represents ;
+.
+:subheadOf
+  rdf:type rdf:Property ;
+.
+:suggestedBy
+  rdf:type rdf:Property ;
+  rdfs:domain :Law ;
+  rdfs:range :Ministry ;
+.
+:viceOfMinistry
+  rdf:type rdf:Property ;
+  rdfs:domain :Deputy_Minister ;
+  rdfs:range :Ministry ;
+  rdfs:subPropertyOf :subheadOf ;
+.
+:viceOfState
+  rdf:type rdf:Property ;
+  rdfs:domain :Vice_President ;
+  rdfs:range :Republic ;
+  rdfs:subPropertyOf :subheadOf ;
 .
