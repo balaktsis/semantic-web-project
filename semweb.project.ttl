@@ -50,6 +50,10 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Member_of_Government ;
 .
+:Governor_of_General_Ledger_of_State
+  rdf:type rdfs:Class ;
+  rdfs:subClassOf :Citizen ;
+.
 :Law
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
@@ -154,11 +158,41 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Member_of_Parliament ;
 .
+:age
+  rdf:type rdf:Property ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:integer ;
+.
+:birthDate
+  rdf:type rdf:Property ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:date ;
+.
+:birthPlace
+  rdf:type rdf:Property ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
+.
+:colour
+  rdf:type rdf:Property ;
+  rdfs:domain :Party ;
+  rdfs:range xsd:string ;
+.
 :councilOfParliament
   rdf:type rdf:Property ;
   rdfs:domain :Council_of_Party_Leaders ;
   rdfs:range :Parliament ;
   rdfs:subPropertyOf :partOfParliament ;
+.
+:electedOn
+  rdf:type rdf:Property ;
+  rdfs:domain :Citizen ;
+  rdfs:range xsd:date ;
+.
+:gender
+  rdf:type rdf:Property ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:string ;
 .
 :governmentOfParliament
   rdf:type rdf:Property ;
@@ -166,8 +200,33 @@
   rdfs:range :Parliament ;
   rdfs:subPropertyOf :partOfParliament ;
 .
+:hasPronoun
+  rdf:type rdf:Property ;
+  rdfs:domain :Citizen ;
+  rdfs:range xsd:string ;
+.
+:hasTaxContributions
+  rdf:type rdf:Property ;
+  rdfs:domain :Budget ;
+  rdfs:range xsd:decimal ;
+.
+:hasTerm
+  rdf:type rdf:Property ;
+  rdfs:range xsd:integer ;
+.
+:hasWage
+  rdf:type rdf:Property ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:decimal ;
+.
 :headOf
   rdf:type rdf:Property ;
+.
+:headOfGeneralLedger
+  rdf:type rdf:Property ;
+  rdfs:domain :Governor_of_General_Ledger_of_State ;
+  rdfs:range :General_Ledger_of_State ;
+  rdfs:subPropertyOf :headOf ;
 .
 :headOfGovernment
   rdf:type rdf:Property ;
@@ -193,10 +252,30 @@
   rdfs:range :Republic ;
   rdfs:subPropertyOf :headOf ;
 .
+:isAlive
+  rdf:type rdf:Property ;
+  rdfs:domain :Person ;
+  rdfs:range xsd:boolean ;
+.
 :issuedBy
   rdf:type rdf:Property ;
   rdfs:domain :Budget ;
   rdfs:range :General_Ledger_of_State ;
+.
+:issues
+  rdf:type rdf:Property ;
+  rdfs:domain :General_Ledger_of_State ;
+  rdfs:range :Budget ;
+.
+:lastMeeting
+  rdf:type rdf:Property ;
+  rdfs:domain :Council_of_State ;
+  rdfs:range xsd:date ;
+.
+:leaningTo
+  rdf:type rdf:Property ;
+  rdfs:domain :Party ;
+  rdfs:range xsd:string ;
 .
 :memberOfGovernment
   rdf:type rdf:Property ;
@@ -215,6 +294,26 @@
   rdfs:domain :Ministry ;
   rdfs:range :Government ;
   rdfs:subPropertyOf :partOfGovernment ;
+.
+:numOfEmployees
+  rdf:type rdf:Property ;
+  rdfs:domain :Prime_Minister_Office ;
+  rdfs:range xsd:integer ;
+.
+:numOfHospitals
+  rdf:type rdf:Property ;
+  rdfs:domain :National_Public_Health_Organization ;
+  rdfs:range xsd:integer ;
+.
+:numOfMembers
+  rdf:type rdf:Property ;
+  rdfs:domain :Party ;
+  rdfs:range xsd:integer ;
+.
+:numOfParliamentSeats
+  rdf:type rdf:Property ;
+  rdfs:domain :Party ;
+  rdfs:range xsd:integer ;
 .
 :officeOfGovernment
   rdf:type rdf:Property ;
@@ -258,6 +357,11 @@
   rdfs:range :Party ;
   rdfs:subPropertyOf :represents ;
 .
+:responsibleFor
+  rdf:type rdf:Property ;
+  rdfs:domain :Citizen ;
+  rdfs:range xsd:string ;
+.
 :subheadOf
   rdf:type rdf:Property ;
 .
@@ -265,6 +369,40 @@
   rdf:type rdf:Property ;
   rdfs:domain :Law ;
   rdfs:range :Ministry ;
+.
+:termEnd
+  rdf:type rdf:Property ;
+  rdfs:domain :Citizen ;
+  rdfs:range xsd:date ;
+.
+:termInGovernment
+  rdf:type rdf:Property ;
+  rdfs:domain :Member_of_Government ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf :hasTerm ;
+.
+:termInLedger
+  rdf:type rdf:Property ;
+  rdfs:domain :Governor_of_General_Ledger_of_State ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf :hasTerm ;
+.
+:termInParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :Member_of_Parliament ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf :hasTerm ;
+.
+:termInPresidency
+  rdf:type rdf:Property ;
+  rdfs:domain :President ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf :hasTerm ;
+.
+:termStart
+  rdf:type rdf:Property ;
+  rdfs:domain :Citizen ;
+  rdfs:range xsd:date ;
 .
 :viceOfMinistry
   rdf:type rdf:Property ;
