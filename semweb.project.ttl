@@ -146,3 +146,80 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Member_of_Parliament ;
 .
+:councilOfParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :Council_of_Party_Leaders ;
+  rdfs:range :Parliament ;
+  rdfs:subPropertyOf :partOfParliament ;
+.
+:governmentOfParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :Government ;
+  rdfs:range :Parliament ;
+  rdfs:subPropertyOf :partOfParliament ;
+.
+:memberOfGovernment
+  rdf:type rdf:Property ;
+  rdfs:domain :Government_Official ;
+  rdfs:range :Government ;
+  rdfs:subPropertyOf :partOfGovernment ;
+.
+:memberOfParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :Member_of_Parliament ;
+  rdfs:range :Parliament ;
+  rdfs:subPropertyOf :partOfParliament ;
+.
+:ministryOfGovernment
+  rdf:type rdf:Property ;
+  rdfs:domain :Ministry ;
+  rdfs:range :Government ;
+  rdfs:subPropertyOf :partOfGovernment ;
+.
+:officeOfGovernment
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf :partOfGovernment ;
+.
+:oppositionOfParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :Opposition ;
+  rdfs:range :Parliament ;
+  rdfs:subPropertyOf :partOfParliament ;
+.
+:partOfGovernment
+  rdf:type rdf:Property ;
+  rdfs:domain :Government_Official ;
+  rdfs:domain :Ministry ;
+  rdfs:domain :Prime_Minister_Office ;
+  rdfs:range :Government ;
+.
+:partOfParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :Council_of_Party_Leaders ;
+  rdfs:domain :Government ;
+  rdfs:domain :Member_of_Parliament ;
+  rdfs:domain :Opposition ;
+  rdfs:domain :Party ;
+  rdfs:range :Parliament ;
+.
+:partyOfParliament
+  rdf:type rdf:Property ;
+  rdfs:domain :Party ;
+  rdfs:range :Parliament ;
+  rdfs:subPropertyOf :partOfParliament ;
+.
+:represents
+  rdf:type rdf:Property ;
+.
+:representsGovernment
+  rdf:type rdf:Property ;
+  rdfs:domain :Government_Representative ;
+  rdfs:range :Government ;
+  rdfs:subPropertyOf :represents ;
+.
+:representsParty
+  rdf:type rdf:Property ;
+  rdfs:domain :Party_Leader ;
+  rdfs:range :Party ;
+  rdfs:subPropertyOf :represents ;
+.
