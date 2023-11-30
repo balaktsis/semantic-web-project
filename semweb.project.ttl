@@ -54,6 +54,9 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Citizen ;
 .
+:Hellenic_government
+  rdf:type :Government ;
+.
 :Law
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
@@ -412,4 +415,87 @@
   rdfs:domain :Vice_President ;
   rdfs:range :Republic ;
   rdfs:subPropertyOf :subheadOf ;
+.
+
+# Ministries
+
+:Ministry_of_Citizen_Protection
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Climate_Crisis_and_Civil_Protection
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Culture
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Development
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Digital_Governance
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Education_Religious_Affairs_Culture_and_Sports
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Environment_and_Energy
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Foreign_Affairs
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Health
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Infrastructure_and_Transport
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Interior
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Justice
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Labour_and_Social_Insurance
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Maritime_Affairs_and_Island_Policy
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Migration_and_Asylum
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_National_Defence
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_National_Economy_And_Finance
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Rural_Development_and_Food
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Social_Connectivity_and_Family_Affairs
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Tourism
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
 .
