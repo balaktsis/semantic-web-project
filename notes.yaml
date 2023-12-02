@@ -43,38 +43,38 @@
 
 ObjectProperty: 
   partof:
-    partofGovernment:
-      MinistryPartofGovernment: Υπουργειο -> Κυβερνηση
-      MemberPartOfGovernment: Μέλος κυβερνησης -> Κυβερνηση
-      PMOfficePartOfGovernment: Γραφείο Πρωθυπουργου -> Κυβερνηση
-    partofParliament:
-      ParliamentMemberPartOfParliament: Μέλος βουλής -> Κοινοβούλιο
-      PoliticalPartyPartOfParliament: Πολιτικό κομμα -> Κοινοβούλιο
-      CouncilOfPartyLeadersPartOfParliament: Συμβουλιο πολιτικών αρχηγών -> Κοινοβούλιο
-      GovernmentPartOfParliament: Κυβερνηση -> Κοινοβούλιο
-      OppositionPartOfParliament: Αντιπολιτευση -> Κοινοβούλιο
-  represents:
-    representativeRepresentsGovernment: Εκπρόσωπος -> Κυβερνηση
-    representativeRepresentsParty: Πολιτικός Αρχηγός -> Πολιτικό κομμα
-  headOf:
-    PMHeadOfGovernment: Πρωθυπουργός -> Κυβερνηση
-    PresidentHeadOfState: Πρόεδρος -> Προεδρια της Δημοκρατιας
-    ParliamentSpeakerHeadOfParliament: Πρόεδρος Βουλής -> Κοινοβούλιο
-    ministerHeadOfMinistry: Υπουργός -> Υπουργειο
-  subheadOf:
-    vicePresidentSubheadOfState: Αντιπρόεδρος -> Προεδρια της Δημοκρατιας
-    viceMinisterSubheadOfMinistry: Υφυπουργός -> Υπουργειο
-  lawSuggestedByMinistry: Νόμος -> Υπουργειο
-  lawIssuedByParliament: Νόμος -> Κοινοβούλιο
+    -partofGovernment:
+      -MinistryPartofGovernment: Υπουργειο -> Κυβερνηση
+      -MemberPartOfGovernment: Μέλος κυβερνησης -> Κυβερνηση
+      -PMOfficePartOfGovernment: Γραφείο Πρωθυπουργου -> Κυβερνηση
+    (-)partofParliament:
+      (-)ParliamentMemberPartOfParliament: Μέλος βουλής -> Κοινοβούλιο
+      (-)PoliticalPartyPartOfParliament: Πολιτικό κομμα -> Κοινοβούλιο
+      -CouncilOfPartyLeadersPartOfParliament: Συμβουλιο πολιτικών αρχηγών -> Κοινοβούλιο
+      -GovernmentPartOfParliament: Κυβερνηση -> Κοινοβούλιο
+      -OppositionPartOfParliament: Αντιπολιτευση -> Κοινοβούλιο
+  (-)represents:
+    -representativeRepresentsGovernment: Εκπρόσωπος -> Κυβερνηση
+    (-)representativeRepresentsParty: Πολιτικός Αρχηγός -> Πολιτικό κομμα
+  -headOf:
+    -PMHeadOfGovernment: Πρωθυπουργός -> Κυβερνηση
+    -PresidentHeadOfState: Πρόεδρος -> Προεδρια της Δημοκρατιας
+    -ParliamentSpeakerHeadOfParliament: Πρόεδρος Βουλής -> Κοινοβούλιο
+    -ministerHeadOfMinistry: Υπουργός -> Υπουργειο
+  (!)subheadOf:
+    (!)vicePresidentSubheadOfState: Αντιπρόεδρος -> Προεδρια της Δημοκρατιας
+    -viceMinisterSubheadOfMinistry: Υφυπουργός -> Υπουργειο
+  (-)lawSuggestedByMinistry: Νόμος -> Υπουργειο
+  (-)lawIssuedByParliament: Νόμος -> Κοινοβούλιο
   (o)LedgerIssuesBudget: Λογιστήριο του Κράτους -> Προϋπολογισμος
 
 
 ValueProperty:
   hasTerm:
-    memberOfGovernmentHasTerm: Μέλος κυβερνησης -> Θητεια
-    memberOfParliamentHasTerm: Μέλος βουλής -> Θητεια
-    presidentHasTerm: Πρόεδρος -> Θητεια
-    primeMinisterHasTerm: Πρωθυπουργός -> Θητεια
+    -memberOfGovernmentHasTerm: Μέλος κυβερνησης -> Θητεια
+    -memberOfParliamentHasTerm: Μέλος βουλής -> Θητεια
+    -presidentHasTerm: Πρόεδρος -> Θητεια
+    -primeMinisterHasTerm: Πρωθυπουργός -> Θητεια
     presidentOfBankHasTerm: Κυβερνητης της Τραπεζας της Ελλαδος -> Θητεια
   gender: Άτομο -> Φύλο
   (leaders only)age: Άτομο -> Ηλικία

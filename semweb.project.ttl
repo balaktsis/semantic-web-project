@@ -10,6 +10,26 @@
   rdf:type owl:Ontology ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
+:Adonis_Georgiadis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
+.
+:Akis_Skertsos
+  rdf:type :State_Minister ;
+  :belongs_to :Hellenic_Government ;
+.
+:Alexandra_Papadopoulou
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
+.
+:Alexandra_Sdoukou
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Environment_and_Energy ;
+.
+:Anna_Mani_Papadimitriou
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Development ;
+.
 :Associate_Minister
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Minister ;
@@ -22,12 +42,37 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:Charis_Theocharis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_National_Economy_And_Finance ;
+.
+:Christina_Alexopoulou
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Infrastructure_and_Transport ;
+.
+:Christos_Dimas
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Culture ;
+.
+:Christos_Staikouras
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Infrastructure_and_Transport ;
+.
+:Christos_Stylianidis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
+.
+:Christos_Triantopoulos
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
+.
 :Citizen
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Person ;
 .
 :Council_of_Party_Leaders
   rdf:type rdfs:Class ;
+  :councilOfParliament :Hellenic_parliament ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Council_of_State
@@ -38,16 +83,86 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Minister ;
 .
+:Dimitris_Keridis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Migration_and_Asylum ;
+.
+:Dimitris_Papastergiou
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Digital_Governance ;
+.
+:Dimitris_Vartzopoulos
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Health ;
+.
+:Dionysis_Stamenitis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Rural_Development_and_Food ;
+.
+:Domna_Michailidou
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
+.
+:Eirini_Agapidaki
+  rdf:type :Associate_Minister ;
+  :belongs_to :Hellenic_Ministry_of_Health ;
+.
+:Elena_Rapti
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Tourism ;
+.
+:Evagelos_Tournas
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
+.
 :General_Ledger_of_State
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:Giannis_Bougas
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Justice ;
+.
+:Giannis_Bratakos
+  rdf:type :Deputy_Minister_of_Prime_Minister ;
+  :belongs_to :Hellenic_Government ;
+.
+:Giannis_Kefalogiannis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_National_Defence ;
+.
+:Giannis_Oikonomou
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Citizen_Protection ;
+.
+:Giannis_Pappas
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
+.
+:Giannis_Vroutsis
+  rdf:type :Associate_Minister ;
+  :belongs_to :Hellenic_Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
+.
+:Giorgos_Floridis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Justice ;
+.
+:Giorgos_Gerapetritis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Foreign_Affairs ;
+.
+:Giorgos_Kotsiras
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
+.
 :Government
   rdf:type rdfs:Class ;
+  :governmentOfParliament :Hellenic_parliament ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Government_Representative
   rdf:type rdfs:Class ;
+  :representsGovernment :Hellenic_government ;
   rdfs:subClassOf :Member_of_Government ;
 .
 :Governor_of_General_Ledger_of_State
@@ -57,25 +172,176 @@
 :Hellenic_government
   rdf:type :Government ;
 .
+:Hellenic_parliament
+  rdf:type :Parliament ;
+.
+:Katerina_Sakellaropoulou
+  rdf:type :President ;
+  :termInPresidency 5 ;
+  :termStart "2023-12-02"^^xsd:date ;
+.
+:Konstantinos_Kyranakis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Digital_Governance ;
+.
+:Konstantinos_Tasoulas
+  rdf:type :President_of_Parliament ;
+.
+:Kostas_Fragkogiannis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
+.
+:Kostas_Katsafados
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Citizen_Protection ;
+.
+:Kostas_Skrekas
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Development ;
+.
+:Kostis_Chatzidakis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_National_Economy_And_Finance ;
+.
+:Kyriakos_Mitsotakis
+  rdf:type :Prime_Minister ;
+  :belongs_to :Hellenic_Government ;
+.
+:Kyriakos_Pierrakakis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
+.
 :Law
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:Lefteris_Avgenakis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Rural_Development_and_Food ;
+.
+:Lina_Mendoni
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Culture ;
+.
+:Makis_Voridis
+  rdf:type :State_Minister ;
+  :belongs_to :Hellenic_Government ;
+.
+:Maria_Kefala
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
+.
+:Marios_Themistokleous
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Health ;
+.
+:Maximos_Senetakis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Development ;
+.
 :Member_of_Government
   rdf:type rdfs:Class ;
+  :memberOfGovernment :Hellenic_government ;
   rdfs:subClassOf :Citizen ;
 .
 :Member_of_Parliament
   rdf:type rdfs:Class ;
+  :termInParliament 4 ;
   rdfs:subClassOf :Citizen ;
+.
+:Michalis_Chrysohoidis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Health ;
 .
 :Minister
   rdf:type rdfs:Class ;
+  :termInGovernment 4 ;
   rdfs:subClassOf :Member_of_Government ;
 .
 :Ministry
   rdf:type rdfs:Class ;
+  :ministryOfGovernment :Hellenic_government ;
   rdfs:subClassOf rdfs:Resource ;
+.
+:Ministry_of_Citizen_Protection
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Climate_Crisis_and_Civil_Protection
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Culture
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Development
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Digital_Governance
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Education_Religious_Affairs_Culture_and_Sports
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Environment_and_Energy
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Foreign_Affairs
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Health
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Infrastructure_and_Transport
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Interior
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Justice
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Labour_and_Social_Insurance
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Maritime_Affairs_and_Island_Policy
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Migration_and_Asylum
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_National_Defence
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_National_Economy_And_Finance
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Rural_Development_and_Food
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Social_Connectivity_and_Family_Affairs
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
+.
+:Ministry_of_Tourism
+  rdf:type :Ministry ;
+  :ministryOfGovernment :Hellenic_government ;
 .
 :National_Commission_for_Communications_and_IT
   rdf:type rdfs:Class ;
@@ -93,13 +359,42 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:Niki_Kerameos
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Interior ;
+.
+:Nikos_Dendias
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_National_Defence ;
+.
+:Nikos_Papathanasis
+  rdf:type :Associate_Minister ;
+  :belongs_to :Hellenic_Ministry_of_National_Economy_And_Finance ;
+.
+:Nikos_Tachiaos
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Infrastructure_and_Transport ;
+.
+:Nikos_Tagaras
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Environment_and_Energy ;
+.
 :Official_Opposition
   rdf:type rdfs:Class ;
+  :oppositionOfParliament :Hellenic_parliament ;
   rdfs:subClassOf :Opposition ;
+.
+:Olga_Kefalogianni
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Tourism ;
 .
 :Opposition
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
+.
+:Panos_Tsakloglou
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
 .
 :Parliament
   rdf:type rdfs:Class ;
@@ -121,24 +416,34 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Citizen ;
 .
+:Pavlos_Marinakis
+  rdf:type :Hellenic_Government_Representative ;
+  :represents :Hellenic_Government ;
+.
 :Person
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :President
   rdf:type rdfs:Class ;
+  :headOfState :Hellenic_government ;
+  :termInPresidency 5 ;
   rdfs:subClassOf :Citizen ;
 .
 :President_of_Parliament
   rdf:type rdfs:Class ;
+  :termInParliament 4 ;
   rdfs:subClassOf :Member_of_Parliament ;
 .
 :Prime_Minister
   rdf:type rdfs:Class ;
+  :headOfGovernment :Hellenic_government ;
+  :termInGovernment 4 ;
   rdfs:subClassOf :Minister ;
 .
 :Prime_Minister_Office
   rdf:type rdfs:Class ;
+  :officeOfGovernment :Hellenic_government ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Republic
@@ -149,17 +454,69 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Member_of_Government ;
 .
+:Sofia_Voultepsi
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Migration_and_Asylum ;
+.
+:Sofia_Zacharaki
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
+.
 :State_Minister
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Minister ;
 .
+:Stathis_Konstantinidis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Interior ;
+.
+:Stavros_Keletsis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Rural_Development_and_Food ;
+.
+:Stavros_Papastavrou
+  rdf:type :State_Minister ;
+  :belongs_to :Hellenic_Government ;
+.
+:Thanasis_Kontogeorgis
+  rdf:type :Deputy_Minister_of_Prime_Minister ;
+  :belongs_to :Hellenic_Government ;
+.
+:Thanos_Petralias
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_National_Economy_And_Finance ;
+.
+:Theodoros_Skylakakis
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Environment_and_Energy ;
+.
+:Thodoris_Livanios
+  rdf:type :Associate_Minister ;
+  :belongs_to :Hellenic_Ministry_of_Interior ;
+.
+:Vasilis_Kikilias
+  rdf:type :Minister ;
+  :headOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
+.
+:Vasilis_Spanakis
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
+.
 :Vice_President
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :President ;
+  rdfs:subClassOf :Citizen ;
 .
 :Vice_President_of_Parliament
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Member_of_Parliament ;
+.
+:Vivi_Charalabogianni
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Interior ;
+.
+:Zetta_Makri
+  rdf:type :Deputy_Minister ;
+  :viceOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
 .
 :age
   rdf:type rdf:Property ;
@@ -191,11 +548,6 @@
   rdf:type rdf:Property ;
   rdfs:domain :Citizen ;
   rdfs:range xsd:date ;
-.
-:gender
-  rdf:type rdf:Property ;
-  rdfs:domain :Person ;
-  rdfs:range xsd:string ;
 .
 :governmentOfParliament
   rdf:type rdf:Property ;
@@ -416,344 +768,3 @@
   rdfs:range :Republic ;
   rdfs:subPropertyOf :subheadOf ;
 .
-
-# Ministries
-
-:Ministry_of_Citizen_Protection
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Climate_Crisis_and_Civil_Protection
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Culture
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Development
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Digital_Governance
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Education_Religious_Affairs_Culture_and_Sports
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Environment_and_Energy
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Foreign_Affairs
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Health
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Infrastructure_and_Transport
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Interior
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Justice
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Labour_and_Social_Insurance
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Maritime_Affairs_and_Island_Policy
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Migration_and_Asylum
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_National_Defence
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_National_Economy_And_Finance
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Rural_Development_and_Food
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Social_Connectivity_and_Family_Affairs
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-:Ministry_of_Tourism
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
-.
-
-
-
-:Adonis_Georgiadis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
-.
-:Akis_Skertsos
-  rdf:type :State_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Alexandra_Papadopoulou
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Alexandra_Sdoukou
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Environment_and_Energy ;
-.
-:Anna_Mani_Papadimitriou
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Development ;
-.
-:Charis_Theocharis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_National_Economy_And_Finance ;
-.
-:Christina_Alexopoulou
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Infrastructure_and_Transport ;
-.
-:Christos_Dimas
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Culture ;
-.
-:Christos_Staikouras
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Infrastructure_and_Transport ;
-.
-:Christos_Stylianidis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
-.
-:Christos_Triantopoulos
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
-.
-:Dimitris_Keridis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Migration_and_Asylum ;
-.
-:Dimitris_Papastergiou
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Digital_Governance ;
-.
-:Dimitris_Vartzopoulos
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Health ;
-.
-:Dionysis_Stamenitis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Rural_Development_and_Food ;
-.
-:Domna_Michailidou
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-:Eirini_Agapidaki
-  rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_Health ;
-.
-:Elena_Rapti
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Tourism ;
-.
-:Evagelos_Tournas
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
-.
-:Giannis_Bougas
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Justice ;
-.
-:Giannis_Bratakos
-  rdf:type :Deputy_Minister_of_Prime_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Giannis_Kefalogiannis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_National_Defence ;
-.
-:Giannis_Oikonomou
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Citizen_Protection ;
-.
-:Giannis_Pappas
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
-.
-:Giannis_Vroutsis
-  rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-:Giorgos_Floridis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Justice ;
-.
-:Giorgos_Gerapetritis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Giorgos_Kotsiras
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Konstantinos_Kyranakis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Digital_Governance ;
-.
-:Kostas_Fragkogiannis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Kostas_Katsafados
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Citizen_Protection ;
-.
-:Kostas_Skrekas
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Development ;
-.
-:Kostis_Chatzidakis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_National_Economy_And_Finance ;
-.
-:Kyriakos_Mitsotakis
-  rdf:type :Prime_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Kyriakos_Pierrakakis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-:Lefteris_Avgenakis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Rural_Development_and_Food ;
-.
-:Lina_Mendoni
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Culture ;
-.
-:Makis_Voridis
-  rdf:type :State_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Maria_Kefala
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
-.
-:Marios_Themistokleous
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Health ;
-.
-:Maximos_Senetakis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Development ;
-.
-:Michalis_Chrysohoidis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Health ;
-.
-:Niki_Kerameos
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Interior ;
-.
-:Nikos_Dendias
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_National_Defence ;
-.
-:Nikos_Papathanasis
-  rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_National_Economy_And_Finance ;
-.
-:Nikos_Tachiaos
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Infrastructure_and_Transport ;
-.
-:Nikos_Tagaras
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Environment_and_Energy ;
-.
-:Olga_Kefalogianni
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Tourism ;
-.
-:Panos_Tsakloglou
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
-.
-:Pavlos_Marinakis
-  rdf:type :Hellenic_Government_Representative ;
-  :represents :Hellenic_Government ;
-.
-:Sofia_Voultepsi
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Migration_and_Asylum ;
-.
-:Sofia_Zacharaki
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
-.
-:Stathis_Konstantinidis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Interior ;
-.
-:Stavros_Keletsis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Rural_Development_and_Food ;
-.
-:Stavros_Papastavrou
-  rdf:type :State_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Thanasis_Kontogeorgis
-  rdf:type :Deputy_Minister_of_Prime_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Thanos_Petralias
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_National_Economy_And_Finance ;
-.
-:Theodoros_Skylakakis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Environment_and_Energy ;
-.
-:Thodoris_Livanios
-  rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_Interior ;
-.
-:Vasilis_Kikilias
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
-.
-:Vasilis_Spanakis
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
-.
-:Vivi_Charalabogianni
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Interior ;
-.
-:Zetta_Makri
-  rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-
-
-
