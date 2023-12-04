@@ -8,26 +8,32 @@
 
 <http://semweb.project.rdfs>
   rdf:type owl:Ontology ;
-  owl:versionInfo "Created with TopBraid Composer" ;
 .
 :Adonis_Georgiadis
+  rdf:type :Member_of_Parliament ;
   rdf:type :Minister ;
+  rdf:type :Party_Member ;
   :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
+  :memberOfGovernment :Hellenic_Government ;
+  :termInParliament 4 ;
 .
 :Akis_Skertsos
+  rdf:type :Party_Member ;
   rdf:type :State_Minister ;
-  :belongs_to :Hellenic_Government ;
+  :memberOfGovernment :Hellenic_Government ;
 .
 :Alexandra_Papadopoulou
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
+  rdf:type :Party_Member ;
+  :deputyOfMinistry :Ministry_of_Foreign_Affairs ;
 .
 :Alexandra_Sdoukou
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Environment_and_Energy ;
+  :deputyOfMinistry :Ministry_of_Environment_and_Energy ;
 .
 :Alexios_Tsipras
   rdf:type :Member_of_Parliament ;
+  rdf:type :Party_Member ;
   :age 49 ;
   :birthDate "1974-07-28"^^xsd:date ;
   :birthPlace "Arta, Greece" ;
@@ -40,7 +46,7 @@
 .
 :Anna_Mani_Papadimitriou
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Development ;
+  :deputyOfMinistry :Ministry_of_Development ;
 .
 :Associate_Minister
   rdf:type rdfs:Class ;
@@ -54,17 +60,21 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:Budget_2024
+  rdf:type :Budget ;
+  :hasTaxContributions 1302586.14 ;
+.
 :Charis_Theocharis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_National_Economy_And_Finance ;
+  :deputyOfMinistry :Ministry_of_National_Economy_And_Finance ;
 .
 :Christina_Alexopoulou
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Infrastructure_and_Transport ;
+  :deputyOfMinistry :Ministry_of_Infrastructure_and_Transport ;
 .
 :Christos_Dimas
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Culture ;
+  :deputyOfMinistry :Ministry_of_Culture ;
 .
 :Christos_Staikouras
   rdf:type :Minister ;
@@ -76,7 +86,7 @@
 .
 :Christos_Triantopoulos
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
+  :deputyOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
 .
 :Citizen
   rdf:type rdfs:Class ;
@@ -130,27 +140,37 @@
 .
 :Dimitris_Vartzopoulos
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Health ;
+  :deputyOfMinistry :Ministry_of_Health ;
 .
 :Dionysis_Stamenitis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Rural_Development_and_Food ;
+  :deputyOfMinistry :Ministry_of_Rural_Development_and_Food ;
 .
 :Domna_Michailidou
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
+  :deputyOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
+.
+:EODY
+  rdf:type :National_Public_Health_Organization ;
+  :numOfHospitals 275 ;
+.
+:ESETK
+  rdf:type :National_Commission_for_Communications_and_IT ;
 .
 :Eirini_Agapidaki
   rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_Health ;
+  rdf:type :Member_of_Parliament ;
+  :associateOfMinistry :Ministry_of_Health ;
+  :memberOfGovernment :Hellenic_Government ;
+  :termInParliament 4 ;
 .
 :Elena_Rapti
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Tourism ;
+  :deputyOfMinistry :Ministry_of_Tourism ;
 .
 :Evagelos_Tournas
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
+  :deputyOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
 .
 :Freedom_Sailing
   rdf:type :Party ;
@@ -158,7 +178,11 @@
   :leaningTo "Left" ;
   :numOfMembers 17 ;
   :numOfParliamentSeats 6 ;
+  :opposedIn :Hellenic_Opposition ;
   :partyOfParliament :Hellenic_Parliament ;
+.
+:GCFAD
+  rdf:type :National_Security_Council ;
 .
 :General_Ledger_of_State
   rdf:type rdfs:Class ;
@@ -166,7 +190,7 @@
 .
 :Giannis_Bougas
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Justice ;
+  :deputyOfMinistry :Ministry_of_Justice ;
 .
 :Giannis_Bratakos
   rdf:type :Deputy_Minister_of_Prime_Minister ;
@@ -174,7 +198,7 @@
 .
 :Giannis_Kefalogiannis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_National_Defence ;
+  :deputyOfMinistry :Ministry_of_National_Defence ;
 .
 :Giannis_Oikonomou
   rdf:type :Minister ;
@@ -182,7 +206,7 @@
 .
 :Giannis_Pappas
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
+  :deputyOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
 .
 :Giannis_Vroutsis
   rdf:type :Associate_Minister ;
@@ -198,7 +222,7 @@
 .
 :Giorgos_Kotsiras
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
+  :deputyOfMinistry :Ministry_of_Foreign_Affairs ;
 .
 :Government
   rdf:type rdfs:Class ;
@@ -214,14 +238,41 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Citizen ;
 .
+:Hellenic_Council_of_State
+  rdf:type :Council_of_State ;
+  :lastMeeting "2023-08-25"^^xsd:date ;
+.
+:Hellenic_General_Ledger
+  rdf:type :General_Ledger_of_State ;
+  :issues :Budget_2024 ;
+.
 :Hellenic_Government
   rdf:type :Government ;
   :begin "2023-06-25"^^xsd:date ;
   :governmentOfParliament :Hellenic_Parliament ;
 .
+:Hellenic_Official_Opposition
+  rdf:type :Official_Opposition ;
+  :oppositionOfParliament :Hellenic_Parliament ;
+.
+:Hellenic_Opposition
+  rdf:type :Opposition ;
+  :oppositionOfParliament :Hellenic_Parliament ;
+.
+:Hellenic_PM_Office
+  rdf:type :Prime_Minister_Office ;
+  :numOfEmployees 35 ;
+.
 :Hellenic_Parliament
   rdf:type :Parliament ;
   :begin "2023-06-25"^^xsd:date ;
+.
+:Hellenic_Party_Leaders_Council
+  rdf:type :Council_of_Party_Leaders ;
+  :councilOfParliament :Hellenic_Parliament ;
+.
+:Hellenic_Republic
+  rdf:type :Republic ;
 .
 :Hellenic_Solution
   rdf:type :Party ;
@@ -229,7 +280,14 @@
   :leaningTo "Right" ;
   :numOfMembers 31 ;
   :numOfParliamentSeats 12 ;
+  :opposedIn :Hellenic_Opposition ;
   :partyOfParliament :Hellenic_Parliament ;
+.
+:Ioannis_Bratakos
+  rdf:type :Secretary_General ;
+.
+:Ioannis_Stournaras
+  rdf:type :Governor_of_General_Ledger_of_State ;
 .
 :Katerina_Sakellaropoulou
   rdf:type :President ;
@@ -238,9 +296,10 @@
 .
 :Konstantinos_Kyranakis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Digital_Governance ;
+  :deputyOfMinistry :Ministry_of_Digital_Governance ;
 .
 :Konstantinos_Tasoulas
+  rdf:type :Party_Member ;
   rdf:type :President_of_Parliament ;
 .
 :Konstantinos_Tsiaras
@@ -258,11 +317,11 @@
 .
 :Kostas_Fragkogiannis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Foreign_Affairs ;
+  :deputyOfMinistry :Ministry_of_Foreign_Affairs ;
 .
 :Kostas_Katsafados
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Citizen_Protection ;
+  :deputyOfMinistry :Ministry_of_Citizen_Protection ;
 .
 :Kostas_Skrekas
   rdf:type :Minister ;
@@ -328,15 +387,15 @@
 .
 :Maria_Kefala
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
+  :deputyOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
 .
 :Marios_Themistokleous
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Health ;
+  :deputyOfMinistry :Ministry_of_Health ;
 .
 :Maximos_Senetakis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Development ;
+  :deputyOfMinistry :Ministry_of_Development ;
 .
 :Member_of_Government
   rdf:type rdfs:Class ;
@@ -472,6 +531,7 @@
   :leaningTo "Right" ;
   :numOfMembers 18 ;
   :numOfParliamentSeats 15 ;
+  :opposedIn :Hellenic_Opposition ;
   :partyOfParliament :Hellenic_Parliament ;
 .
 :Niki_Kerameos
@@ -501,11 +561,11 @@
 .
 :Nikos_Tachiaos
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Infrastructure_and_Transport ;
+  :deputyOfMinistry :Ministry_of_Infrastructure_and_Transport ;
 .
 :Nikos_Tagaras
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Environment_and_Energy ;
+  :deputyOfMinistry :Ministry_of_Environment_and_Energy ;
 .
 :Official_Opposition
   rdf:type rdfs:Class ;
@@ -526,11 +586,15 @@
   :leaningTo "Center" ;
   :numOfMembers 38 ;
   :numOfParliamentSeats 32 ;
+  :opposedIn :Hellenic_Opposition ;
   :partyOfParliament :Hellenic_Parliament ;
+.
+:Panagiotis_Pikrammenos
+  rdf:type :Vice_President ;
 .
 :Panos_Tsakloglou
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
+  :deputyOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
 .
 :Parliament
   rdf:type rdfs:Class ;
@@ -553,12 +617,19 @@
   rdfs:subClassOf :Citizen ;
 .
 :Pavlos_Marinakis
-  rdf:type :Hellenic_Government_Representative ;
+  rdf:type :Government_Representative ;
+  rdf:type :Member_of_Parliament ;
+  rdf:type :Party_Member ;
   :represents :Hellenic_Government ;
 .
 :Person
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
+.
+:Polity
+  rdf:type :Law ;
+  :hasStatement "Το πολίτευμα της Ελλάδας είναι η Προεδρευόμενη Κοινοβουλευτική Δημοκρατία." ;
+  :suggestedBy :Ministry_of_Interior ;
 .
 :President
   rdf:type rdfs:Class ;
@@ -592,6 +663,7 @@
   :leaningTo "Radical Left" ;
   :numOfMembers 45 ;
   :numOfParliamentSeats 36 ;
+  :opposedIn :Hellenic_Official_Opposition ;
   :partyOfParliament :Hellenic_Parliament ;
 .
 :Secretary_General
@@ -600,7 +672,7 @@
 .
 :Sofia_Voultepsi
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Migration_and_Asylum ;
+  :deputyOfMinistry :Ministry_of_Migration_and_Asylum ;
 .
 :Sofia_Zacharaki
   rdf:type :Minister ;
@@ -612,6 +684,7 @@
   :leaningTo "Right" ;
   :numOfMembers 13 ;
   :numOfParliamentSeats 11 ;
+  :opposedIn :Hellenic_Opposition ;
   :partyOfParliament :Hellenic_Parliament ;
 .
 :State_Minister
@@ -620,11 +693,11 @@
 .
 :Stathis_Konstantinidis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Interior ;
+  :deputyOfMinistry :Ministry_of_Interior ;
 .
 :Stavros_Keletsis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Rural_Development_and_Food ;
+  :deputyOfMinistry :Ministry_of_Rural_Development_and_Food ;
 .
 :Stavros_Papastavrou
   rdf:type :State_Minister ;
@@ -639,21 +712,39 @@
   :isAlive "true"^^xsd:boolean ;
   :representsParty :SYRIZA ;
 .
+:TTE
+  rdf:type :Bank_of_Greece ;
+.
 :Thanasis_Kontogeorgis
   rdf:type :Deputy_Minister_of_Prime_Minister ;
   :belongs_to :Hellenic_Government ;
 .
 :Thanos_Petralias
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_National_Economy_And_Finance ;
+  :deputyOfMinistry :Ministry_of_National_Economy_And_Finance ;
 .
 :Theodoros_Skylakakis
+  rdf:type :Member_of_Parliament ;
   rdf:type :Minister ;
+  rdf:type :Party_Member ;
   :headOfMinistry :Ministry_of_Environment_and_Energy ;
+  :memberOfGovernment :Hellenic_Government ;
+  :memberOfParliament :Hellenic_Parliament ;
 .
 :Thodoris_Livanios
   rdf:type :Associate_Minister ;
   :belongs_to :Hellenic_Ministry_of_Interior ;
+.
+:Vasileios_Stigkas
+  rdf:type :Parliamentary_Group_Representative ;
+  rdf:type :Party_Leader ;
+  :age 59 ;
+  :birthPlace "Livadeia, Greece" ;
+  :hasPronoun "Mr" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :representsParty :Spartans ;
+  :termInParliament 4 ;
 .
 :Vasilis_Kikilias
   rdf:type :Minister ;
@@ -661,11 +752,7 @@
 .
 :Vasilis_Spanakis
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
-.
-:Vasilis_Stigkas
-  rdf:type :Party_Leader ;
-  :age 59 ;
+  :deputyOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
 .
 :Vice_President
   rdf:type rdfs:Class ;
@@ -677,11 +764,11 @@
 .
 :Vivi_Charalabogianni
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Interior ;
+  :deputyOfMinistry :Ministry_of_Interior ;
 .
 :Zetta_Makri
   rdf:type :Deputy_Minister ;
-  :viceOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
+  :deputyOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
 .
 :Zoe_Konstantopoulou
   rdf:type :Parliamentary_Group_Representative ;
@@ -701,6 +788,12 @@
   rdf:type rdf:Property ;
   rdfs:domain :Person ;
   rdfs:range xsd:integer ;
+.
+:associateOfMinistry
+  rdf:type rdf:Property ;
+  rdfs:domain :Associate_Minister ;
+  rdfs:range :Ministry ;
+  rdfs:subPropertyOf :subheadOf ;
 .
 :begin
   rdf:type rdf:Property ;
@@ -727,6 +820,12 @@
   rdfs:range :Parliament ;
   rdfs:subPropertyOf :partOfParliament ;
 .
+:deputyOfMinistry
+  rdf:type rdf:Property ;
+  rdfs:domain :Deputy_Minister ;
+  rdfs:range :Ministry ;
+  rdfs:subPropertyOf :subheadOf ;
+.
 :electedOn
   rdf:type rdf:Property ;
   rdfs:domain :Citizen ;
@@ -745,6 +844,11 @@
 :hasPronoun
   rdf:type rdf:Property ;
   rdfs:domain :Citizen ;
+  rdfs:range xsd:string ;
+.
+:hasStatement
+  rdf:type rdf:Property ;
+  rdfs:domain :Law ;
   rdfs:range xsd:string ;
 .
 :hasTaxContributions
@@ -798,11 +902,6 @@
   rdf:type rdf:Property ;
   rdfs:domain :Person ;
   rdfs:range xsd:boolean ;
-.
-:issuedBy
-  rdf:type rdf:Property ;
-  rdfs:domain :Budget ;
-  rdfs:range :General_Ledger_of_State ;
 .
 :issues
   rdf:type rdf:Property ;
@@ -860,6 +959,11 @@
 :officeOfGovernment
   rdf:type rdf:Property ;
   rdfs:subPropertyOf :partOfGovernment ;
+.
+:opposedIn
+  rdf:type rdf:Property ;
+  rdfs:domain :Party ;
+  rdfs:range :Opposition ;
 .
 :oppositionOfParliament
   rdf:type rdf:Property ;
@@ -943,16 +1047,10 @@
   rdfs:domain :Citizen ;
   rdfs:range xsd:date ;
 .
-:viceOfMinistry
-  rdf:type rdf:Property ;
-  rdfs:domain :Deputy_Minister ;
-  rdfs:range :Ministry ;
-  rdfs:subPropertyOf :subheadOf ;
-.
-:viceOfState
+:viceOfGovernment
   rdf:type rdf:Property ;
   rdfs:domain :Vice_President ;
-  rdfs:range :Republic ;
+  rdfs:range :Government ;
   rdfs:subPropertyOf :subheadOf ;
 .
 :ΚΚΕ
@@ -961,5 +1059,6 @@
   :leaningTo "Left" ;
   :numOfMembers 70 ;
   :numOfParliamentSeats 21 ;
+  :opposedIn :Hellenic_Opposition ;
   :partyOfParliament :Hellenic_Parliament ;
 .
