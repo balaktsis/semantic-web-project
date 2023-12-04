@@ -26,6 +26,18 @@
   rdf:type :Deputy_Minister ;
   :viceOfMinistry :Ministry_of_Environment_and_Energy ;
 .
+:Alexios_Tsipras
+  rdf:type :Member_of_Parliament ;
+  :age 49 ;
+  :birthDate "1974-07-28"^^xsd:date ;
+  :birthPlace "Arta, Greece" ;
+  :electedOn "2023-12-04"^^xsd:date ;
+  :hasPronoun "Mr" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :termInParliament 4 ;
+.
 :Anna_Mani_Papadimitriou
   rdf:type :Deputy_Minister ;
   :viceOfMinistry :Ministry_of_Development ;
@@ -72,7 +84,7 @@
 .
 :Council_of_Party_Leaders
   rdf:type rdfs:Class ;
-  :councilOfParliament :Hellenic_parliament ;
+  :councilOfParliament :Hellenic_Parliament ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Council_of_State
@@ -82,6 +94,31 @@
 :Deputy_Minister
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Minister ;
+.
+:Dimitrios_Koutsoumpas
+  rdf:type :Parliamentary_Group_Representative ;
+  rdf:type :Party_Leader ;
+  :age 58 ;
+  :birthDate "1955-08-10"^^xsd:date ;
+  :birthPlace "Lamia, Greece" ;
+  :electedOn "2023-06-25"^^xsd:date ;
+  :hasPronoun "Mr" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :representsParty :ΚΚΕ ;
+  :termInParliament 4 ;
+.
+:Dimitrios_Natsios
+  rdf:type :Parliamentary_Group_Representative ;
+  rdf:type :Party_Leader ;
+  :age 58 ;
+  :birthPlace "Pieria, Greece" ;
+  :electedOn "2023-06-25"^^xsd:date ;
+  :hasPronoun "Mr" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :representsParty :Nike ;
+  :termInParliament 4 ;
 .
 :Dimitris_Keridis
   rdf:type :Minister ;
@@ -114,6 +151,14 @@
 :Evagelos_Tournas
   rdf:type :Deputy_Minister ;
   :viceOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
+.
+:Freedom_Sailing
+  rdf:type :Party ;
+  :colour "Purple" ;
+  :leaningTo "Left" ;
+  :numOfMembers 17 ;
+  :numOfParliamentSeats 6 ;
+  :partyOfParliament :Hellenic_Parliament ;
 .
 :General_Ledger_of_State
   rdf:type rdfs:Class ;
@@ -157,23 +202,34 @@
 .
 :Government
   rdf:type rdfs:Class ;
-  :governmentOfParliament :Hellenic_parliament ;
+  :governmentOfParliament :Hellenic_Parliament ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Government_Representative
   rdf:type rdfs:Class ;
-  :representsGovernment :Hellenic_government ;
+  :representsGovernment :Hellenic_Government ;
   rdfs:subClassOf :Member_of_Government ;
 .
 :Governor_of_General_Ledger_of_State
   rdf:type rdfs:Class ;
   rdfs:subClassOf :Citizen ;
 .
-:Hellenic_government
+:Hellenic_Government
   rdf:type :Government ;
+  :begin "2023-06-25"^^xsd:date ;
+  :governmentOfParliament :Hellenic_Parliament ;
 .
-:Hellenic_parliament
+:Hellenic_Parliament
   rdf:type :Parliament ;
+  :begin "2023-06-25"^^xsd:date ;
+.
+:Hellenic_Solution
+  rdf:type :Party ;
+  :colour "Cyan" ;
+  :leaningTo "Right" ;
+  :numOfMembers 31 ;
+  :numOfParliamentSeats 12 ;
+  :partyOfParliament :Hellenic_Parliament ;
 .
 :Katerina_Sakellaropoulou
   rdf:type :President ;
@@ -186,6 +242,19 @@
 .
 :Konstantinos_Tasoulas
   rdf:type :President_of_Parliament ;
+.
+:Konstantinos_Tsiaras
+  rdf:type :Parliamentary_Group_Representative ;
+  rdf:type :Party_Member ;
+  :age 57 ;
+  :birthDate "1966-07-02"^^xsd:date ;
+  :birthPlace "Karditsa, Greece" ;
+  :electedOn "2023-06-25"^^xsd:date ;
+  :hasPronoun "Mr" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :termInParliament 4 ;
 .
 :Kostas_Fragkogiannis
   rdf:type :Deputy_Minister ;
@@ -204,12 +273,42 @@
   :headOfMinistry :Ministry_of_National_Economy_And_Finance ;
 .
 :Kyriakos_Mitsotakis
+  rdf:type :Member_of_Parliament ;
+  rdf:type :Party_Leader ;
   rdf:type :Prime_Minister ;
-  :belongs_to :Hellenic_Government ;
+  :age 55 ;
+  :birthDate "1955-03-04"^^xsd:date ;
+  :birthPlace "Athens, Greece" ;
+  :electedOn "2023-06-25"^^xsd:date ;
+  :hasPronoun "His Majesty" ;
+  :hasWage 6203.08 ;
+  :headOfGovernment :Hellenic_Government ;
+  :isAlive "true"^^xsd:boolean ;
+  :memberOfGovernment :Hellenic_Government ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :representsParty :New_Democracy ;
+  :responsibleFor "Managing the ministry council of the government" ;
+  :termEnd "2027-06-25"^^xsd:date ;
+  :termInGovernment 4 ;
+  :termInParliament 4 ;
+  :termStart "2023-06-25"^^xsd:date ;
 .
 :Kyriakos_Pierrakakis
   rdf:type :Minister ;
   :headOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
+.
+:Kyriakos_Velopoulos
+  rdf:type :Parliamentary_Group_Representative ;
+  rdf:type :Party_Leader ;
+  :age 58 ;
+  :birthDate "1965-10-24"^^xsd:date ;
+  :birthPlace "Germany" ;
+  :electedOn "2023-06-25"^^xsd:date ;
+  :hasPronoun "Mr" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :representsParty :Hellenic_Solution ;
+  :termInParliament 4 ;
 .
 :Law
   rdf:type rdfs:Class ;
@@ -241,7 +340,7 @@
 .
 :Member_of_Government
   rdf:type rdfs:Class ;
-  :memberOfGovernment :Hellenic_government ;
+  :memberOfGovernment :Hellenic_Government ;
   rdfs:subClassOf :Citizen ;
 .
 :Member_of_Parliament
@@ -260,88 +359,88 @@
 .
 :Ministry
   rdf:type rdfs:Class ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Ministry_of_Citizen_Protection
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Climate_Crisis_and_Civil_Protection
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Culture
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Development
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Digital_Governance
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Education_Religious_Affairs_Culture_and_Sports
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Environment_and_Energy
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Foreign_Affairs
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Health
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Infrastructure_and_Transport
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Interior
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Justice
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Labour_and_Social_Insurance
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Maritime_Affairs_and_Island_Policy
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Migration_and_Asylum
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_National_Defence
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_National_Economy_And_Finance
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Rural_Development_and_Food
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Social_Connectivity_and_Family_Affairs
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :Ministry_of_Tourism
   rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_government ;
+  :ministryOfGovernment :Hellenic_Government ;
 .
 :National_Commission_for_Communications_and_IT
   rdf:type rdfs:Class ;
@@ -359,9 +458,38 @@
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
 .
+:New_Democracy
+  rdf:type :Party ;
+  :colour "Blue" ;
+  :leaningTo "Center-right" ;
+  :numOfMembers 175 ;
+  :numOfParliamentSeats 158 ;
+  :partyOfParliament :Hellenic_Parliament ;
+.
+:Nike
+  rdf:type :Party ;
+  :colour "Aqua" ;
+  :leaningTo "Right" ;
+  :numOfMembers 18 ;
+  :numOfParliamentSeats 15 ;
+  :partyOfParliament :Hellenic_Parliament ;
+.
 :Niki_Kerameos
   rdf:type :Minister ;
   :headOfMinistry :Ministry_of_Interior ;
+.
+:Nikolaos_Androulakis
+  rdf:type :Parliamentary_Group_Representative ;
+  rdf:type :Party_Leader ;
+  :age 49 ;
+  :birthDate "1979-02-07"^^xsd:date ;
+  :birthPlace "Arta, Greece" ;
+  :electedOn "2023-12-04"^^xsd:date ;
+  :hasPronoun "Mr" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :termInParliament 4 ;
 .
 :Nikos_Dendias
   rdf:type :Minister ;
@@ -381,7 +509,7 @@
 .
 :Official_Opposition
   rdf:type rdfs:Class ;
-  :oppositionOfParliament :Hellenic_parliament ;
+  :oppositionOfParliament :Hellenic_Parliament ;
   rdfs:subClassOf :Opposition ;
 .
 :Olga_Kefalogianni
@@ -391,6 +519,14 @@
 :Opposition
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
+.
+:PASOK
+  rdf:type :Party ;
+  :colour "Green" ;
+  :leaningTo "Center" ;
+  :numOfMembers 38 ;
+  :numOfParliamentSeats 32 ;
+  :partyOfParliament :Hellenic_Parliament ;
 .
 :Panos_Tsakloglou
   rdf:type :Deputy_Minister ;
@@ -426,7 +562,7 @@
 .
 :President
   rdf:type rdfs:Class ;
-  :headOfState :Hellenic_government ;
+  :headOfState :Hellenic_Government ;
   :termInPresidency 5 ;
   rdfs:subClassOf :Citizen ;
 .
@@ -437,18 +573,26 @@
 .
 :Prime_Minister
   rdf:type rdfs:Class ;
-  :headOfGovernment :Hellenic_government ;
+  :headOfGovernment :Hellenic_Government ;
   :termInGovernment 4 ;
   rdfs:subClassOf :Minister ;
 .
 :Prime_Minister_Office
   rdf:type rdfs:Class ;
-  :officeOfGovernment :Hellenic_government ;
+  :officeOfGovernment :Hellenic_Government ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Republic
   rdf:type rdfs:Class ;
   rdfs:subClassOf rdfs:Resource ;
+.
+:SYRIZA
+  rdf:type :Party ;
+  :colour "Pink" ;
+  :leaningTo "Radical Left" ;
+  :numOfMembers 45 ;
+  :numOfParliamentSeats 36 ;
+  :partyOfParliament :Hellenic_Parliament ;
 .
 :Secretary_General
   rdf:type rdfs:Class ;
@@ -461,6 +605,14 @@
 :Sofia_Zacharaki
   rdf:type :Minister ;
   :headOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
+.
+:Spartans
+  rdf:type :Party ;
+  :colour "Yellow" ;
+  :leaningTo "Right" ;
+  :numOfMembers 13 ;
+  :numOfParliamentSeats 11 ;
+  :partyOfParliament :Hellenic_Parliament ;
 .
 :State_Minister
   rdf:type rdfs:Class ;
@@ -477,6 +629,15 @@
 :Stavros_Papastavrou
   rdf:type :State_Minister ;
   :belongs_to :Hellenic_Government ;
+.
+:Stefanos_Kasselakis
+  rdf:type :Party_Leader ;
+  :age 35 ;
+  :birthDate "1988-03-29"^^xsd:date ;
+  :birthPlace "Athens, Greece" ;
+  :hasPronoun "Mr" ;
+  :isAlive "true"^^xsd:boolean ;
+  :representsParty :SYRIZA ;
 .
 :Thanasis_Kontogeorgis
   rdf:type :Deputy_Minister_of_Prime_Minister ;
@@ -502,9 +663,13 @@
   rdf:type :Deputy_Minister ;
   :viceOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
 .
+:Vasilis_Stigkas
+  rdf:type :Party_Leader ;
+  :age 59 ;
+.
 :Vice_President
   rdf:type rdfs:Class ;
-  rdfs:subClassOf :Citizen ;
+  rdfs:subClassOf :Member_of_Government ;
 .
 :Vice_President_of_Parliament
   rdf:type rdfs:Class ;
@@ -518,10 +683,28 @@
   rdf:type :Deputy_Minister ;
   :viceOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
 .
+:Zoe_Konstantopoulou
+  rdf:type :Parliamentary_Group_Representative ;
+  rdf:type :Party_Leader ;
+  :age 47 ;
+  :birthDate "1976-12-08"^^xsd:date ;
+  :birthPlace "Athens, Greece" ;
+  :electedOn "2023-06-25"^^xsd:date ;
+  :hasPronoun "Ms" ;
+  :hasWage "4787"^^xsd:decimal ;
+  :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :representsParty :Freedom_Sailing ;
+  :termInParliament 4 ;
+.
 :age
   rdf:type rdf:Property ;
   rdfs:domain :Person ;
   rdfs:range xsd:integer ;
+.
+:begin
+  rdf:type rdf:Property ;
+  rdfs:range xsd:date ;
 .
 :birthDate
   rdf:type rdf:Property ;
@@ -547,6 +730,10 @@
 :electedOn
   rdf:type rdf:Property ;
   rdfs:domain :Citizen ;
+  rdfs:range xsd:date ;
+.
+:end
+  rdf:type rdf:Property ;
   rdfs:range xsd:date ;
 .
 :governmentOfParliament
@@ -767,4 +954,12 @@
   rdfs:domain :Vice_President ;
   rdfs:range :Republic ;
   rdfs:subPropertyOf :subheadOf ;
+.
+:ΚΚΕ
+  rdf:type :Party ;
+  :colour "Red" ;
+  :leaningTo "Left" ;
+  :numOfMembers 70 ;
+  :numOfParliamentSeats 21 ;
+  :partyOfParliament :Hellenic_Parliament ;
 .
