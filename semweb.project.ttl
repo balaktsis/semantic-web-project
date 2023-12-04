@@ -15,12 +15,14 @@
   rdf:type :Party_Member ;
   :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
   :memberOfGovernment :Hellenic_Government ;
+  :partOfParty :New_Democracy ;
   :termInParliament 4 ;
 .
 :Akis_Skertsos
   rdf:type :Party_Member ;
   rdf:type :State_Minister ;
   :memberOfGovernment :Hellenic_Government ;
+  :partOfParty :New_Democracy ;
 .
 :Alexandra_Papadopoulou
   rdf:type :Deputy_Minister ;
@@ -160,8 +162,10 @@
 :Eirini_Agapidaki
   rdf:type :Associate_Minister ;
   rdf:type :Member_of_Parliament ;
+  rdf:type :Party_Member ;
   :associateOfMinistry :Ministry_of_Health ;
   :memberOfGovernment :Hellenic_Government ;
+  :partOfParty :New_Democracy ;
   :termInParliament 4 ;
 .
 :Elena_Rapti
@@ -334,6 +338,7 @@
 :Kyriakos_Mitsotakis
   rdf:type :Member_of_Parliament ;
   rdf:type :Party_Leader ;
+  rdf:type :Party_Member ;
   rdf:type :Prime_Minister ;
   :age 55 ;
   :birthDate "1955-03-04"^^xsd:date ;
@@ -345,6 +350,7 @@
   :isAlive "true"^^xsd:boolean ;
   :memberOfGovernment :Hellenic_Government ;
   :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :New_Democracy ;
   :representsParty :New_Democracy ;
   :responsibleFor "Managing the ministry council of the government" ;
   :termEnd "2027-06-25"^^xsd:date ;
@@ -730,6 +736,7 @@
   :headOfMinistry :Ministry_of_Environment_and_Energy ;
   :memberOfGovernment :Hellenic_Government ;
   :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :New_Democracy ;
 .
 :Thodoris_Livanios
   rdf:type :Associate_Minister ;
@@ -978,6 +985,11 @@
 :partOfParliament
   rdf:type rdf:Property ;
   rdfs:range :Parliament ;
+.
+:partOfParty
+  rdf:type rdf:Property ;
+  rdfs:domain :Citizen ;
+  rdfs:range :Party ;
 .
 :partyOfParliament
   rdf:type rdf:Property ;
