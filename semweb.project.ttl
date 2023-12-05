@@ -15,6 +15,7 @@
   rdf:type :Party_Member ;
   :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
   :memberOfGovernment :Hellenic_Government ;
+  :memberOfParliament :Hellenic_Parliament ;
   :partOfParty :New_Democracy ;
   :termInParliament 4 ;
 .
@@ -22,6 +23,7 @@
   rdf:type :Party_Member ;
   rdf:type :State_Minister ;
   :memberOfGovernment :Hellenic_Government ;
+  :memberOfParliament :Hellenic_Parliament ;
   :partOfParty :New_Democracy ;
 .
 :Alexandra_Papadopoulou
@@ -118,6 +120,8 @@
   :hasPronoun "Mr" ;
   :hasWage "4787"^^xsd:decimal ;
   :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :ΚΚΕ ;
   :representsParty :ΚΚΕ ;
   :termInParliament 4 ;
 .
@@ -130,6 +134,8 @@
   :hasPronoun "Mr" ;
   :hasWage "4787"^^xsd:decimal ;
   :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :Nike ;
   :representsParty :Nike ;
   :termInParliament 4 ;
 .
@@ -166,6 +172,7 @@
   rdf:type :Party_Member ;
   :associateOfMinistry :Ministry_of_Health ;
   :memberOfGovernment :Hellenic_Government ;
+  :memberOfParliament :Hellenic_Parliament ;
   :partOfParty :New_Democracy ;
   :termInParliament 4 ;
 .
@@ -373,6 +380,8 @@
   :hasPronoun "Mr" ;
   :hasWage "4787"^^xsd:decimal ;
   :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :Hellenic_Solution ;
   :representsParty :Hellenic_Solution ;
   :termInParliament 4 ;
 .
@@ -717,6 +726,7 @@
   :birthPlace "Athens, Greece" ;
   :hasPronoun "Mr" ;
   :isAlive "true"^^xsd:boolean ;
+  :partOfParty :SYRIZA ;
   :representsParty :SYRIZA ;
 .
 :TTE
@@ -751,6 +761,8 @@
   :hasPronoun "Mr" ;
   :hasWage "4787"^^xsd:decimal ;
   :isAlive "true"^^xsd:boolean ;
+  :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :Spartans ;
   :representsParty :Spartans ;
   :termInParliament 4 ;
 .
@@ -789,6 +801,7 @@
   :hasWage "4787"^^xsd:decimal ;
   :isAlive "true"^^xsd:boolean ;
   :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :Freedom_Sailing ;
   :representsParty :Freedom_Sailing ;
   :termInParliament 4 ;
 .
