@@ -849,6 +849,10 @@
   rdfs:range :Parliament ;
   rdfs:subPropertyOf :partOfParliament ;
 .
+:hasHighIncome
+  rdf:type rdf:Property ;
+  rdfs:range xsd:boolean ;
+.
 :hasPronoun
   rdf:type rdf:Property ;
   rdfs:domain :Citizen ;
