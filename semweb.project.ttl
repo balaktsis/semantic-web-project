@@ -851,6 +851,7 @@
 .
 :hasHighIncome
   rdf:type rdf:Property ;
+  rdfs:domain :Person ;
   rdfs:range xsd:boolean ;
 .
 :hasPronoun
