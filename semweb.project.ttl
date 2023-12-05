@@ -44,6 +44,7 @@
   :hasWage "4787"^^xsd:decimal ;
   :isAlive "true"^^xsd:boolean ;
   :memberOfParliament :Hellenic_Parliament ;
+  :partOfParty :SYRIZA ;
   :termInParliament 4 ;
 .
 :Anna_Mani_Papadimitriou
@@ -965,6 +966,8 @@
 .
 :officeOfGovernment
   rdf:type rdf:Property ;
+  rdfs:domain :Prime_Minister_Office ;
+  rdfs:range :Government ;
   rdfs:subPropertyOf :partOfGovernment ;
 .
 :opposedIn
@@ -980,11 +983,9 @@
 .
 :partOfGovernment
   rdf:type rdf:Property ;
-  rdfs:range :Government ;
 .
 :partOfParliament
   rdf:type rdf:Property ;
-  rdfs:range :Parliament ;
 .
 :partOfParty
   rdf:type rdf:Property ;
