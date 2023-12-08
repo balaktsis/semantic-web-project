@@ -1,0 +1,8 @@
+CONSTRUCT {?person :partOfParty ?party}
+WHERE {
+	?person rdf:type/rdfs:subClassOf* :Person .
+	?person :representsParty ?party .
+	FILTER NOT EXISTS {
+		?person :partOfParty ?party .
+	}
+}

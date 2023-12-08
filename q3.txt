@@ -1,0 +1,7 @@
+SELECT ?member  ?party
+WHERE {
+	?member :partOfParty ?party .
+	FILTER NOT EXISTS { 
+		?member :memberOfParliament :Hellenic_Parliament .
+	}
+}

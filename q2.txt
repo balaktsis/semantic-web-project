@@ -1,0 +1,6 @@
+CONSTRUCT {?person :hasHighIncome true}
+WHERE {
+	?person rdf:type/rdfs:subClassOf* :Person .
+	?person :hasWage ?income .
+	FILTER (?income >5000)
+}

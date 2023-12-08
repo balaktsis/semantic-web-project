@@ -1,0 +1,14 @@
+SELECT ?party (COUNT(?pmember) AS ?count)
+WHERE {
+	{
+		?pmember :partOfParty ?party.
+	}
+	UNION
+	{
+		?pmember :representsParty ?party.
+	}
+	?party rdf:type :Party.
+}
+GROUP BY ?party
+ORDER BY DESC(?count)
+LIMIT 3
