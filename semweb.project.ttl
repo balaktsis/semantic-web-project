@@ -95,6 +95,7 @@
 .
 :Citizen
   rdf:type rdfs:Class ;
+  rdfs:label "Έλληνας Πολίτης" ;
   rdfs:subClassOf :Person ;
 .
 :Council_of_Party_Leaders
@@ -278,6 +279,7 @@
 :Hellenic_Parliament
   rdf:type :Parliament ;
   :begin "2023-06-25"^^xsd:date ;
+  rdfs:comment "Object which represents the currently active parliament as of 2023, it's members etc." ;
 .
 :Hellenic_Party_Leaders_Council
   rdf:type :Council_of_Party_Leaders ;
@@ -387,6 +389,7 @@
 .
 :Law
   rdf:type rdfs:Class ;
+  rdfs:comment "Laws get suggested and voted for/passed by the parliament and governing bodies, it's a common ground for interaction between the various government entities" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Lefteris_Avgenakis
@@ -540,6 +543,7 @@
   :numOfMembers 175 ;
   :numOfParliamentSeats 158 ;
   :partyOfParliament :Hellenic_Parliament ;
+  rdfs:label "ΝΔ" ;
 .
 :Nike
   rdf:type :Party ;
@@ -586,6 +590,7 @@
 :Official_Opposition
   rdf:type rdfs:Class ;
   :oppositionOfParliament :Hellenic_Parliament ;
+  rdfs:comment "This class is for parts of the opposition which have been voted into parliament, thus forming the official opposition" ;
   rdfs:subClassOf :Opposition ;
 .
 :Olga_Kefalogianni
@@ -594,6 +599,7 @@
 .
 :Opposition
   rdf:type rdfs:Class ;
+  rdfs:comment "Greece's republic always consists of a leading party/government, and the rest form the opposition" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :PASOK
@@ -614,6 +620,7 @@
 .
 :Parliament
   rdf:type rdfs:Class ;
+  rdfs:comment "Represents the parliament as active" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Parliamentary_Group_Representative
@@ -626,6 +633,7 @@
 .
 :Party_Leader
   rdf:type rdfs:Class ;
+  rdfs:comment "Political Party Leaders is a particularly importan distinction in the Hellenic republic as they are persons of high interest and have special properties" ;
   rdfs:subClassOf :Party_Member ;
 .
 :Party_Member
@@ -640,6 +648,7 @@
 .
 :Person
   rdf:type rdfs:Class ;
+  rdfs:comment "Generic person class which allows us to model higher level properties for people which may be relating to the government but not necesserily citizens of Greece" ;
   rdfs:subClassOf rdfs:Resource ;
 .
 :Polity
@@ -651,6 +660,7 @@
   rdf:type rdfs:Class ;
   :headOfState :Hellenic_Government ;
   :termInPresidency 5 ;
+  rdfs:comment "Class which represents the seat of the President for the Hellenic Republic, it's object is the currently active occupant, although former occupants can be modeled as well through setting the correct properties" ;
   rdfs:subClassOf :Citizen ;
 .
 :President_of_Parliament
