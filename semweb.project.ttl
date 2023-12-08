@@ -4,10 +4,12 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://semweb.project.rdfs>
   rdf:type owl:Ontology ;
+  spin:imports <http://topbraid.org/spin/rdfsplus> ;
 .
 :Adonis_Georgiadis
   rdf:type :Member_of_Parliament ;
@@ -302,6 +304,8 @@
 .
 :Ioannis_Stournaras
   rdf:type :Governor_of_General_Ledger_of_State ;
+  :headOfGeneralLedger :Hellenic_General_Ledger ;
+  :termInLedger 4 ;
 .
 :Katerina_Sakellaropoulou
   rdf:type :President ;
@@ -315,6 +319,7 @@
 :Konstantinos_Tasoulas
   rdf:type :Party_Member ;
   rdf:type :President_of_Parliament ;
+  :headOfParliament :Hellenic_Parliament ;
 .
 :Konstantinos_Tsiaras
   rdf:type :Parliamentary_Group_Representative ;
@@ -828,6 +833,7 @@
 .
 :begin
   rdf:type rdf:Property ;
+  rdfs:comment "Marks the date start of a tenure in a particular position" ;
   rdfs:range xsd:date ;
 .
 :birthDate
@@ -894,6 +900,7 @@
 .
 :hasTerm
   rdf:type rdf:Property ;
+  rdfs:comment "Term length in years" ;
   rdfs:range xsd:integer ;
 .
 :hasWage
@@ -951,6 +958,7 @@
 .
 :leaningTo
   rdf:type rdf:Property ;
+  rdfs:comment "Political ideological leaning direction of a party" ;
   rdfs:domain :Party ;
   rdfs:range xsd:string ;
 .
@@ -1017,6 +1025,7 @@
 .
 :partOfParty
   rdf:type rdf:Property ;
+  rdfs:comment "No fun" ;
   rdfs:domain :Citizen ;
   rdfs:range :Party ;
 .
@@ -1090,6 +1099,7 @@
 .
 :viceOfGovernment
   rdf:type rdf:Property ;
+  rdfs:comment "Doesn't exist in the current government as of writing" ;
   rdfs:domain :Vice_President ;
   rdfs:range :Government ;
   rdfs:subPropertyOf :subheadOf ;
