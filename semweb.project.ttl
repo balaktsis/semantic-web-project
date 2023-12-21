@@ -1,1115 +1,1621 @@
-# baseURI: http://semweb.project.rdfs
-
 @prefix : <http://semweb.project.rdfs#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix spin: <http://spinrdf.org/spin#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://semweb.project.rdfs#> .
 
-<http://semweb.project.rdfs>
-  rdf:type owl:Ontology ;
-  spin:imports <http://topbraid.org/spin/rdfsplus> ;
-.
-:Adonis_Georgiadis
-  rdf:type :Member_of_Parliament ;
-  rdf:type :Minister ;
-  rdf:type :Party_Member ;
-  :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
-  :memberOfGovernment :Hellenic_Government ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :New_Democracy ;
-  :termInParliament 4 ;
-.
-:Akis_Skertsos
-  rdf:type :Party_Member ;
-  rdf:type :State_Minister ;
-  :memberOfGovernment :Hellenic_Government ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :New_Democracy ;
-.
-:Alexandra_Papadopoulou
-  rdf:type :Deputy_Minister ;
-  rdf:type :Party_Member ;
-  :deputyOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Alexandra_Sdoukou
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Environment_and_Energy ;
-.
-:Alexios_Tsipras
-  rdf:type :Member_of_Parliament ;
-  rdf:type :Party_Member ;
-  :age 49 ;
-  :birthDate "1974-07-28"^^xsd:date ;
-  :birthPlace "Arta, Greece" ;
-  :electedOn "2023-12-04"^^xsd:date ;
-  :hasPronoun "Mr" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :SYRIZA ;
-  :termInParliament 4 ;
-.
-:Anna_Mani_Papadimitriou
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Development ;
-.
-:Associate_Minister
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Minister ;
-.
-:Bank_of_Greece
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :National_Organization ;
-.
-:Budget
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Budget_2024
-  rdf:type :Budget ;
-  :hasTaxContributions 1302586.14 ;
-.
-:Charis_Theocharis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_National_Economy_And_Finance ;
-.
-:Christina_Alexopoulou
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Infrastructure_and_Transport ;
-.
-:Christos_Dimas
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Culture ;
-.
-:Christos_Staikouras
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Infrastructure_and_Transport ;
-.
-:Christos_Stylianidis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
-.
-:Christos_Triantopoulos
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
-.
-:Citizen
-  rdf:type rdfs:Class ;
-  rdfs:label "Έλληνας Πολίτης" ;
-  rdfs:subClassOf :Person ;
-.
-:Council_of_Party_Leaders
-  rdf:type rdfs:Class ;
-  :councilOfParliament :Hellenic_Parliament ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Council_of_State
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Deputy_Minister
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Minister ;
-.
-:Dimitrios_Koutsoumpas
-  rdf:type :Parliamentary_Group_Representative ;
-  rdf:type :Party_Leader ;
-  :age 58 ;
-  :birthDate "1955-08-10"^^xsd:date ;
-  :birthPlace "Lamia, Greece" ;
-  :electedOn "2023-06-25"^^xsd:date ;
-  :hasPronoun "Mr" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :ΚΚΕ ;
-  :representsParty :ΚΚΕ ;
-  :termInParliament 4 ;
-.
-:Dimitrios_Natsios
-  rdf:type :Parliamentary_Group_Representative ;
-  rdf:type :Party_Leader ;
-  :age 58 ;
-  :birthPlace "Pieria, Greece" ;
-  :electedOn "2023-06-25"^^xsd:date ;
-  :hasPronoun "Mr" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :Nike ;
-  :representsParty :Nike ;
-  :termInParliament 4 ;
-.
-:Dimitris_Keridis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Migration_and_Asylum ;
-.
-:Dimitris_Papastergiou
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Digital_Governance ;
-.
-:Dimitris_Vartzopoulos
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Health ;
-.
-:Dionysis_Stamenitis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Rural_Development_and_Food ;
-.
-:Domna_Michailidou
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-:EODY
-  rdf:type :National_Public_Health_Organization ;
-  :numOfHospitals 275 ;
-.
-:ESETK
-  rdf:type :National_Commission_for_Communications_and_IT ;
-.
-:Eirini_Agapidaki
-  rdf:type :Associate_Minister ;
-  rdf:type :Member_of_Parliament ;
-  rdf:type :Party_Member ;
-  :associateOfMinistry :Ministry_of_Health ;
-  :memberOfGovernment :Hellenic_Government ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :New_Democracy ;
-  :termInParliament 4 ;
-.
-:Elena_Rapti
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Tourism ;
-.
-:Evagelos_Tournas
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
-.
-:Freedom_Sailing
-  rdf:type :Party ;
-  :colour "Purple" ;
-  :leaningTo "Left" ;
-  :numOfMembers 17 ;
-  :numOfParliamentSeats 6 ;
-  :opposedIn :Hellenic_Opposition ;
-  :partyOfParliament :Hellenic_Parliament ;
-.
-:GCFAD
-  rdf:type :National_Security_Council ;
-.
-:General_Ledger_of_State
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Giannis_Bougas
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Justice ;
-.
-:Giannis_Bratakos
-  rdf:type :Deputy_Minister_of_Prime_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Giannis_Kefalogiannis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_National_Defence ;
-.
-:Giannis_Oikonomou
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Citizen_Protection ;
-.
-:Giannis_Pappas
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy ;
-.
-:Giannis_Vroutsis
-  rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-:Giorgos_Floridis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Justice ;
-.
-:Giorgos_Gerapetritis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Giorgos_Kotsiras
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Government
-  rdf:type rdfs:Class ;
-  :governmentOfParliament :Hellenic_Parliament ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Government_Representative
-  rdf:type rdfs:Class ;
-  :representsGovernment :Hellenic_Government ;
-  rdfs:subClassOf :Member_of_Government ;
-.
-:Governor_of_General_Ledger_of_State
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Citizen ;
-.
-:Hellenic_Council_of_State
-  rdf:type :Council_of_State ;
-  :lastMeeting "2023-08-25"^^xsd:date ;
-.
-:Hellenic_General_Ledger
-  rdf:type :General_Ledger_of_State ;
-  :issues :Budget_2024 ;
-.
-:Hellenic_Government
-  rdf:type :Government ;
-  :begin "2023-06-25"^^xsd:date ;
-  :governmentOfParliament :Hellenic_Parliament ;
-.
-:Hellenic_Official_Opposition
-  rdf:type :Official_Opposition ;
-  :oppositionOfParliament :Hellenic_Parliament ;
-.
-:Hellenic_Opposition
-  rdf:type :Opposition ;
-  :oppositionOfParliament :Hellenic_Parliament ;
-.
-:Hellenic_PM_Office
-  rdf:type :Prime_Minister_Office ;
-  :numOfEmployees 35 ;
-.
-:Hellenic_Parliament
-  rdf:type :Parliament ;
-  :begin "2023-06-25"^^xsd:date ;
-  rdfs:comment "Object which represents the currently active parliament as of 2023, it's members etc." ;
-.
-:Hellenic_Party_Leaders_Council
-  rdf:type :Council_of_Party_Leaders ;
-  :councilOfParliament :Hellenic_Parliament ;
-.
-:Hellenic_Republic
-  rdf:type :Republic ;
-.
-:Hellenic_Solution
-  rdf:type :Party ;
-  :colour "Cyan" ;
-  :leaningTo "Right" ;
-  :numOfMembers 31 ;
-  :numOfParliamentSeats 12 ;
-  :opposedIn :Hellenic_Opposition ;
-  :partyOfParliament :Hellenic_Parliament ;
-.
-:Ioannis_Bratakos
-  rdf:type :Secretary_General ;
-.
-:Ioannis_Stournaras
-  rdf:type :Governor_of_General_Ledger_of_State ;
-  :headOfGeneralLedger :Hellenic_General_Ledger ;
-  :termInLedger 4 ;
-.
-:Katerina_Sakellaropoulou
-  rdf:type :President ;
-  :termInPresidency 5 ;
-  :termStart "2023-12-02"^^xsd:date ;
-.
-:Konstantinos_Kyranakis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Digital_Governance ;
-.
-:Konstantinos_Tasoulas
-  rdf:type :Party_Member ;
-  rdf:type :President_of_Parliament ;
-  :headOfParliament :Hellenic_Parliament ;
-.
-:Konstantinos_Tsiaras
-  rdf:type :Parliamentary_Group_Representative ;
-  rdf:type :Party_Member ;
-  :age 57 ;
-  :birthDate "1966-07-02"^^xsd:date ;
-  :birthPlace "Karditsa, Greece" ;
-  :electedOn "2023-06-25"^^xsd:date ;
-  :hasPronoun "Mr" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :termInParliament 4 ;
-.
-:Kostas_Fragkogiannis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Foreign_Affairs ;
-.
-:Kostas_Katsafados
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Citizen_Protection ;
-.
-:Kostas_Skrekas
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Development ;
-.
-:Kostis_Chatzidakis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_National_Economy_And_Finance ;
-.
-:Kyriakos_Mitsotakis
-  rdf:type :Member_of_Parliament ;
-  rdf:type :Party_Leader ;
-  rdf:type :Party_Member ;
-  rdf:type :Prime_Minister ;
-  :age 55 ;
-  :birthDate "1955-03-04"^^xsd:date ;
-  :birthPlace "Athens, Greece" ;
-  :electedOn "2023-06-25"^^xsd:date ;
-  :hasPronoun "His Majesty" ;
-  :hasWage 6203.08 ;
-  :headOfGovernment :Hellenic_Government ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfGovernment :Hellenic_Government ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :New_Democracy ;
-  :representsParty :New_Democracy ;
-  :responsibleFor "Managing the ministry council of the government" ;
-  :termEnd "2027-06-25"^^xsd:date ;
-  :termInGovernment 4 ;
-  :termInParliament 4 ;
-  :termStart "2023-06-25"^^xsd:date ;
-.
-:Kyriakos_Pierrakakis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-:Kyriakos_Velopoulos
-  rdf:type :Parliamentary_Group_Representative ;
-  rdf:type :Party_Leader ;
-  :age 58 ;
-  :birthDate "1965-10-24"^^xsd:date ;
-  :birthPlace "Germany" ;
-  :electedOn "2023-06-25"^^xsd:date ;
-  :hasPronoun "Mr" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :Hellenic_Solution ;
-  :representsParty :Hellenic_Solution ;
-  :termInParliament 4 ;
-.
-:Law
-  rdf:type rdfs:Class ;
-  rdfs:comment "Laws get suggested and voted for/passed by the parliament and governing bodies, it's a common ground for interaction between the various government entities" ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Lefteris_Avgenakis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Rural_Development_and_Food ;
-.
-:Lina_Mendoni
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Culture ;
-.
-:Makis_Voridis
-  rdf:type :State_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Maria_Kefala
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
-.
-:Marios_Themistokleous
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Health ;
-.
-:Maximos_Senetakis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Development ;
-.
-:Member_of_Government
-  rdf:type rdfs:Class ;
-  :memberOfGovernment :Hellenic_Government ;
-  rdfs:subClassOf :Citizen ;
-.
-:Member_of_Parliament
-  rdf:type rdfs:Class ;
-  :termInParliament 4 ;
-  rdfs:subClassOf :Citizen ;
-.
-:Michalis_Chrysohoidis
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Health ;
-.
-:Minister
-  rdf:type rdfs:Class ;
-  :termInGovernment 4 ;
-  rdfs:subClassOf :Member_of_Government ;
-.
-:Ministry
-  rdf:type rdfs:Class ;
-  :ministryOfGovernment :Hellenic_Government ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Ministry_of_Citizen_Protection
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Climate_Crisis_and_Civil_Protection
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Culture
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Development
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Digital_Governance
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Education_Religious_Affairs_Culture_and_Sports
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Environment_and_Energy
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Foreign_Affairs
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Health
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Infrastructure_and_Transport
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Interior
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Justice
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Labour_and_Social_Insurance
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Maritime_Affairs_and_Island_Policy
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Migration_and_Asylum
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_National_Defence
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_National_Economy_And_Finance
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Rural_Development_and_Food
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Social_Connectivity_and_Family_Affairs
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:Ministry_of_Tourism
-  rdf:type :Ministry ;
-  :ministryOfGovernment :Hellenic_Government ;
-.
-:National_Commission_for_Communications_and_IT
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :National_Organization ;
-.
-:National_Organization
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:National_Public_Health_Organization
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :National_Organization ;
-.
-:National_Security_Council
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:New_Democracy
-  rdf:type :Party ;
-  :colour "Blue" ;
-  :leaningTo "Center-right" ;
-  :numOfMembers 175 ;
-  :numOfParliamentSeats 158 ;
-  :partyOfParliament :Hellenic_Parliament ;
-  rdfs:label "ΝΔ" ;
-.
-:Nike
-  rdf:type :Party ;
-  :colour "Aqua" ;
-  :leaningTo "Right" ;
-  :numOfMembers 18 ;
-  :numOfParliamentSeats 15 ;
-  :opposedIn :Hellenic_Opposition ;
-  :partyOfParliament :Hellenic_Parliament ;
-.
-:Niki_Kerameos
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Interior ;
-.
-:Nikolaos_Androulakis
-  rdf:type :Parliamentary_Group_Representative ;
-  rdf:type :Party_Leader ;
-  :age 49 ;
-  :birthDate "1979-02-07"^^xsd:date ;
-  :birthPlace "Arta, Greece" ;
-  :electedOn "2023-12-04"^^xsd:date ;
-  :hasPronoun "Mr" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :termInParliament 4 ;
-.
-:Nikos_Dendias
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_National_Defence ;
-.
-:Nikos_Papathanasis
-  rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_National_Economy_And_Finance ;
-.
-:Nikos_Tachiaos
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Infrastructure_and_Transport ;
-.
-:Nikos_Tagaras
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Environment_and_Energy ;
-.
-:Official_Opposition
-  rdf:type rdfs:Class ;
-  :oppositionOfParliament :Hellenic_Parliament ;
-  rdfs:comment "This class is for parts of the opposition which have been voted into parliament, thus forming the official opposition" ;
-  rdfs:subClassOf :Opposition ;
-.
-:Olga_Kefalogianni
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Tourism ;
-.
-:Opposition
-  rdf:type rdfs:Class ;
-  rdfs:comment "Greece's republic always consists of a leading party/government, and the rest form the opposition" ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:PASOK
-  rdf:type :Party ;
-  :colour "Green" ;
-  :leaningTo "Center" ;
-  :numOfMembers 38 ;
-  :numOfParliamentSeats 32 ;
-  :opposedIn :Hellenic_Opposition ;
-  :partyOfParliament :Hellenic_Parliament ;
-.
-:Panagiotis_Pikrammenos
-  rdf:type :Vice_President ;
-.
-:Panos_Tsakloglou
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
-.
-:Parliament
-  rdf:type rdfs:Class ;
-  rdfs:comment "Represents the parliament as active" ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Parliamentary_Group_Representative
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Member_of_Parliament ;
-.
-:Party
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Party_Leader
-  rdf:type rdfs:Class ;
-  rdfs:comment "Political Party Leaders is a particularly importan distinction in the Hellenic republic as they are persons of high interest and have special properties" ;
-  rdfs:subClassOf :Party_Member ;
-.
-:Party_Member
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Citizen ;
-.
-:Pavlos_Marinakis
-  rdf:type :Government_Representative ;
-  rdf:type :Member_of_Parliament ;
-  rdf:type :Party_Member ;
-  :represents :Hellenic_Government ;
-.
-:Person
-  rdf:type rdfs:Class ;
-  rdfs:comment "Generic person class which allows us to model higher level properties for people which may be relating to the government but not necesserily citizens of Greece" ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Polity
-  rdf:type :Law ;
-  :hasStatement "Το πολίτευμα της Ελλάδας είναι η Προεδρευόμενη Κοινοβουλευτική Δημοκρατία." ;
-  :suggestedBy :Ministry_of_Interior ;
-.
-:President
-  rdf:type rdfs:Class ;
-  :headOfState :Hellenic_Government ;
-  :termInPresidency 5 ;
-  rdfs:comment "Class which represents the seat of the President for the Hellenic Republic, it's object is the currently active occupant, although former occupants can be modeled as well through setting the correct properties" ;
-  rdfs:subClassOf :Citizen ;
-.
-:President_of_Parliament
-  rdf:type rdfs:Class ;
-  :termInParliament 4 ;
-  rdfs:subClassOf :Member_of_Parliament ;
-.
-:Prime_Minister
-  rdf:type rdfs:Class ;
-  :headOfGovernment :Hellenic_Government ;
-  :termInGovernment 4 ;
-  rdfs:subClassOf :Minister ;
-.
-:Prime_Minister_Office
-  rdf:type rdfs:Class ;
-  :officeOfGovernment :Hellenic_Government ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:Republic
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf rdfs:Resource ;
-.
-:SYRIZA
-  rdf:type :Party ;
-  :colour "Pink" ;
-  :leaningTo "Radical Left" ;
-  :numOfMembers 45 ;
-  :numOfParliamentSeats 36 ;
-  :opposedIn :Hellenic_Official_Opposition ;
-  :partyOfParliament :Hellenic_Parliament ;
-.
-:Secretary_General
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Member_of_Government ;
-.
-:Sofia_Voultepsi
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Migration_and_Asylum ;
-.
-:Sofia_Zacharaki
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs ;
-.
-:Spartans
-  rdf:type :Party ;
-  :colour "Yellow" ;
-  :leaningTo "Right" ;
-  :numOfMembers 13 ;
-  :numOfParliamentSeats 11 ;
-  :opposedIn :Hellenic_Opposition ;
-  :partyOfParliament :Hellenic_Parliament ;
-.
-:State_Minister
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Minister ;
-.
-:Stathis_Konstantinidis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Interior ;
-.
-:Stavros_Keletsis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Rural_Development_and_Food ;
-.
-:Stavros_Papastavrou
-  rdf:type :State_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Stefanos_Kasselakis
-  rdf:type :Party_Leader ;
-  :age 35 ;
-  :birthDate "1988-03-29"^^xsd:date ;
-  :birthPlace "Athens, Greece" ;
-  :hasPronoun "Mr" ;
-  :isAlive "true"^^xsd:boolean ;
-  :partOfParty :SYRIZA ;
-  :representsParty :SYRIZA ;
-.
-:TTE
-  rdf:type :Bank_of_Greece ;
-.
-:Thanasis_Kontogeorgis
-  rdf:type :Deputy_Minister_of_Prime_Minister ;
-  :belongs_to :Hellenic_Government ;
-.
-:Thanos_Petralias
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_National_Economy_And_Finance ;
-.
-:Theodoros_Skylakakis
-  rdf:type :Member_of_Parliament ;
-  rdf:type :Minister ;
-  rdf:type :Party_Member ;
-  :headOfMinistry :Ministry_of_Environment_and_Energy ;
-  :memberOfGovernment :Hellenic_Government ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :New_Democracy ;
-.
-:Thodoris_Livanios
-  rdf:type :Associate_Minister ;
-  :belongs_to :Hellenic_Ministry_of_Interior ;
-.
-:Vasileios_Stigkas
-  rdf:type :Parliamentary_Group_Representative ;
-  rdf:type :Party_Leader ;
-  :age 59 ;
-  :birthPlace "Livadeia, Greece" ;
-  :hasPronoun "Mr" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :Spartans ;
-  :representsParty :Spartans ;
-  :termInParliament 4 ;
-.
-:Vasilis_Kikilias
-  rdf:type :Minister ;
-  :headOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection ;
-.
-:Vasilis_Spanakis
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
-.
-:Vice_President
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Member_of_Government ;
-.
-:Vice_President_of_Parliament
-  rdf:type rdfs:Class ;
-  rdfs:subClassOf :Member_of_Parliament ;
-.
-:Vivi_Charalabogianni
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Interior ;
-.
-:Zetta_Makri
-  rdf:type :Deputy_Minister ;
-  :deputyOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports ;
-.
-:Zoe_Konstantopoulou
-  rdf:type :Parliamentary_Group_Representative ;
-  rdf:type :Party_Leader ;
-  :age 47 ;
-  :birthDate "1976-12-08"^^xsd:date ;
-  :birthPlace "Athens, Greece" ;
-  :electedOn "2023-06-25"^^xsd:date ;
-  :hasPronoun "Ms" ;
-  :hasWage "4787"^^xsd:decimal ;
-  :isAlive "true"^^xsd:boolean ;
-  :memberOfParliament :Hellenic_Parliament ;
-  :partOfParty :Freedom_Sailing ;
-  :representsParty :Freedom_Sailing ;
-  :termInParliament 4 ;
-.
-:age
-  rdf:type rdf:Property ;
-  rdfs:domain :Person ;
-  rdfs:range xsd:integer ;
-.
-:associateOfMinistry
-  rdf:type rdf:Property ;
-  rdfs:domain :Associate_Minister ;
-  rdfs:range :Ministry ;
-  rdfs:subPropertyOf :subheadOf ;
-.
-:begin
-  rdf:type rdf:Property ;
-  rdfs:comment "Marks the date start of a tenure in a particular position" ;
-  rdfs:range xsd:date ;
-.
-:birthDate
-  rdf:type rdf:Property ;
-  rdfs:domain :Person ;
-  rdfs:range xsd:date ;
-.
-:birthPlace
-  rdf:type rdf:Property ;
-  rdfs:domain :Person ;
-  rdfs:range xsd:string ;
-.
-:colour
-  rdf:type rdf:Property ;
-  rdfs:domain :Party ;
-  rdfs:range xsd:string ;
-.
-:councilOfParliament
-  rdf:type rdf:Property ;
-  rdfs:domain :Council_of_Party_Leaders ;
-  rdfs:range :Parliament ;
-  rdfs:subPropertyOf :partOfParliament ;
-.
-:deputyOfMinistry
-  rdf:type rdf:Property ;
-  rdfs:domain :Deputy_Minister ;
-  rdfs:range :Ministry ;
-  rdfs:subPropertyOf :subheadOf ;
-.
-:electedOn
-  rdf:type rdf:Property ;
-  rdfs:domain :Citizen ;
-  rdfs:range xsd:date ;
-.
-:end
-  rdf:type rdf:Property ;
-  rdfs:range xsd:date ;
-.
-:governmentOfParliament
-  rdf:type rdf:Property ;
-  rdfs:domain :Government ;
-  rdfs:range :Parliament ;
-  rdfs:subPropertyOf :partOfParliament ;
-.
-:hasHighIncome
-  rdf:type rdf:Property ;
-  rdfs:domain :Person ;
-  rdfs:range xsd:boolean ;
-.
-:hasPronoun
-  rdf:type rdf:Property ;
-  rdfs:domain :Citizen ;
-  rdfs:range xsd:string ;
-.
-:hasStatement
-  rdf:type rdf:Property ;
-  rdfs:domain :Law ;
-  rdfs:range xsd:string ;
-.
-:hasTaxContributions
-  rdf:type rdf:Property ;
-  rdfs:domain :Budget ;
-  rdfs:range xsd:decimal ;
-.
-:hasTerm
-  rdf:type rdf:Property ;
-  rdfs:comment "Term length in years" ;
-  rdfs:range xsd:integer ;
-.
-:hasWage
-  rdf:type rdf:Property ;
-  rdfs:domain :Person ;
-  rdfs:range xsd:decimal ;
-.
-:headOf
-  rdf:type rdf:Property ;
-.
-:headOfGeneralLedger
-  rdf:type rdf:Property ;
-  rdfs:domain :Governor_of_General_Ledger_of_State ;
-  rdfs:range :General_Ledger_of_State ;
-  rdfs:subPropertyOf :headOf ;
-.
-:headOfGovernment
-  rdf:type rdf:Property ;
-  rdfs:domain :Prime_Minister ;
-  rdfs:range :Government ;
-  rdfs:subPropertyOf :headOf ;
-.
-:headOfMinistry
-  rdf:type rdf:Property ;
-  rdfs:domain :Minister ;
-  rdfs:range :Ministry ;
-  rdfs:subPropertyOf :headOf ;
-.
-:headOfParliament
-  rdf:type rdf:Property ;
-  rdfs:domain :President_of_Parliament ;
-  rdfs:range :Parliament ;
-  rdfs:subPropertyOf :headOf ;
-.
-:headOfState
-  rdf:type rdf:Property ;
-  rdfs:domain :President ;
-  rdfs:range :Republic ;
-  rdfs:subPropertyOf :headOf ;
-.
-:isAlive
-  rdf:type rdf:Property ;
-  rdfs:domain :Person ;
-  rdfs:range xsd:boolean ;
-.
-:issues
-  rdf:type rdf:Property ;
-  rdfs:domain :General_Ledger_of_State ;
-  rdfs:range :Budget ;
-.
-:lastMeeting
-  rdf:type rdf:Property ;
-  rdfs:domain :Council_of_State ;
-  rdfs:range xsd:date ;
-.
-:leaningTo
-  rdf:type rdf:Property ;
-  rdfs:comment "Political ideological leaning direction of a party" ;
-  rdfs:domain :Party ;
-  rdfs:range xsd:string ;
-.
-:memberOfGovernment
-  rdf:type rdf:Property ;
-  rdfs:domain :Member_of_Government ;
-  rdfs:range :Government ;
-  rdfs:subPropertyOf :partOfGovernment ;
-.
-:memberOfParliament
-  rdf:type rdf:Property ;
-  rdfs:domain :Member_of_Parliament ;
-  rdfs:range :Parliament ;
-  rdfs:subPropertyOf :partOfParliament ;
-.
-:ministryOfGovernment
-  rdf:type rdf:Property ;
-  rdfs:domain :Ministry ;
-  rdfs:range :Government ;
-  rdfs:subPropertyOf :partOfGovernment ;
-.
-:numOfEmployees
-  rdf:type rdf:Property ;
-  rdfs:domain :Prime_Minister_Office ;
-  rdfs:range xsd:integer ;
-.
-:numOfHospitals
-  rdf:type rdf:Property ;
-  rdfs:domain :National_Public_Health_Organization ;
-  rdfs:range xsd:integer ;
-.
-:numOfMembers
-  rdf:type rdf:Property ;
-  rdfs:domain :Party ;
-  rdfs:range xsd:integer ;
-.
-:numOfParliamentSeats
-  rdf:type rdf:Property ;
-  rdfs:domain :Party ;
-  rdfs:range xsd:integer ;
-.
-:officeOfGovernment
-  rdf:type rdf:Property ;
-  rdfs:domain :Prime_Minister_Office ;
-  rdfs:range :Government ;
-  rdfs:subPropertyOf :partOfGovernment ;
-.
-:opposedIn
-  rdf:type rdf:Property ;
-  rdfs:domain :Party ;
-  rdfs:range :Opposition ;
-.
-:oppositionOfParliament
-  rdf:type rdf:Property ;
-  rdfs:domain :Opposition ;
-  rdfs:range :Parliament ;
-  rdfs:subPropertyOf :partOfParliament ;
-.
-:partOfGovernment
-  rdf:type rdf:Property ;
-.
-:partOfParliament
-  rdf:type rdf:Property ;
-.
-:partOfParty
-  rdf:type rdf:Property ;
-  rdfs:comment "No fun" ;
-  rdfs:domain :Citizen ;
-  rdfs:range :Party ;
-.
-:partyOfParliament
-  rdf:type rdf:Property ;
-  rdfs:domain :Party ;
-  rdfs:range :Parliament ;
-  rdfs:subPropertyOf :partOfParliament ;
-.
-:represents
-  rdf:type rdf:Property ;
-.
-:representsGovernment
-  rdf:type rdf:Property ;
-  rdfs:domain :Government_Representative ;
-  rdfs:range :Government ;
-  rdfs:subPropertyOf :represents ;
-.
-:representsParty
-  rdf:type rdf:Property ;
-  rdfs:domain :Party_Leader ;
-  rdfs:range :Party ;
-  rdfs:subPropertyOf :represents ;
-.
-:responsibleFor
-  rdf:type rdf:Property ;
-  rdfs:domain :Citizen ;
-  rdfs:range xsd:string ;
-.
-:subheadOf
-  rdf:type rdf:Property ;
-.
-:suggestedBy
-  rdf:type rdf:Property ;
-  rdfs:domain :Law ;
-  rdfs:range :Ministry ;
-.
-:termEnd
-  rdf:type rdf:Property ;
-  rdfs:domain :Citizen ;
-  rdfs:range xsd:date ;
-.
-:termInGovernment
-  rdf:type rdf:Property ;
-  rdfs:domain :Member_of_Government ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :hasTerm ;
-.
-:termInLedger
-  rdf:type rdf:Property ;
-  rdfs:domain :Governor_of_General_Ledger_of_State ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :hasTerm ;
-.
-:termInParliament
-  rdf:type rdf:Property ;
-  rdfs:domain :Member_of_Parliament ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :hasTerm ;
-.
-:termInPresidency
-  rdf:type rdf:Property ;
-  rdfs:domain :President ;
-  rdfs:range xsd:integer ;
-  rdfs:subPropertyOf :hasTerm ;
-.
-:termStart
-  rdf:type rdf:Property ;
-  rdfs:domain :Citizen ;
-  rdfs:range xsd:date ;
-.
-:viceOfGovernment
-  rdf:type rdf:Property ;
-  rdfs:comment "Doesn't exist in the current government as of writing" ;
-  rdfs:domain :Vice_President ;
-  rdfs:range :Government ;
-  rdfs:subPropertyOf :subheadOf ;
-.
-:ΚΚΕ
-  rdf:type :Party ;
-  :colour "Red" ;
-  :leaningTo "Left" ;
-  :numOfMembers 70 ;
-  :numOfParliamentSeats 21 ;
-  :opposedIn :Hellenic_Opposition ;
-  :partyOfParliament :Hellenic_Parliament ;
-.
+<http://semweb.project.rdfs> rdf:type owl:Ontology ;
+                              spin:imports <http://topbraid.org/spin/rdfsplus> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://semweb.project.rdfs#associateOfMinistry
+:associateOfMinistry rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :subheadOf .
+
+
+###  http://semweb.project.rdfs#belongs_to
+:belongs_to rdf:type owl:AnnotationProperty .
+
+
+###  http://semweb.project.rdfs#councilOfParliament
+:councilOfParliament rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :partOfParliament .
+
+
+###  http://semweb.project.rdfs#deputyOfMinistry
+:deputyOfMinistry rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :subheadOf .
+
+
+###  http://semweb.project.rdfs#governmentOfParliament
+:governmentOfParliament rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf :partOfParliament .
+
+
+###  http://semweb.project.rdfs#headOf
+:headOf rdf:type owl:AnnotationProperty .
+
+
+###  http://semweb.project.rdfs#headOfGeneralLedger
+:headOfGeneralLedger rdf:type owl:AnnotationProperty ;
+                     rdfs:subPropertyOf :headOf .
+
+
+###  http://semweb.project.rdfs#headOfGovernment
+:headOfGovernment rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :headOf .
+
+
+###  http://semweb.project.rdfs#headOfMinistry
+:headOfMinistry rdf:type owl:AnnotationProperty ;
+                rdfs:subPropertyOf :headOf .
+
+
+###  http://semweb.project.rdfs#headOfParliament
+:headOfParliament rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :headOf .
+
+
+###  http://semweb.project.rdfs#headOfState
+:headOfState rdf:type owl:AnnotationProperty ;
+             rdfs:subPropertyOf :headOf .
+
+
+###  http://semweb.project.rdfs#memberOfGovernment
+:memberOfGovernment rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :partOfGovernment .
+
+
+###  http://semweb.project.rdfs#memberOfParliament
+:memberOfParliament rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :partOfParliament .
+
+
+###  http://semweb.project.rdfs#ministryOfGovernment
+:ministryOfGovernment rdf:type owl:AnnotationProperty ;
+                      rdfs:subPropertyOf :partOfGovernment .
+
+
+###  http://semweb.project.rdfs#officeOfGovernment
+:officeOfGovernment rdf:type owl:AnnotationProperty ;
+                    rdfs:subPropertyOf :partOfGovernment .
+
+
+###  http://semweb.project.rdfs#oppositionOfParliament
+:oppositionOfParliament rdf:type owl:AnnotationProperty ;
+                        rdfs:subPropertyOf :partOfParliament .
+
+
+###  http://semweb.project.rdfs#partOfGovernment
+:partOfGovernment rdf:type owl:AnnotationProperty .
+
+
+###  http://semweb.project.rdfs#partOfParliament
+:partOfParliament rdf:type owl:AnnotationProperty .
+
+
+###  http://semweb.project.rdfs#partyOfParliament
+:partyOfParliament rdf:type owl:AnnotationProperty ;
+                   rdfs:subPropertyOf :partOfParliament .
+
+
+###  http://semweb.project.rdfs#represents
+:represents rdf:type owl:AnnotationProperty .
+
+
+###  http://semweb.project.rdfs#representsGovernment
+:representsGovernment rdf:type owl:AnnotationProperty ;
+                      rdfs:subPropertyOf :represents .
+
+
+###  http://semweb.project.rdfs#representsParty
+:representsParty rdf:type owl:AnnotationProperty ;
+                 rdfs:subPropertyOf :represents .
+
+
+###  http://semweb.project.rdfs#subheadOf
+:subheadOf rdf:type owl:AnnotationProperty .
+
+
+###  http://semweb.project.rdfs#viceOfGovernment
+:viceOfGovernment rdf:type owl:AnnotationProperty ;
+                  rdfs:subPropertyOf :subheadOf .
+
+
+###  http://spinrdf.org/spin#imports
+spin:imports rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://semweb.project.rdfs#associateOfMinistry
+:associateOfMinistry rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Associate_Minister ;
+                     rdfs:range :Ministry .
+
+
+###  http://semweb.project.rdfs#councilOfParliament
+:councilOfParliament rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Council_of_Party_Leaders ;
+                     rdfs:range :Parliament .
+
+
+###  http://semweb.project.rdfs#deputyOfMinistry
+:deputyOfMinistry rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Deputy_Minister ;
+                  rdfs:range :Ministry .
+
+
+###  http://semweb.project.rdfs#governmentOfParliament
+:governmentOfParliament rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Government ;
+                        rdfs:range :Parliament .
+
+
+###  http://semweb.project.rdfs#headOfGeneralLedger
+:headOfGeneralLedger rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Governor_of_General_Ledger_of_State ;
+                     rdfs:range :General_Ledger_of_State .
+
+
+###  http://semweb.project.rdfs#headOfGovernment
+:headOfGovernment rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Prime_Minister ;
+                  rdfs:range :Government .
+
+
+###  http://semweb.project.rdfs#headOfMinistry
+:headOfMinistry rdf:type owl:ObjectProperty ;
+                rdfs:domain :Minister ;
+                rdfs:range :Ministry .
+
+
+###  http://semweb.project.rdfs#headOfParliament
+:headOfParliament rdf:type owl:ObjectProperty ;
+                  rdfs:domain :President_of_Parliament ;
+                  rdfs:range :Parliament .
+
+
+###  http://semweb.project.rdfs#headOfState
+:headOfState rdf:type owl:ObjectProperty ;
+             rdfs:domain :President ;
+             rdfs:range :Republic .
+
+
+###  http://semweb.project.rdfs#issues
+:issues rdf:type owl:ObjectProperty ;
+        rdfs:domain :General_Ledger_of_State ;
+        rdfs:range :Budget .
+
+
+###  http://semweb.project.rdfs#memberOfGovernment
+:memberOfGovernment rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Member_of_Government ;
+                    rdfs:range :Government .
+
+
+###  http://semweb.project.rdfs#memberOfParliament
+:memberOfParliament rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Member_of_Parliament ;
+                    rdfs:range :Parliament .
+
+
+###  http://semweb.project.rdfs#ministryOfGovernment
+:ministryOfGovernment rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Ministry ;
+                      rdfs:range :Government .
+
+
+###  http://semweb.project.rdfs#officeOfGovernment
+:officeOfGovernment rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Prime_Minister_Office ;
+                    rdfs:range :Government .
+
+
+###  http://semweb.project.rdfs#opposedIn
+:opposedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Party ;
+           rdfs:range :Opposition .
+
+
+###  http://semweb.project.rdfs#oppositionOfParliament
+:oppositionOfParliament rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Opposition ;
+                        rdfs:range :Parliament .
+
+
+###  http://semweb.project.rdfs#partOfParty
+:partOfParty rdf:type owl:ObjectProperty ;
+             rdfs:domain :Citizen ;
+             rdfs:range :Party ;
+             rdfs:comment "No fun" .
+
+
+###  http://semweb.project.rdfs#partyOfParliament
+:partyOfParliament rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Party ;
+                   rdfs:range :Parliament .
+
+
+###  http://semweb.project.rdfs#representsGovernment
+:representsGovernment rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Government_Representative ;
+                      rdfs:range :Government .
+
+
+###  http://semweb.project.rdfs#representsParty
+:representsParty rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Party_Leader ;
+                 rdfs:range :Party .
+
+
+###  http://semweb.project.rdfs#suggestedBy
+:suggestedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Law ;
+             rdfs:range :Ministry .
+
+
+###  http://semweb.project.rdfs#viceOfGovernment
+:viceOfGovernment rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Vice_President ;
+                  rdfs:range :Government .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://semweb.project.rdfs#age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Person ;
+     rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#begin
+:begin rdf:type owl:DatatypeProperty ;
+       rdfs:range xsd:date ;
+       rdfs:comment "Marks the date start of a tenure in a particular position" .
+
+
+###  http://semweb.project.rdfs#birthDate
+:birthDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Person ;
+           rdfs:range xsd:date .
+
+
+###  http://semweb.project.rdfs#birthPlace
+:birthPlace rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Person ;
+            rdfs:range xsd:string .
+
+
+###  http://semweb.project.rdfs#colour
+:colour rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Party ;
+        rdfs:range xsd:string .
+
+
+###  http://semweb.project.rdfs#electedOn
+:electedOn rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Citizen ;
+           rdfs:range xsd:date .
+
+
+###  http://semweb.project.rdfs#end
+:end rdf:type owl:DatatypeProperty ;
+     rdfs:range xsd:date .
+
+
+###  http://semweb.project.rdfs#hasHighIncome
+:hasHighIncome rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Person ;
+               rdfs:range xsd:boolean .
+
+
+###  http://semweb.project.rdfs#hasPronoun
+:hasPronoun rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Citizen ;
+            rdfs:range xsd:string .
+
+
+###  http://semweb.project.rdfs#hasStatement
+:hasStatement rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Law ;
+              rdfs:range xsd:string .
+
+
+###  http://semweb.project.rdfs#hasTaxContributions
+:hasTaxContributions rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Budget ;
+                     rdfs:range xsd:decimal .
+
+
+###  http://semweb.project.rdfs#hasTerm
+:hasTerm rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "Term length in years" .
+
+
+###  http://semweb.project.rdfs#hasWage
+:hasWage rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:decimal .
+
+
+###  http://semweb.project.rdfs#isAlive
+:isAlive rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Person ;
+         rdfs:range xsd:boolean .
+
+
+###  http://semweb.project.rdfs#lastMeeting
+:lastMeeting rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Council_of_State ;
+             rdfs:range xsd:date .
+
+
+###  http://semweb.project.rdfs#leaningTo
+:leaningTo rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Party ;
+           rdfs:range xsd:string ;
+           rdfs:comment "Political ideological leaning direction of a party" .
+
+
+###  http://semweb.project.rdfs#numOfEmployees
+:numOfEmployees rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Prime_Minister_Office ;
+                rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#numOfHospitals
+:numOfHospitals rdf:type owl:DatatypeProperty ;
+                rdfs:domain :National_Public_Health_Organization ;
+                rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#numOfMembers
+:numOfMembers rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Party ;
+              rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#numOfParliamentSeats
+:numOfParliamentSeats rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Party ;
+                      rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#responsibleFor
+:responsibleFor rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Citizen ;
+                rdfs:range xsd:string .
+
+
+###  http://semweb.project.rdfs#termEnd
+:termEnd rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Citizen ;
+         rdfs:range xsd:date .
+
+
+###  http://semweb.project.rdfs#termInGovernment
+:termInGovernment rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :hasTerm ;
+                  rdfs:domain :Member_of_Government ;
+                  rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#termInLedger
+:termInLedger rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :hasTerm ;
+              rdfs:domain :Governor_of_General_Ledger_of_State ;
+              rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#termInParliament
+:termInParliament rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :hasTerm ;
+                  rdfs:domain :Member_of_Parliament ;
+                  rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#termInPresidency
+:termInPresidency rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :hasTerm ;
+                  rdfs:domain :President ;
+                  rdfs:range xsd:integer .
+
+
+###  http://semweb.project.rdfs#termStart
+:termStart rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Citizen ;
+           rdfs:range xsd:date .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://semweb.project.rdfs#Associate_Minister
+:Associate_Minister rdf:type owl:Class ;
+                    rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#Bank_of_Greece
+:Bank_of_Greece rdf:type owl:Class ;
+                rdfs:subClassOf :National_Organization .
+
+
+###  http://semweb.project.rdfs#Budget
+:Budget rdf:type owl:Class ;
+        rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Citizen
+:Citizen rdf:type owl:Class ;
+         rdfs:subClassOf :Person ;
+         rdfs:label "Έλληνας Πολίτης" .
+
+
+###  http://semweb.project.rdfs#Council_of_Party_Leaders
+:Council_of_Party_Leaders rdf:type owl:Class ;
+                          rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Council_of_State
+:Council_of_State rdf:type owl:Class ;
+                  rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Deputy_Minister
+:Deputy_Minister rdf:type owl:Class ;
+                 rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#Deputy_Minister_of_Prime_Minister
+:Deputy_Minister_of_Prime_Minister rdf:type owl:Class ;
+                                   rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#General_Ledger_of_State
+:General_Ledger_of_State rdf:type owl:Class ;
+                         rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Government
+:Government rdf:type owl:Class ;
+            rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Government_Representative
+:Government_Representative rdf:type owl:Class ;
+                           rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#Governor_of_General_Ledger_of_State
+:Governor_of_General_Ledger_of_State rdf:type owl:Class ;
+                                     rdfs:subClassOf :Citizen .
+
+
+###  http://semweb.project.rdfs#Law
+:Law rdf:type owl:Class ;
+     rdfs:subClassOf rdfs:Resource ;
+     rdfs:comment "Laws get suggested and voted for/passed by the parliament and governing bodies, it's a common ground for interaction between the various government entities" .
+
+
+###  http://semweb.project.rdfs#Member_of_Government
+:Member_of_Government rdf:type owl:Class ;
+                      rdfs:subClassOf :Citizen .
+
+
+###  http://semweb.project.rdfs#Member_of_Parliament
+:Member_of_Parliament rdf:type owl:Class ;
+                      rdfs:subClassOf :Citizen .
+
+
+###  http://semweb.project.rdfs#Minister
+:Minister rdf:type owl:Class ;
+          rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#Ministry
+:Ministry rdf:type owl:Class ;
+          rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#National_Commission_for_Communications_and_IT
+:National_Commission_for_Communications_and_IT rdf:type owl:Class ;
+                                               rdfs:subClassOf :National_Organization .
+
+
+###  http://semweb.project.rdfs#National_Organization
+:National_Organization rdf:type owl:Class ;
+                       rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#National_Public_Health_Organization
+:National_Public_Health_Organization rdf:type owl:Class ;
+                                     rdfs:subClassOf :National_Organization .
+
+
+###  http://semweb.project.rdfs#National_Security_Council
+:National_Security_Council rdf:type owl:Class ;
+                           rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Official_Opposition
+:Official_Opposition rdf:type owl:Class ;
+                     rdfs:subClassOf :Opposition .
+
+
+###  http://semweb.project.rdfs#Opposition
+:Opposition rdf:type owl:Class ;
+            rdfs:subClassOf rdfs:Resource ;
+            rdfs:comment "Greece's republic always consists of a leading party/government, and the rest form the opposition" .
+
+
+###  http://semweb.project.rdfs#Parliament
+:Parliament rdf:type owl:Class ;
+            rdfs:subClassOf rdfs:Resource ;
+            rdfs:comment "Represents the parliament as active" .
+
+
+###  http://semweb.project.rdfs#Parliamentary_Group_Representative
+:Parliamentary_Group_Representative rdf:type owl:Class ;
+                                    rdfs:subClassOf :Member_of_Parliament .
+
+
+###  http://semweb.project.rdfs#Party
+:Party rdf:type owl:Class ;
+       rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Party_Leader
+:Party_Leader rdf:type owl:Class ;
+              rdfs:subClassOf :Party_Member ;
+              rdfs:comment "Political Party Leaders is a particularly importan distinction in the Hellenic republic as they are persons of high interest and have special properties" .
+
+
+###  http://semweb.project.rdfs#Party_Member
+:Party_Member rdf:type owl:Class ;
+              rdfs:subClassOf :Citizen .
+
+
+###  http://semweb.project.rdfs#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf rdfs:Resource ;
+        rdfs:comment "Generic person class which allows us to model higher level properties for people which may be relating to the government but not necesserily citizens of Greece" .
+
+
+###  http://semweb.project.rdfs#President
+:President rdf:type owl:Class ;
+           rdfs:subClassOf :Citizen .
+
+
+###  http://semweb.project.rdfs#President_of_Parliament
+:President_of_Parliament rdf:type owl:Class ;
+                         rdfs:subClassOf :Member_of_Parliament .
+
+
+###  http://semweb.project.rdfs#Prime_Minister
+:Prime_Minister rdf:type owl:Class ;
+                rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#Prime_Minister_Office
+:Prime_Minister_Office rdf:type owl:Class ;
+                       rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Republic
+:Republic rdf:type owl:Class ;
+          rdfs:subClassOf rdfs:Resource .
+
+
+###  http://semweb.project.rdfs#Secretary_General
+:Secretary_General rdf:type owl:Class ;
+                   rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#State_Minister
+:State_Minister rdf:type owl:Class ;
+                rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#Vice_President
+:Vice_President rdf:type owl:Class ;
+                rdfs:subClassOf :Member_of_Government .
+
+
+###  http://semweb.project.rdfs#Vice_President_of_Parliament
+:Vice_President_of_Parliament rdf:type owl:Class ;
+                              rdfs:subClassOf :Member_of_Parliament .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+rdfs:Resource rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://semweb.project.rdfs#Adonis_Georgiadis
+:Adonis_Georgiadis rdf:type owl:NamedIndividual ,
+                            :Member_of_Parliament ,
+                            :Minister ,
+                            :Party_Member ;
+                   :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
+                   :memberOfGovernment :Hellenic_Government ;
+                   :memberOfParliament :Hellenic_Parliament ;
+                   :partOfParty :New_Democracy ;
+                   :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Akis_Skertsos
+:Akis_Skertsos rdf:type owl:NamedIndividual ,
+                        :Party_Member ,
+                        :State_Minister ;
+               :memberOfGovernment :Hellenic_Government ;
+               :memberOfParliament :Hellenic_Parliament ;
+               :partOfParty :New_Democracy .
+
+
+###  http://semweb.project.rdfs#Alexandra_Papadopoulou
+:Alexandra_Papadopoulou rdf:type owl:NamedIndividual ,
+                                 :Deputy_Minister ,
+                                 :Party_Member ;
+                        :deputyOfMinistry :Ministry_of_Foreign_Affairs .
+
+
+###  http://semweb.project.rdfs#Alexandra_Sdoukou
+:Alexandra_Sdoukou rdf:type owl:NamedIndividual ,
+                            :Deputy_Minister ;
+                   :deputyOfMinistry :Ministry_of_Environment_and_Energy .
+
+
+###  http://semweb.project.rdfs#Alexios_Tsipras
+:Alexios_Tsipras rdf:type owl:NamedIndividual ,
+                          :Member_of_Parliament ,
+                          :Party_Member ;
+                 :memberOfParliament :Hellenic_Parliament ;
+                 :partOfParty :SYRIZA ;
+                 :age 49 ;
+                 :birthDate "1974-07-28"^^xsd:date ;
+                 :birthPlace "Arta, Greece" ;
+                 :electedOn "2023-12-04"^^xsd:date ;
+                 :hasPronoun "Mr" ;
+                 :hasWage 4787 ;
+                 :isAlive "true"^^xsd:boolean ;
+                 :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Anna_Mani_Papadimitriou
+:Anna_Mani_Papadimitriou rdf:type owl:NamedIndividual ,
+                                  :Deputy_Minister ;
+                         :deputyOfMinistry :Ministry_of_Development .
+
+
+###  http://semweb.project.rdfs#Budget_2024
+:Budget_2024 rdf:type owl:NamedIndividual ,
+                      :Budget ;
+             :hasTaxContributions 1302586.14 .
+
+
+###  http://semweb.project.rdfs#Charis_Theocharis
+:Charis_Theocharis rdf:type owl:NamedIndividual ,
+                            :Deputy_Minister ;
+                   :deputyOfMinistry :Ministry_of_National_Economy_And_Finance .
+
+
+###  http://semweb.project.rdfs#Christina_Alexopoulou
+:Christina_Alexopoulou rdf:type owl:NamedIndividual ,
+                                :Deputy_Minister ;
+                       :deputyOfMinistry :Ministry_of_Infrastructure_and_Transport .
+
+
+###  http://semweb.project.rdfs#Christos_Dimas
+:Christos_Dimas rdf:type owl:NamedIndividual ,
+                         :Deputy_Minister ;
+                :deputyOfMinistry :Ministry_of_Culture .
+
+
+###  http://semweb.project.rdfs#Christos_Staikouras
+:Christos_Staikouras rdf:type owl:NamedIndividual ,
+                              :Minister ;
+                     :headOfMinistry :Ministry_of_Infrastructure_and_Transport .
+
+
+###  http://semweb.project.rdfs#Christos_Stylianidis
+:Christos_Stylianidis rdf:type owl:NamedIndividual ,
+                               :Minister ;
+                      :headOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy .
+
+
+###  http://semweb.project.rdfs#Christos_Triantopoulos
+:Christos_Triantopoulos rdf:type owl:NamedIndividual ,
+                                 :Deputy_Minister ;
+                        :deputyOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection .
+
+
+###  http://semweb.project.rdfs#Council_of_Party_Leaders
+:Council_of_Party_Leaders rdf:type owl:NamedIndividual ;
+                          :councilOfParliament :Hellenic_Parliament .
+
+
+###  http://semweb.project.rdfs#Dimitrios_Koutsoumpas
+:Dimitrios_Koutsoumpas rdf:type owl:NamedIndividual ,
+                                :Parliamentary_Group_Representative ,
+                                :Party_Leader ;
+                       :memberOfParliament :Hellenic_Parliament ;
+                       :partOfParty :ΚΚΕ ;
+                       :representsParty :ΚΚΕ ;
+                       :age 58 ;
+                       :birthDate "1955-08-10"^^xsd:date ;
+                       :birthPlace "Lamia, Greece" ;
+                       :electedOn "2023-06-25"^^xsd:date ;
+                       :hasPronoun "Mr" ;
+                       :hasWage 4787 ;
+                       :isAlive "true"^^xsd:boolean ;
+                       :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Dimitrios_Natsios
+:Dimitrios_Natsios rdf:type owl:NamedIndividual ,
+                            :Parliamentary_Group_Representative ,
+                            :Party_Leader ;
+                   :memberOfParliament :Hellenic_Parliament ;
+                   :partOfParty :Nike ;
+                   :representsParty :Nike ;
+                   :age 58 ;
+                   :birthPlace "Pieria, Greece" ;
+                   :electedOn "2023-06-25"^^xsd:date ;
+                   :hasPronoun "Mr" ;
+                   :hasWage 4787 ;
+                   :isAlive "true"^^xsd:boolean ;
+                   :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Dimitris_Keridis
+:Dimitris_Keridis rdf:type owl:NamedIndividual ,
+                           :Minister ;
+                  :headOfMinistry :Ministry_of_Migration_and_Asylum .
+
+
+###  http://semweb.project.rdfs#Dimitris_Papastergiou
+:Dimitris_Papastergiou rdf:type owl:NamedIndividual ,
+                                :Minister ;
+                       :headOfMinistry :Ministry_of_Digital_Governance .
+
+
+###  http://semweb.project.rdfs#Dimitris_Vartzopoulos
+:Dimitris_Vartzopoulos rdf:type owl:NamedIndividual ,
+                                :Deputy_Minister ;
+                       :deputyOfMinistry :Ministry_of_Health .
+
+
+###  http://semweb.project.rdfs#Dionysis_Stamenitis
+:Dionysis_Stamenitis rdf:type owl:NamedIndividual ,
+                              :Deputy_Minister ;
+                     :deputyOfMinistry :Ministry_of_Rural_Development_and_Food .
+
+
+###  http://semweb.project.rdfs#Domna_Michailidou
+:Domna_Michailidou rdf:type owl:NamedIndividual ,
+                            :Deputy_Minister ;
+                   :deputyOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports .
+
+
+###  http://semweb.project.rdfs#EODY
+:EODY rdf:type owl:NamedIndividual ,
+               :National_Public_Health_Organization ;
+      :numOfHospitals 275 .
+
+
+###  http://semweb.project.rdfs#ESETK
+:ESETK rdf:type owl:NamedIndividual ,
+                :National_Commission_for_Communications_and_IT .
+
+
+###  http://semweb.project.rdfs#Eirini_Agapidaki
+:Eirini_Agapidaki rdf:type owl:NamedIndividual ,
+                           :Associate_Minister ,
+                           :Member_of_Parliament ,
+                           :Party_Member ;
+                  :associateOfMinistry :Ministry_of_Health ;
+                  :memberOfGovernment :Hellenic_Government ;
+                  :memberOfParliament :Hellenic_Parliament ;
+                  :partOfParty :New_Democracy ;
+                  :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Elena_Rapti
+:Elena_Rapti rdf:type owl:NamedIndividual ,
+                      :Deputy_Minister ;
+             :deputyOfMinistry :Ministry_of_Tourism .
+
+
+###  http://semweb.project.rdfs#Evagelos_Tournas
+:Evagelos_Tournas rdf:type owl:NamedIndividual ,
+                           :Deputy_Minister ;
+                  :deputyOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection .
+
+
+###  http://semweb.project.rdfs#Freedom_Sailing
+:Freedom_Sailing rdf:type owl:NamedIndividual ,
+                          :Party ;
+                 :opposedIn :Hellenic_Opposition ;
+                 :partyOfParliament :Hellenic_Parliament ;
+                 :colour "Purple" ;
+                 :leaningTo "Left" ;
+                 :numOfMembers 17 ;
+                 :numOfParliamentSeats 6 .
+
+
+###  http://semweb.project.rdfs#GCFAD
+:GCFAD rdf:type owl:NamedIndividual ,
+                :National_Security_Council .
+
+
+###  http://semweb.project.rdfs#Giannis_Bougas
+:Giannis_Bougas rdf:type owl:NamedIndividual ,
+                         :Deputy_Minister ;
+                :deputyOfMinistry :Ministry_of_Justice .
+
+
+###  http://semweb.project.rdfs#Giannis_Bratakos
+:Giannis_Bratakos rdf:type owl:NamedIndividual ,
+                           :Deputy_Minister_of_Prime_Minister ;
+                  :belongs_to :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Giannis_Kefalogiannis
+:Giannis_Kefalogiannis rdf:type owl:NamedIndividual ,
+                                :Deputy_Minister ;
+                       :deputyOfMinistry :Ministry_of_National_Defence .
+
+
+###  http://semweb.project.rdfs#Giannis_Oikonomou
+:Giannis_Oikonomou rdf:type owl:NamedIndividual ,
+                            :Minister ;
+                   :headOfMinistry :Ministry_of_Citizen_Protection .
+
+
+###  http://semweb.project.rdfs#Giannis_Pappas
+:Giannis_Pappas rdf:type owl:NamedIndividual ,
+                         :Deputy_Minister ;
+                :deputyOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy .
+
+
+###  http://semweb.project.rdfs#Giannis_Vroutsis
+:Giannis_Vroutsis rdf:type owl:NamedIndividual ,
+                           :Associate_Minister ;
+                  :belongs_to :Hellenic_Ministry_of_Education_Religious_Affairs_Culture_and_Sports .
+
+
+###  http://semweb.project.rdfs#Giorgos_Floridis
+:Giorgos_Floridis rdf:type owl:NamedIndividual ,
+                           :Minister ;
+                  :headOfMinistry :Ministry_of_Justice .
+
+
+###  http://semweb.project.rdfs#Giorgos_Gerapetritis
+:Giorgos_Gerapetritis rdf:type owl:NamedIndividual ,
+                               :Minister ;
+                      :headOfMinistry :Ministry_of_Foreign_Affairs .
+
+
+###  http://semweb.project.rdfs#Giorgos_Kotsiras
+:Giorgos_Kotsiras rdf:type owl:NamedIndividual ,
+                           :Deputy_Minister ;
+                  :deputyOfMinistry :Ministry_of_Foreign_Affairs .
+
+
+###  http://semweb.project.rdfs#Government
+:Government rdf:type owl:NamedIndividual ;
+            :governmentOfParliament :Hellenic_Parliament .
+
+
+###  http://semweb.project.rdfs#Government_Representative
+:Government_Representative rdf:type owl:NamedIndividual ;
+                           :representsGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Hellenic_Council_of_State
+:Hellenic_Council_of_State rdf:type owl:NamedIndividual ,
+                                    :Council_of_State ;
+                           :lastMeeting "2023-08-25"^^xsd:date .
+
+
+###  http://semweb.project.rdfs#Hellenic_General_Ledger
+:Hellenic_General_Ledger rdf:type owl:NamedIndividual ,
+                                  :General_Ledger_of_State ;
+                         :issues :Budget_2024 .
+
+
+###  http://semweb.project.rdfs#Hellenic_Government
+:Hellenic_Government rdf:type owl:NamedIndividual ,
+                              :Government ;
+                     :governmentOfParliament :Hellenic_Parliament ;
+                     :begin "2023-06-25"^^xsd:date .
+
+
+###  http://semweb.project.rdfs#Hellenic_Official_Opposition
+:Hellenic_Official_Opposition rdf:type owl:NamedIndividual ,
+                                       :Official_Opposition ;
+                              :oppositionOfParliament :Hellenic_Parliament .
+
+
+###  http://semweb.project.rdfs#Hellenic_Opposition
+:Hellenic_Opposition rdf:type owl:NamedIndividual ,
+                              :Opposition ;
+                     :oppositionOfParliament :Hellenic_Parliament .
+
+
+###  http://semweb.project.rdfs#Hellenic_PM_Office
+:Hellenic_PM_Office rdf:type owl:NamedIndividual ,
+                             :Prime_Minister_Office ;
+                    :numOfEmployees 35 .
+
+
+###  http://semweb.project.rdfs#Hellenic_Parliament
+:Hellenic_Parliament rdf:type owl:NamedIndividual ,
+                              :Parliament ;
+                     :begin "2023-06-25"^^xsd:date ;
+                     rdfs:comment "Object which represents the currently active parliament as of 2023, it's members etc." .
+
+
+###  http://semweb.project.rdfs#Hellenic_Party_Leaders_Council
+:Hellenic_Party_Leaders_Council rdf:type owl:NamedIndividual ,
+                                         :Council_of_Party_Leaders ;
+                                :councilOfParliament :Hellenic_Parliament .
+
+
+###  http://semweb.project.rdfs#Hellenic_Republic
+:Hellenic_Republic rdf:type owl:NamedIndividual ,
+                            :Republic .
+
+
+###  http://semweb.project.rdfs#Hellenic_Solution
+:Hellenic_Solution rdf:type owl:NamedIndividual ,
+                            :Party ;
+                   :opposedIn :Hellenic_Opposition ;
+                   :partyOfParliament :Hellenic_Parliament ;
+                   :colour "Cyan" ;
+                   :leaningTo "Right" ;
+                   :numOfMembers 31 ;
+                   :numOfParliamentSeats 12 .
+
+
+###  http://semweb.project.rdfs#Ioannis_Bratakos
+:Ioannis_Bratakos rdf:type owl:NamedIndividual ,
+                           :Secretary_General .
+
+
+###  http://semweb.project.rdfs#Ioannis_Stournaras
+:Ioannis_Stournaras rdf:type owl:NamedIndividual ,
+                             :Governor_of_General_Ledger_of_State ;
+                    :headOfGeneralLedger :Hellenic_General_Ledger ;
+                    :termInLedger 4 .
+
+
+###  http://semweb.project.rdfs#Katerina_Sakellaropoulou
+:Katerina_Sakellaropoulou rdf:type owl:NamedIndividual ,
+                                   :President ;
+                          :termInPresidency 5 ;
+                          :termStart "2023-12-02"^^xsd:date .
+
+
+###  http://semweb.project.rdfs#Konstantinos_Kyranakis
+:Konstantinos_Kyranakis rdf:type owl:NamedIndividual ,
+                                 :Deputy_Minister ;
+                        :deputyOfMinistry :Ministry_of_Digital_Governance .
+
+
+###  http://semweb.project.rdfs#Konstantinos_Tasoulas
+:Konstantinos_Tasoulas rdf:type owl:NamedIndividual ,
+                                :Party_Member ,
+                                :President_of_Parliament ;
+                       :headOfParliament :Hellenic_Parliament .
+
+
+###  http://semweb.project.rdfs#Konstantinos_Tsiaras
+:Konstantinos_Tsiaras rdf:type owl:NamedIndividual ,
+                               :Parliamentary_Group_Representative ,
+                               :Party_Member ;
+                      :memberOfParliament :Hellenic_Parliament ;
+                      :age 57 ;
+                      :birthDate "1966-07-02"^^xsd:date ;
+                      :birthPlace "Karditsa, Greece" ;
+                      :electedOn "2023-06-25"^^xsd:date ;
+                      :hasPronoun "Mr" ;
+                      :hasWage 4787 ;
+                      :isAlive "true"^^xsd:boolean ;
+                      :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Kostas_Fragkogiannis
+:Kostas_Fragkogiannis rdf:type owl:NamedIndividual ,
+                               :Deputy_Minister ;
+                      :deputyOfMinistry :Ministry_of_Foreign_Affairs .
+
+
+###  http://semweb.project.rdfs#Kostas_Katsafados
+:Kostas_Katsafados rdf:type owl:NamedIndividual ,
+                            :Deputy_Minister ;
+                   :deputyOfMinistry :Ministry_of_Citizen_Protection .
+
+
+###  http://semweb.project.rdfs#Kostas_Skrekas
+:Kostas_Skrekas rdf:type owl:NamedIndividual ,
+                         :Minister ;
+                :headOfMinistry :Ministry_of_Development .
+
+
+###  http://semweb.project.rdfs#Kostis_Chatzidakis
+:Kostis_Chatzidakis rdf:type owl:NamedIndividual ,
+                             :Minister ;
+                    :headOfMinistry :Ministry_of_National_Economy_And_Finance .
+
+
+###  http://semweb.project.rdfs#Kyriakos_Mitsotakis
+:Kyriakos_Mitsotakis rdf:type owl:NamedIndividual ,
+                              :Member_of_Parliament ,
+                              :Party_Leader ,
+                              :Party_Member ,
+                              :Prime_Minister ;
+                     :headOfGovernment :Hellenic_Government ;
+                     :memberOfGovernment :Hellenic_Government ;
+                     :memberOfParliament :Hellenic_Parliament ;
+                     :partOfParty :New_Democracy ;
+                     :representsParty :New_Democracy ;
+                     :age 55 ;
+                     :birthDate "1955-03-04"^^xsd:date ;
+                     :birthPlace "Athens, Greece" ;
+                     :electedOn "2023-06-25"^^xsd:date ;
+                     :hasPronoun "His Majesty" ;
+                     :hasWage 6203.08 ;
+                     :isAlive "true"^^xsd:boolean ;
+                     :responsibleFor "Managing the ministry council of the government" ;
+                     :termEnd "2027-06-25"^^xsd:date ;
+                     :termInGovernment 4 ;
+                     :termInParliament 4 ;
+                     :termStart "2023-06-25"^^xsd:date .
+
+
+###  http://semweb.project.rdfs#Kyriakos_Pierrakakis
+:Kyriakos_Pierrakakis rdf:type owl:NamedIndividual ,
+                               :Minister ;
+                      :headOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports .
+
+
+###  http://semweb.project.rdfs#Kyriakos_Velopoulos
+:Kyriakos_Velopoulos rdf:type owl:NamedIndividual ,
+                              :Parliamentary_Group_Representative ,
+                              :Party_Leader ;
+                     :memberOfParliament :Hellenic_Parliament ;
+                     :partOfParty :Hellenic_Solution ;
+                     :representsParty :Hellenic_Solution ;
+                     :age 58 ;
+                     :birthDate "1965-10-24"^^xsd:date ;
+                     :birthPlace "Germany" ;
+                     :electedOn "2023-06-25"^^xsd:date ;
+                     :hasPronoun "Mr" ;
+                     :hasWage 4787 ;
+                     :isAlive "true"^^xsd:boolean ;
+                     :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Lefteris_Avgenakis
+:Lefteris_Avgenakis rdf:type owl:NamedIndividual ,
+                             :Minister ;
+                    :headOfMinistry :Ministry_of_Rural_Development_and_Food .
+
+
+###  http://semweb.project.rdfs#Lina_Mendoni
+:Lina_Mendoni rdf:type owl:NamedIndividual ,
+                       :Minister ;
+              :headOfMinistry :Ministry_of_Culture .
+
+
+###  http://semweb.project.rdfs#Makis_Voridis
+:Makis_Voridis rdf:type owl:NamedIndividual ,
+                        :State_Minister ;
+               :belongs_to :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Maria_Kefala
+:Maria_Kefala rdf:type owl:NamedIndividual ,
+                       :Deputy_Minister ;
+              :deputyOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs .
+
+
+###  http://semweb.project.rdfs#Marios_Themistokleous
+:Marios_Themistokleous rdf:type owl:NamedIndividual ,
+                                :Deputy_Minister ;
+                       :deputyOfMinistry :Ministry_of_Health .
+
+
+###  http://semweb.project.rdfs#Maximos_Senetakis
+:Maximos_Senetakis rdf:type owl:NamedIndividual ,
+                            :Deputy_Minister ;
+                   :deputyOfMinistry :Ministry_of_Development .
+
+
+###  http://semweb.project.rdfs#Member_of_Government
+:Member_of_Government rdf:type owl:NamedIndividual ;
+                      :memberOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Member_of_Parliament
+:Member_of_Parliament rdf:type owl:NamedIndividual ;
+                      :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Michalis_Chrysohoidis
+:Michalis_Chrysohoidis rdf:type owl:NamedIndividual ,
+                                :Minister ;
+                       :headOfMinistry :Ministry_of_Health .
+
+
+###  http://semweb.project.rdfs#Minister
+:Minister rdf:type owl:NamedIndividual ;
+          :termInGovernment 4 .
+
+
+###  http://semweb.project.rdfs#Ministry
+:Ministry rdf:type owl:NamedIndividual ;
+          :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Citizen_Protection
+:Ministry_of_Citizen_Protection rdf:type owl:NamedIndividual ,
+                                         :Ministry ;
+                                :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Climate_Crisis_and_Civil_Protection
+:Ministry_of_Climate_Crisis_and_Civil_Protection rdf:type owl:NamedIndividual ,
+                                                          :Ministry ;
+                                                 :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Culture
+:Ministry_of_Culture rdf:type owl:NamedIndividual ,
+                              :Ministry ;
+                     :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Development
+:Ministry_of_Development rdf:type owl:NamedIndividual ,
+                                  :Ministry ;
+                         :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Digital_Governance
+:Ministry_of_Digital_Governance rdf:type owl:NamedIndividual ,
+                                         :Ministry ;
+                                :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Education_Religious_Affairs_Culture_and_Sports
+:Ministry_of_Education_Religious_Affairs_Culture_and_Sports rdf:type owl:NamedIndividual ,
+                                                                     :Ministry ;
+                                                            :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Environment_and_Energy
+:Ministry_of_Environment_and_Energy rdf:type owl:NamedIndividual ,
+                                             :Ministry ;
+                                    :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Foreign_Affairs
+:Ministry_of_Foreign_Affairs rdf:type owl:NamedIndividual ,
+                                      :Ministry ;
+                             :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Health
+:Ministry_of_Health rdf:type owl:NamedIndividual ,
+                             :Ministry ;
+                    :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Infrastructure_and_Transport
+:Ministry_of_Infrastructure_and_Transport rdf:type owl:NamedIndividual ,
+                                                   :Ministry ;
+                                          :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Interior
+:Ministry_of_Interior rdf:type owl:NamedIndividual ,
+                               :Ministry ;
+                      :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Justice
+:Ministry_of_Justice rdf:type owl:NamedIndividual ,
+                              :Ministry ;
+                     :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Labour_and_Social_Insurance
+:Ministry_of_Labour_and_Social_Insurance rdf:type owl:NamedIndividual ,
+                                                  :Ministry ;
+                                         :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Maritime_Affairs_and_Island_Policy
+:Ministry_of_Maritime_Affairs_and_Island_Policy rdf:type owl:NamedIndividual ,
+                                                         :Ministry ;
+                                                :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Migration_and_Asylum
+:Ministry_of_Migration_and_Asylum rdf:type owl:NamedIndividual ,
+                                           :Ministry ;
+                                  :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_National_Defence
+:Ministry_of_National_Defence rdf:type owl:NamedIndividual ,
+                                       :Ministry ;
+                              :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_National_Economy_And_Finance
+:Ministry_of_National_Economy_And_Finance rdf:type owl:NamedIndividual ,
+                                                   :Ministry ;
+                                          :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Rural_Development_and_Food
+:Ministry_of_Rural_Development_and_Food rdf:type owl:NamedIndividual ,
+                                                 :Ministry ;
+                                        :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Social_Connectivity_and_Family_Affairs
+:Ministry_of_Social_Connectivity_and_Family_Affairs rdf:type owl:NamedIndividual ,
+                                                             :Ministry ;
+                                                    :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Ministry_of_Tourism
+:Ministry_of_Tourism rdf:type owl:NamedIndividual ,
+                              :Ministry ;
+                     :ministryOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#New_Democracy
+:New_Democracy rdf:type owl:NamedIndividual ,
+                        :Party ;
+               :partyOfParliament :Hellenic_Parliament ;
+               :colour "Blue" ;
+               :leaningTo "Center-right" ;
+               :numOfMembers 175 ;
+               :numOfParliamentSeats 158 ;
+               rdfs:label "ΝΔ" .
+
+
+###  http://semweb.project.rdfs#Nike
+:Nike rdf:type owl:NamedIndividual ,
+               :Party ;
+      :opposedIn :Hellenic_Opposition ;
+      :partyOfParliament :Hellenic_Parliament ;
+      :colour "Aqua" ;
+      :leaningTo "Right" ;
+      :numOfMembers 18 ;
+      :numOfParliamentSeats 15 .
+
+
+###  http://semweb.project.rdfs#Niki_Kerameos
+:Niki_Kerameos rdf:type owl:NamedIndividual ,
+                        :Minister ;
+               :headOfMinistry :Ministry_of_Interior .
+
+
+###  http://semweb.project.rdfs#Nikolaos_Androulakis
+:Nikolaos_Androulakis rdf:type owl:NamedIndividual ,
+                               :Parliamentary_Group_Representative ,
+                               :Party_Leader ;
+                      :memberOfParliament :Hellenic_Parliament ;
+                      :age 49 ;
+                      :birthDate "1979-02-07"^^xsd:date ;
+                      :birthPlace "Arta, Greece" ;
+                      :electedOn "2023-12-04"^^xsd:date ;
+                      :hasPronoun "Mr" ;
+                      :hasWage 4787 ;
+                      :isAlive "true"^^xsd:boolean ;
+                      :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Nikos_Dendias
+:Nikos_Dendias rdf:type owl:NamedIndividual ,
+                        :Minister ;
+               :headOfMinistry :Ministry_of_National_Defence .
+
+
+###  http://semweb.project.rdfs#Nikos_Papathanasis
+:Nikos_Papathanasis rdf:type owl:NamedIndividual ,
+                             :Associate_Minister ;
+                    :belongs_to :Hellenic_Ministry_of_National_Economy_And_Finance .
+
+
+###  http://semweb.project.rdfs#Nikos_Tachiaos
+:Nikos_Tachiaos rdf:type owl:NamedIndividual ,
+                         :Deputy_Minister ;
+                :deputyOfMinistry :Ministry_of_Infrastructure_and_Transport .
+
+
+###  http://semweb.project.rdfs#Nikos_Tagaras
+:Nikos_Tagaras rdf:type owl:NamedIndividual ,
+                        :Deputy_Minister ;
+               :deputyOfMinistry :Ministry_of_Environment_and_Energy .
+
+
+###  http://semweb.project.rdfs#Official_Opposition
+:Official_Opposition rdf:type owl:NamedIndividual ;
+                     :oppositionOfParliament :Hellenic_Parliament .
+
+
+###  http://semweb.project.rdfs#Olga_Kefalogianni
+:Olga_Kefalogianni rdf:type owl:NamedIndividual ,
+                            :Minister ;
+                   :headOfMinistry :Ministry_of_Tourism .
+
+
+###  http://semweb.project.rdfs#PASOK
+:PASOK rdf:type owl:NamedIndividual ,
+                :Party ;
+       :opposedIn :Hellenic_Opposition ;
+       :partyOfParliament :Hellenic_Parliament ;
+       :colour "Green" ;
+       :leaningTo "Center" ;
+       :numOfMembers 38 ;
+       :numOfParliamentSeats 32 .
+
+
+###  http://semweb.project.rdfs#Panagiotis_Pikrammenos
+:Panagiotis_Pikrammenos rdf:type owl:NamedIndividual ,
+                                 :Vice_President .
+
+
+###  http://semweb.project.rdfs#Panos_Tsakloglou
+:Panos_Tsakloglou rdf:type owl:NamedIndividual ,
+                           :Deputy_Minister ;
+                  :deputyOfMinistry :Ministry_of_Labour_and_Social_Insurance .
+
+
+###  http://semweb.project.rdfs#Pavlos_Marinakis
+:Pavlos_Marinakis rdf:type owl:NamedIndividual ,
+                           :Government_Representative ,
+                           :Member_of_Parliament ,
+                           :Party_Member ;
+                  :represents :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Polity
+:Polity rdf:type owl:NamedIndividual ,
+                 :Law ;
+        :suggestedBy :Ministry_of_Interior ;
+        :hasStatement "Το πολίτευμα της Ελλάδας είναι η Προεδρευόμενη Κοινοβουλευτική Δημοκρατία." .
+
+
+###  http://semweb.project.rdfs#President
+:President rdf:type owl:NamedIndividual ;
+           :headOfState :Hellenic_Government ;
+           :termInPresidency 5 .
+
+
+###  http://semweb.project.rdfs#President_of_Parliament
+:President_of_Parliament rdf:type owl:NamedIndividual ;
+                         :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Prime_Minister
+:Prime_Minister rdf:type owl:NamedIndividual ;
+                :headOfGovernment :Hellenic_Government ;
+                :termInGovernment 4 .
+
+
+###  http://semweb.project.rdfs#Prime_Minister_Office
+:Prime_Minister_Office rdf:type owl:NamedIndividual ;
+                       :officeOfGovernment :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#SYRIZA
+:SYRIZA rdf:type owl:NamedIndividual ,
+                 :Party ;
+        :opposedIn :Hellenic_Official_Opposition ;
+        :partyOfParliament :Hellenic_Parliament ;
+        :colour "Pink" ;
+        :leaningTo "Radical Left" ;
+        :numOfMembers 45 ;
+        :numOfParliamentSeats 36 .
+
+
+###  http://semweb.project.rdfs#Sofia_Voultepsi
+:Sofia_Voultepsi rdf:type owl:NamedIndividual ,
+                          :Deputy_Minister ;
+                 :deputyOfMinistry :Ministry_of_Migration_and_Asylum .
+
+
+###  http://semweb.project.rdfs#Sofia_Zacharaki
+:Sofia_Zacharaki rdf:type owl:NamedIndividual ,
+                          :Minister ;
+                 :headOfMinistry :Ministry_of_Social_Connectivity_and_Family_Affairs .
+
+
+###  http://semweb.project.rdfs#Spartans
+:Spartans rdf:type owl:NamedIndividual ,
+                   :Party ;
+          :opposedIn :Hellenic_Opposition ;
+          :partyOfParliament :Hellenic_Parliament ;
+          :colour "Yellow" ;
+          :leaningTo "Right" ;
+          :numOfMembers 13 ;
+          :numOfParliamentSeats 11 .
+
+
+###  http://semweb.project.rdfs#Stathis_Konstantinidis
+:Stathis_Konstantinidis rdf:type owl:NamedIndividual ,
+                                 :Deputy_Minister ;
+                        :deputyOfMinistry :Ministry_of_Interior .
+
+
+###  http://semweb.project.rdfs#Stavros_Keletsis
+:Stavros_Keletsis rdf:type owl:NamedIndividual ,
+                           :Deputy_Minister ;
+                  :deputyOfMinistry :Ministry_of_Rural_Development_and_Food .
+
+
+###  http://semweb.project.rdfs#Stavros_Papastavrou
+:Stavros_Papastavrou rdf:type owl:NamedIndividual ,
+                              :State_Minister ;
+                     :belongs_to :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Stefanos_Kasselakis
+:Stefanos_Kasselakis rdf:type owl:NamedIndividual ,
+                              :Party_Leader ;
+                     :partOfParty :SYRIZA ;
+                     :representsParty :SYRIZA ;
+                     :age 35 ;
+                     :birthDate "1988-03-29"^^xsd:date ;
+                     :birthPlace "Athens, Greece" ;
+                     :hasPronoun "Mr" ;
+                     :isAlive "true"^^xsd:boolean .
+
+
+###  http://semweb.project.rdfs#TTE
+:TTE rdf:type owl:NamedIndividual ,
+              :Bank_of_Greece .
+
+
+###  http://semweb.project.rdfs#Thanasis_Kontogeorgis
+:Thanasis_Kontogeorgis rdf:type owl:NamedIndividual ,
+                                :Deputy_Minister_of_Prime_Minister ;
+                       :belongs_to :Hellenic_Government .
+
+
+###  http://semweb.project.rdfs#Thanos_Petralias
+:Thanos_Petralias rdf:type owl:NamedIndividual ,
+                           :Deputy_Minister ;
+                  :deputyOfMinistry :Ministry_of_National_Economy_And_Finance .
+
+
+###  http://semweb.project.rdfs#Theodoros_Skylakakis
+:Theodoros_Skylakakis rdf:type owl:NamedIndividual ,
+                               :Member_of_Parliament ,
+                               :Minister ,
+                               :Party_Member ;
+                      :headOfMinistry :Ministry_of_Environment_and_Energy ;
+                      :memberOfGovernment :Hellenic_Government ;
+                      :memberOfParliament :Hellenic_Parliament ;
+                      :partOfParty :New_Democracy .
+
+
+###  http://semweb.project.rdfs#Thodoris_Livanios
+:Thodoris_Livanios rdf:type owl:NamedIndividual ,
+                            :Associate_Minister ;
+                   :belongs_to :Hellenic_Ministry_of_Interior .
+
+
+###  http://semweb.project.rdfs#Vasileios_Stigkas
+:Vasileios_Stigkas rdf:type owl:NamedIndividual ,
+                            :Parliamentary_Group_Representative ,
+                            :Party_Leader ;
+                   :memberOfParliament :Hellenic_Parliament ;
+                   :partOfParty :Spartans ;
+                   :representsParty :Spartans ;
+                   :age 59 ;
+                   :birthPlace "Livadeia, Greece" ;
+                   :hasPronoun "Mr" ;
+                   :hasWage 4787 ;
+                   :isAlive "true"^^xsd:boolean ;
+                   :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#Vasilis_Kikilias
+:Vasilis_Kikilias rdf:type owl:NamedIndividual ,
+                           :Minister ;
+                  :headOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection .
+
+
+###  http://semweb.project.rdfs#Vasilis_Spanakis
+:Vasilis_Spanakis rdf:type owl:NamedIndividual ,
+                           :Deputy_Minister ;
+                  :deputyOfMinistry :Ministry_of_Labour_and_Social_Insurance .
+
+
+###  http://semweb.project.rdfs#Vivi_Charalabogianni
+:Vivi_Charalabogianni rdf:type owl:NamedIndividual ,
+                               :Deputy_Minister ;
+                      :deputyOfMinistry :Ministry_of_Interior .
+
+
+###  http://semweb.project.rdfs#Zetta_Makri
+:Zetta_Makri rdf:type owl:NamedIndividual ,
+                      :Deputy_Minister ;
+             :deputyOfMinistry :Ministry_of_Education_Religious_Affairs_Culture_and_Sports .
+
+
+###  http://semweb.project.rdfs#Zoe_Konstantopoulou
+:Zoe_Konstantopoulou rdf:type owl:NamedIndividual ,
+                              :Parliamentary_Group_Representative ,
+                              :Party_Leader ;
+                     :memberOfParliament :Hellenic_Parliament ;
+                     :partOfParty :Freedom_Sailing ;
+                     :representsParty :Freedom_Sailing ;
+                     :age 47 ;
+                     :birthDate "1976-12-08"^^xsd:date ;
+                     :birthPlace "Athens, Greece" ;
+                     :electedOn "2023-06-25"^^xsd:date ;
+                     :hasPronoun "Ms" ;
+                     :hasWage 4787 ;
+                     :isAlive "true"^^xsd:boolean ;
+                     :termInParliament 4 .
+
+
+###  http://semweb.project.rdfs#ΚΚΕ
+:ΚΚΕ rdf:type owl:NamedIndividual ,
+              :Party ;
+     :opposedIn :Hellenic_Opposition ;
+     :partyOfParliament :Hellenic_Parliament ;
+     :colour "Red" ;
+     :leaningTo "Left" ;
+     :numOfMembers 70 ;
+     :numOfParliamentSeats 21 .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Official_Opposition rdfs:comment "This class is for parts of the opposition which have been voted into parliament, thus forming the official opposition" .
+
+
+:President rdfs:comment "Class which represents the seat of the President for the Hellenic Republic, it's object is the currently active occupant, although former occupants can be modeled as well through setting the correct properties" .
+
+
+:viceOfGovernment rdfs:comment "Doesn't exist in the current government as of writing" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
