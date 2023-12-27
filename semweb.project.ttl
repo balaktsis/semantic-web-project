@@ -463,7 +463,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Budget
 :Budget rdf:type owl:Class ;
-        rdfs:subClassOf rdfs:Resource .
+        rdfs:subClassOf rdfs:Resource ;
+        owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#Citizen
@@ -474,12 +475,14 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Council_of_Party_Leaders
 :Council_of_Party_Leaders rdf:type owl:Class ;
-                          rdfs:subClassOf rdfs:Resource .
+                          rdfs:subClassOf rdfs:Resource ;
+                          owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#Council_of_State
 :Council_of_State rdf:type owl:Class ;
-                  rdfs:subClassOf rdfs:Resource .
+                  rdfs:subClassOf rdfs:Resource ;
+                  owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#Deputy_Minister
@@ -514,12 +517,14 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#General_Ledger_of_State
 :General_Ledger_of_State rdf:type owl:Class ;
-                         rdfs:subClassOf rdfs:Resource .
+                         rdfs:subClassOf rdfs:Resource ;
+                         owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#Government
 :Government rdf:type owl:Class ;
-            rdfs:subClassOf rdfs:Resource .
+            rdfs:subClassOf rdfs:Resource ;
+            owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#Government_Representative
@@ -535,6 +540,7 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://semweb.project.rdfs#Law
 :Law rdf:type owl:Class ;
      rdfs:subClassOf rdfs:Resource ;
+     owl:disjointWith :Person ;
      rdfs:comment "Laws get suggested and voted for/passed by the parliament and governing bodies, it's a common ground for interaction between the various government entities" .
 
 
@@ -572,7 +578,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Ministry
 :Ministry rdf:type owl:Class ;
-          rdfs:subClassOf rdfs:Resource .
+          rdfs:subClassOf rdfs:Resource ;
+          owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#National_Commission_for_Communications_and_IT
@@ -588,12 +595,14 @@ xsd:date rdf:type rdfs:Datatype .
                                                       :National_Security_Council
                                                     )
                                       ] ;
-                  rdfs:subClassOf rdfs:Resource .
+                  rdfs:subClassOf rdfs:Resource ;
+                  owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#National_Organization
 :National_Organization rdf:type owl:Class ;
-                       rdfs:subClassOf rdfs:Resource .
+                       rdfs:subClassOf rdfs:Resource ;
+                       owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#National_Public_Health_Organization
@@ -603,7 +612,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#National_Security_Council
 :National_Security_Council rdf:type owl:Class ;
-                           rdfs:subClassOf rdfs:Resource .
+                           rdfs:subClassOf rdfs:Resource ;
+                           owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#Official_Opposition
@@ -614,12 +624,14 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://semweb.project.rdfs#Opposition
 :Opposition rdf:type owl:Class ;
             rdfs:subClassOf rdfs:Resource ;
+            owl:disjointWith :Person ;
             rdfs:comment "Greece's republic always consists of a leading party/government, and the rest form the opposition" .
 
 
 ###  http://semweb.project.rdfs#Parliament
 :Parliament rdf:type owl:Class ;
             rdfs:subClassOf rdfs:Resource ;
+            owl:disjointWith :Person ;
             rdfs:comment "Represents the parliament as active" .
 
 
@@ -635,7 +647,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Party
 :Party rdf:type owl:Class ;
-       rdfs:subClassOf rdfs:Resource .
+       rdfs:subClassOf rdfs:Resource ;
+       owl:disjointWith :Person .
 
 
 ###  http://semweb.project.rdfs#Party_Leader
@@ -652,6 +665,9 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://semweb.project.rdfs#Person
 :Person rdf:type owl:Class ;
         rdfs:subClassOf rdfs:Resource ;
+        owl:disjointWith :Prime_Minister_Office ,
+                         :Regulator_of_National_Economy ,
+                         :Republic ;
         rdfs:comment "Generic person class which allows us to model higher level properties for people which may be relating to the government but not necesserily citizens of Greece" .
 
 
