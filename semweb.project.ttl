@@ -47,37 +47,32 @@
 
 
 ###  http://semweb.project.rdfs#headOfGeneralLedger
-:headOfGeneralLedger rdf:type owl:ObjectProperty ;
+:headOfGeneralLedger rdf:type owl:AnnotationProperty ;
                      rdfs:subPropertyOf :headOf ;
-                     rdfs:range :General_Ledger_of_State ;
-                     rdfs:domain :Governor_of_General_Ledger_of_State .
+                     rdfs:range :General_Ledger_of_State .
 
 
 ###  http://semweb.project.rdfs#headOfGovernment
-:headOfGovernment rdf:type owl:ObjectProperty ;
+:headOfGovernment rdf:type owl:AnnotationProperty ;
                   rdfs:subPropertyOf :headOf ;
-                  rdfs:domain :Prime_Minister ;
                   rdfs:range :Government .
 
 
 ###  http://semweb.project.rdfs#headOfMinistry
-:headOfMinistry rdf:type owl:ObjectProperty ;
+:headOfMinistry rdf:type owl:AnnotationProperty ;
                 rdfs:subPropertyOf :headOf ;
-                rdfs:domain :Minister ;
                 rdfs:range :Ministry .
 
 
 ###  http://semweb.project.rdfs#headOfParliament
-:headOfParliament rdf:type owl:ObjectProperty ;
+:headOfParliament rdf:type owl:AnnotationProperty ;
                   rdfs:subPropertyOf :headOf ;
-                  rdfs:domain :President_of_Parliament ;
                   rdfs:range :Parliament .
 
 
 ###  http://semweb.project.rdfs#headOfState
-:headOfState rdf:type owl:ObjectProperty ;
+:headOfState rdf:type owl:AnnotationProperty ;
              rdfs:subPropertyOf :headOf ;
-             rdfs:domain :President ;
              rdfs:range :Republic .
 
 
@@ -497,6 +492,26 @@ xsd:date rdf:type rdfs:Datatype .
                                    rdfs:subClassOf :Member_of_Government .
 
 
+###  http://semweb.project.rdfs#Elected_Member_of_Government
+:Elected_Member_of_Government rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( :Member_of_Government
+                                                                         :Member_of_Parliament
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf :Citizen .
+
+
+###  http://semweb.project.rdfs#Elected_Party_Member
+:Elected_Party_Member rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :Member_of_Parliament
+                                                                 :Party_Member
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :Citizen .
+
+
 ###  http://semweb.project.rdfs#General_Ledger_of_State
 :General_Ledger_of_State rdf:type owl:Class ;
                          rdfs:subClassOf rdfs:Resource .
@@ -528,6 +543,23 @@ xsd:date rdf:type rdfs:Datatype .
                       rdfs:subClassOf :Citizen .
 
 
+###  http://semweb.project.rdfs#Member_of_Official_Opposition
+:Member_of_Official_Opposition rdf:type owl:Class ;
+                               owl:equivalentClass [ owl:intersectionOf ( :Member_of_Parliament
+                                                                          :Party_Member
+                                                                          [ rdf:type owl:Restriction ;
+                                                                            owl:onProperty :partOfParty ;
+                                                                            owl:allValuesFrom [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty :opposedIn ;
+                                                                                                owl:hasValue :Official_Opposition
+                                                                                              ]
+                                                                          ]
+                                                                        ) ;
+                                                     rdf:type owl:Class
+                                                   ] ;
+                               rdfs:subClassOf :Citizen .
+
+
 ###  http://semweb.project.rdfs#Member_of_Parliament
 :Member_of_Parliament rdf:type owl:Class ;
                       rdfs:subClassOf :Citizen .
@@ -548,15 +580,15 @@ xsd:date rdf:type rdfs:Datatype .
                                                rdfs:subClassOf :National_Organization .
 
 
-###  http://semweb.project.rdfs#National_Councils
-:National_Councils rdf:type owl:Class ;
-                   owl:equivalentClass [ rdf:type owl:Class ;
-                                         owl:unionOf ( :Council_of_Party_Leaders
-                                                       :Council_of_State
-                                                       :National_Security_Council
-                                                     )
-                                       ] ;
-                   rdfs:subClassOf rdfs:Resource .
+###  http://semweb.project.rdfs#National_Council
+:National_Council rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :Council_of_Party_Leaders
+                                                      :Council_of_State
+                                                      :National_Security_Council
+                                                    )
+                                      ] ;
+                  rdfs:subClassOf rdfs:Resource .
 
 
 ###  http://semweb.project.rdfs#National_Organization
@@ -593,6 +625,11 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Parliamentary_Group_Representative
 :Parliamentary_Group_Representative rdf:type owl:Class ;
+                                    owl:equivalentClass [ owl:intersectionOf ( :Member_of_Parliament
+                                                                               :Party_Leader
+                                                                             ) ;
+                                                          rdf:type owl:Class
+                                                        ] ;
                                     rdfs:subClassOf :Member_of_Parliament .
 
 
@@ -638,15 +675,15 @@ xsd:date rdf:type rdfs:Datatype .
                        rdfs:subClassOf rdfs:Resource .
 
 
-###  http://semweb.project.rdfs#Regulators_of_National_Economy
-:Regulators_of_National_Economy rdf:type owl:Class ;
-                                owl:equivalentClass [ rdf:type owl:Class ;
-                                                      owl:unionOf ( :General_Ledger_of_State
-                                                                    :Government
-                                                                    :Parliament
-                                                                  )
-                                                    ] ;
-                                rdfs:subClassOf rdfs:Resource .
+###  http://semweb.project.rdfs#Regulator_of_National_Economy
+:Regulator_of_National_Economy rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :General_Ledger_of_State
+                                                                   :Government
+                                                                   :Parliament
+                                                                 )
+                                                   ] ;
+                               rdfs:subClassOf rdfs:Resource .
 
 
 ###  http://semweb.project.rdfs#Republic
