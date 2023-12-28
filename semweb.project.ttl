@@ -162,6 +162,13 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
+###  http://semweb.project.rdfs#arguesWith
+:arguesWith rdf:type owl:ObjectProperty ,
+                     owl:SymmetricProperty ;
+            rdfs:domain :Prime_Minister ;
+            rdfs:range :Party_Leader .
+
+
 ###  http://semweb.project.rdfs#associateOfMinistry
 :associateOfMinistry rdf:type owl:ObjectProperty ;
                      rdfs:domain :Associate_Minister .
@@ -1188,6 +1195,7 @@ rdfs:Resource rdf:type owl:Class .
                               :Party_Leader ,
                               :Party_Member ,
                               :Prime_Minister ;
+                     :arguesWith :Stefanos_Kasselakis ;
                      :headOfGovernment :Hellenic_Government ;
                      :memberOfGovernment :Hellenic_Government ;
                      :memberOfParliament :Hellenic_Parliament ;
