@@ -164,8 +164,9 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#arguesWith
 :arguesWith rdf:type owl:ObjectProperty ,
-                     owl:SymmetricProperty ;
-            rdfs:domain :Prime_Minister ;
+                     owl:SymmetricProperty ,
+                     owl:TransitiveProperty ;
+            rdfs:domain :Party_Leader ;
             rdfs:range :Party_Leader .
 
 
@@ -176,7 +177,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#collaboratesWith
 :collaboratesWith rdf:type owl:ObjectProperty ,
-                           owl:SymmetricProperty ;
+                           owl:SymmetricProperty ,
+                           owl:TransitiveProperty ;
                   rdfs:domain :Ministry ;
                   rdfs:range :Ministry .
 
@@ -198,9 +200,17 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#hasColleague
 :hasColleague rdf:type owl:ObjectProperty ,
-                       owl:SymmetricProperty ;
+                       owl:SymmetricProperty ,
+                       owl:TransitiveProperty ;
               rdfs:domain :Minister ;
               rdfs:range :Minister .
+
+
+###  http://semweb.project.rdfs#hasSupervisor
+:hasSupervisor rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               rdfs:domain :Citizen ;
+               rdfs:range :Citizen .
 
 
 ###  http://semweb.project.rdfs#headOfGeneralLedger
@@ -230,7 +240,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#isPoliticalOpponentTo
 :isPoliticalOpponentTo rdf:type owl:ObjectProperty ,
-                                owl:SymmetricProperty ;
+                                owl:SymmetricProperty ,
+                                owl:TransitiveProperty ;
                        rdfs:domain :Party ;
                        rdfs:range :Party .
 
@@ -921,7 +932,8 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#Dimitris_Vartzopoulos
 :Dimitris_Vartzopoulos rdf:type owl:NamedIndividual ,
                                 :Deputy_Minister ;
-                       :deputyOfMinistry :Ministry_of_Health .
+                       :deputyOfMinistry :Ministry_of_Health ;
+                       :hasSupervisor :Michalis_Chrysohoidis .
 
 
 ###  http://semweb.project.rdfs#Dionysis_Stamenitis
@@ -953,6 +965,7 @@ rdfs:Resource rdf:type owl:Class .
                            :Member_of_Parliament ,
                            :Party_Member ;
                   :associateOfMinistry :Ministry_of_Health ;
+                  :hasSupervisor :Dimitris_Vartzopoulos ;
                   :memberOfGovernment :Hellenic_Government ;
                   :memberOfParliament :Hellenic_Parliament ;
                   :partOfParty :New_Democracy ;
