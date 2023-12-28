@@ -171,7 +171,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://semweb.project.rdfs#associateOfMinistry
-:associateOfMinistry rdf:type owl:ObjectProperty ;
+:associateOfMinistry rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain :Associate_Minister ;
                      rdfs:range :Ministry .
 
@@ -185,13 +186,15 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://semweb.project.rdfs#councilOfParliament
-:councilOfParliament rdf:type owl:ObjectProperty ;
+:councilOfParliament rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain :Council_of_Party_Leaders ;
                      rdfs:range :Parliament .
 
 
 ###  http://semweb.project.rdfs#deputyOfMinistry
-:deputyOfMinistry rdf:type owl:ObjectProperty ;
+:deputyOfMinistry rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :Deputy_Minister ;
                   rdfs:range :Ministry .
 
@@ -225,31 +228,36 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://semweb.project.rdfs#headOfGeneralLedger
-:headOfGeneralLedger rdf:type owl:ObjectProperty ;
+:headOfGeneralLedger rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
                      rdfs:domain :Governor_of_General_Ledger_of_State ;
                      rdfs:range :Citizen .
 
 
 ###  http://semweb.project.rdfs#headOfGovernment
-:headOfGovernment rdf:type owl:ObjectProperty ;
+:headOfGovernment rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :Prime_Minister ;
                   rdfs:range :Government .
 
 
 ###  http://semweb.project.rdfs#headOfMinistry
-:headOfMinistry rdf:type owl:ObjectProperty ;
+:headOfMinistry rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
                 rdfs:domain :Minister ;
                 rdfs:range :Ministry .
 
 
 ###  http://semweb.project.rdfs#headOfParliament
-:headOfParliament rdf:type owl:ObjectProperty ;
+:headOfParliament rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :President_of_Parliament ;
                   rdfs:range :Parliament .
 
 
 ###  http://semweb.project.rdfs#headOfState
-:headOfState rdf:type owl:ObjectProperty ;
+:headOfState rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :President ;
              rdfs:range :Republic .
 
@@ -276,25 +284,29 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://semweb.project.rdfs#memberOfGovernment
-:memberOfGovernment rdf:type owl:ObjectProperty ;
+:memberOfGovernment rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain :Member_of_Government ;
                     rdfs:range :Government .
 
 
 ###  http://semweb.project.rdfs#memberOfParliament
-:memberOfParliament rdf:type owl:ObjectProperty ;
+:memberOfParliament rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain :Member_of_Parliament ;
                     rdfs:range :Parliament .
 
 
 ###  http://semweb.project.rdfs#ministryOfGovernment
-:ministryOfGovernment rdf:type owl:ObjectProperty ;
+:ministryOfGovernment rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ;
                       rdfs:domain :Ministry ;
                       rdfs:range :Government .
 
 
 ###  http://semweb.project.rdfs#officeOfGovernment
-:officeOfGovernment rdf:type owl:ObjectProperty ;
+:officeOfGovernment rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
                     rdfs:domain :Prime_Minister_Office ;
                     rdfs:range :Government .
 
@@ -317,14 +329,16 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://semweb.project.rdfs#partOfParty
-:partOfParty rdf:type owl:ObjectProperty ;
+:partOfParty rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
              rdfs:domain :Citizen ;
              rdfs:range :Party ;
              rdfs:comment "No fun" .
 
 
 ###  http://semweb.project.rdfs#partyOfParliament
-:partyOfParliament rdf:type owl:ObjectProperty ;
+:partyOfParliament rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
                    rdfs:domain :Party ;
                    rdfs:range :Parliament .
 
@@ -332,18 +346,21 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://semweb.project.rdfs#partyRepresentedBy
 :partyRepresentedBy rdf:type owl:ObjectProperty ;
                     owl:inverseOf :representsParty ;
+                    rdf:type owl:FunctionalProperty ;
                     rdfs:domain :Party ;
                     rdfs:range :Party_Leader .
 
 
 ###  http://semweb.project.rdfs#representsGovernment
-:representsGovernment rdf:type owl:ObjectProperty ;
+:representsGovernment rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ;
                       rdfs:domain :Government_Representative ;
                       rdfs:range :Government .
 
 
 ###  http://semweb.project.rdfs#representsParty
-:representsParty rdf:type owl:ObjectProperty ;
+:representsParty rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
                  rdfs:domain :Party_Leader ;
                  rdfs:range :Party .
 
@@ -362,7 +379,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://semweb.project.rdfs#viceOfGovernment
-:viceOfGovernment rdf:type owl:ObjectProperty ;
+:viceOfGovernment rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
                   rdfs:domain :Vice_President ;
                   rdfs:range :Government .
 
