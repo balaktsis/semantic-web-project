@@ -164,56 +164,68 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#associateOfMinistry
 :associateOfMinistry rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Associate_Minister ;
-                     rdfs:range :Ministry .
+                     rdfs:domain :Associate_Minister .
+
+
+###  http://semweb.project.rdfs#collaboratesWith
+:collaboratesWith rdf:type owl:ObjectProperty ,
+                           owl:SymmetricProperty ;
+                  rdfs:domain :Ministry ;
+                  rdfs:range :Ministry .
 
 
 ###  http://semweb.project.rdfs#councilOfParliament
 :councilOfParliament rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Council_of_Party_Leaders ;
-                     rdfs:range :Parliament .
+                     rdfs:domain :Council_of_Party_Leaders .
 
 
 ###  http://semweb.project.rdfs#deputyOfMinistry
 :deputyOfMinistry rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Deputy_Minister ;
-                  rdfs:range :Ministry .
+                  rdfs:domain :Deputy_Minister .
 
 
 ###  http://semweb.project.rdfs#governmentOfParliament
 :governmentOfParliament rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Government ;
-                        rdfs:range :Parliament .
+                        rdfs:domain :Government .
+
+
+###  http://semweb.project.rdfs#hasColleague
+:hasColleague rdf:type owl:ObjectProperty ,
+                       owl:SymmetricProperty ;
+              rdfs:domain :Minister ;
+              rdfs:range :Minister .
 
 
 ###  http://semweb.project.rdfs#headOfGeneralLedger
 :headOfGeneralLedger rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Governor_of_General_Ledger_of_State ;
-                     rdfs:range :General_Ledger_of_State .
+                     rdfs:domain :Governor_of_General_Ledger_of_State .
 
 
 ###  http://semweb.project.rdfs#headOfGovernment
 :headOfGovernment rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Prime_Minister ;
-                  rdfs:range :Government .
+                  rdfs:domain :Prime_Minister .
 
 
 ###  http://semweb.project.rdfs#headOfMinistry
 :headOfMinistry rdf:type owl:ObjectProperty ;
-                rdfs:domain :Minister ;
-                rdfs:range :Ministry .
+                rdfs:domain :Minister .
 
 
 ###  http://semweb.project.rdfs#headOfParliament
 :headOfParliament rdf:type owl:ObjectProperty ;
-                  rdfs:domain :President_of_Parliament ;
-                  rdfs:range :Parliament .
+                  rdfs:domain :President_of_Parliament .
 
 
 ###  http://semweb.project.rdfs#headOfState
 :headOfState rdf:type owl:ObjectProperty ;
-             rdfs:domain :President ;
-             rdfs:range :Republic .
+             rdfs:domain :President .
+
+
+###  http://semweb.project.rdfs#isPoliticalOpponentTo
+:isPoliticalOpponentTo rdf:type owl:ObjectProperty ,
+                                owl:SymmetricProperty ;
+                       rdfs:domain :Party ;
+                       rdfs:range :Party .
 
 
 ###  http://semweb.project.rdfs#issues
@@ -224,26 +236,22 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#memberOfGovernment
 :memberOfGovernment rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Member_of_Government ;
-                    rdfs:range :Government .
+                    rdfs:domain :Member_of_Government .
 
 
 ###  http://semweb.project.rdfs#memberOfParliament
 :memberOfParliament rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Member_of_Parliament ;
-                    rdfs:range :Parliament .
+                    rdfs:domain :Member_of_Parliament .
 
 
 ###  http://semweb.project.rdfs#ministryOfGovernment
 :ministryOfGovernment rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Ministry ;
-                      rdfs:range :Government .
+                      rdfs:domain :Ministry .
 
 
 ###  http://semweb.project.rdfs#officeOfGovernment
 :officeOfGovernment rdf:type owl:ObjectProperty ;
-                    rdfs:domain :Prime_Minister_Office ;
-                    rdfs:range :Government .
+                    rdfs:domain :Prime_Minister_Office .
 
 
 ###  http://semweb.project.rdfs#opposedIn
@@ -252,10 +260,14 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:range :Opposition .
 
 
+###  http://semweb.project.rdfs#opposes
+:opposes rdf:type owl:ObjectProperty ,
+                  owl:SymmetricProperty .
+
+
 ###  http://semweb.project.rdfs#oppositionOfParliament
 :oppositionOfParliament rdf:type owl:ObjectProperty ;
-                        rdfs:domain :Opposition ;
-                        rdfs:range :Parliament .
+                        rdfs:domain :Opposition .
 
 
 ###  http://semweb.project.rdfs#partOfParty
@@ -267,20 +279,17 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#partyOfParliament
 :partyOfParliament rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Party ;
-                   rdfs:range :Parliament .
+                   rdfs:domain :Party .
 
 
 ###  http://semweb.project.rdfs#representsGovernment
 :representsGovernment rdf:type owl:ObjectProperty ;
-                      rdfs:domain :Government_Representative ;
-                      rdfs:range :Government .
+                      rdfs:domain :Government_Representative .
 
 
 ###  http://semweb.project.rdfs#representsParty
 :representsParty rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Party_Leader ;
-                 rdfs:range :Party .
+                 rdfs:domain :Party_Leader .
 
 
 ###  http://semweb.project.rdfs#suggestedBy
@@ -291,8 +300,7 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#viceOfGovernment
 :viceOfGovernment rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Vice_President ;
-                  rdfs:range :Government .
+                  rdfs:domain :Vice_President .
 
 
 #################################################################
@@ -758,6 +766,7 @@ rdfs:Resource rdf:type owl:Class .
                             :Member_of_Parliament ,
                             :Minister ,
                             :Party_Member ;
+                   :hasColleague :Kyriakos_Pierrakakis ;
                    :headOfMinistry :Ministry_of_Labour_and_Social_Insurance ;
                    :memberOfGovernment :Hellenic_Government ;
                    :memberOfParliament :Hellenic_Parliament ;
@@ -842,6 +851,7 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#Christos_Stylianidis
 :Christos_Stylianidis rdf:type owl:NamedIndividual ,
                                :Minister ;
+                      :hasColleague :Giorgos_Floridis ;
                       :headOfMinistry :Ministry_of_Maritime_Affairs_and_Island_Policy .
 
 
@@ -1050,6 +1060,7 @@ rdfs:Resource rdf:type owl:Class .
 :Hellenic_Government rdf:type owl:NamedIndividual ,
                               :Government ;
                      :governmentOfParliament :Hellenic_Parliament ;
+                     :opposes :Hellenic_Official_Opposition ;
                      :begin "2023-06-25"^^xsd:date .
 
 
@@ -1338,6 +1349,7 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#Ministry_of_Infrastructure_and_Transport
 :Ministry_of_Infrastructure_and_Transport rdf:type owl:NamedIndividual ,
                                                    :Ministry ;
+                                          :collaboratesWith :Ministry_of_Environment_and_Energy ;
                                           :ministryOfGovernment :Hellenic_Government .
 
 
@@ -1404,6 +1416,8 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#New_Democracy
 :New_Democracy rdf:type owl:NamedIndividual ,
                         :Party ;
+               :isPoliticalOpponentTo :PASOK ,
+                                      :SYRIZA ;
                :partyOfParliament :Hellenic_Parliament ;
                :colour "Blue" ;
                :leaningTo "Center-right" ;
