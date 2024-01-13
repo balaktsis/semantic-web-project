@@ -14,16 +14,12 @@
 #    Annotation properties
 #################################################################
 
-###  http://semweb.project.rdfs#associateOfMinistry
-:associateOfMinistry rdf:type owl:AnnotationProperty ;
-                     rdfs:subPropertyOf :subheadOf ;
-                     rdfs:range :Ministry .
-
-
 ###  http://semweb.project.rdfs#belongs_to
 :belongs_to rdf:type owl:AnnotationProperty .
 
 
+<<<<<<< HEAD
+=======
 ###  http://semweb.project.rdfs#councilOfParliament
 :councilOfParliament rdf:type owl:AnnotationProperty ;
                      rdfs:subPropertyOf :partOfParliament ;
@@ -147,6 +143,7 @@
                   rdfs:range :Government .
 
 
+>>>>>>> dff8c6379f21509321d9ebfc9a0dc2e90a049e1d
 ###  http://spinrdf.org/spin#imports
 spin:imports rdf:type owl:AnnotationProperty .
 
@@ -242,11 +239,20 @@ xsd:date rdf:type rdfs:Datatype .
                rdfs:range :Citizen .
 
 
+###  http://semweb.project.rdfs#headOf
+:headOf rdf:type owl:ObjectProperty .
+
+
 ###  http://semweb.project.rdfs#headOfGeneralLedger
 :headOfGeneralLedger rdf:type owl:ObjectProperty ,
                               owl:FunctionalProperty ,
                               owl:InverseFunctionalProperty ;
+<<<<<<< HEAD
+                     rdfs:domain :Governor_of_General_Ledger_of_State ;
+                     rdfs:range :General_Ledger_of_State .
+=======
                      rdfs:domain :Governor_of_General_Ledger_of_State .
+>>>>>>> dff8c6379f21509321d9ebfc9a0dc2e90a049e1d
 
 
 ###  http://semweb.project.rdfs#headOfGovernment
@@ -344,6 +350,10 @@ xsd:date rdf:type rdfs:Datatype .
                         rdfs:domain :Opposition .
 
 
+###  http://semweb.project.rdfs#partOf
+:partOf rdf:type owl:ObjectProperty .
+
+
 ###  http://semweb.project.rdfs#partOfParty
 :partOfParty rdf:type owl:ObjectProperty ,
                       owl:FunctionalProperty ;
@@ -380,15 +390,11 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#suggestedBy
 :suggestedBy rdf:type owl:ObjectProperty ;
-             owl:inverseOf :suggests ;
-             rdfs:domain :Law ;
-             rdfs:range :Ministry .
+             owl:inverseOf :suggests .
 
 
 ###  http://semweb.project.rdfs#suggests
-:suggests rdf:type owl:ObjectProperty ;
-          rdfs:domain :Ministry ;
-          rdfs:range :Law .
+:suggests rdf:type owl:ObjectProperty .
 
 
 ###  http://semweb.project.rdfs#viceOfGovernment
@@ -660,6 +666,15 @@ xsd:date rdf:type rdfs:Datatype .
                               rdfs:subClassOf :Citizen .
 
 
+###  http://semweb.project.rdfs#Elected_Party
+:Elected_Party rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :partOf ;
+                                     owl:allValuesFrom :Parliament
+                                   ] ;
+               rdfs:subClassOf :Party .
+
+
 ###  http://semweb.project.rdfs#Elected_Party_Member
 :Elected_Party_Member rdf:type owl:Class ;
                       owl:equivalentClass [ owl:intersectionOf ( :Member_of_Parliament
@@ -718,6 +733,10 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Law
 :Law rdf:type owl:Class ;
+     owl:equivalentClass [ rdf:type owl:Restriction ;
+                           owl:onProperty :suggestedBy ;
+                           owl:allValuesFrom :Ministry
+                         ] ;
      rdfs:subClassOf rdfs:Resource ;
      owl:disjointWith :Person ;
      rdfs:comment "Laws get suggested and voted for/passed by the parliament and governing bodies, it's a common ground for interaction between the various government entities" .
@@ -730,18 +749,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Member_of_Official_Opposition
 :Member_of_Official_Opposition rdf:type owl:Class ;
-                               owl:equivalentClass [ owl:intersectionOf ( :Member_of_Parliament
-                                                                          :Party_Member
-                                                                          [ rdf:type owl:Restriction ;
-                                                                            owl:onProperty :partOfParty ;
-                                                                            owl:allValuesFrom [ rdf:type owl:Restriction ;
-                                                                                                owl:onProperty :opposedIn ;
-                                                                                                owl:hasValue :Official_Opposition
-                                                                                              ]
-                                                                          ]
-                                                                        ) ;
-                                                     rdf:type owl:Class
-                                                   ] ;
                                rdfs:subClassOf :Citizen .
 
 
@@ -757,6 +764,10 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Ministry
 :Ministry rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :suggests ;
+                                owl:allValuesFrom :Law
+                              ] ;
           rdfs:subClassOf rdfs:Resource ;
           owl:disjointWith :Person .
 
@@ -780,6 +791,12 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#National_Organization
 :National_Organization rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:unionOf ( :Bank_of_Greece
+                                                           :National_Commission_for_Communications_and_IT
+                                                           :National_Public_Health_Organization
+                                                         )
+                                           ] ;
                        rdfs:subClassOf rdfs:Resource ;
                        owl:disjointWith :Person .
 
@@ -866,6 +883,10 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#President
 :President rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :headOf ;
+                                 owl:allValuesFrom :Republic
+                               ] ;
            rdfs:subClassOf :Citizen .
 
 
@@ -1060,11 +1081,6 @@ rdfs:Resource rdf:type owl:Class .
                         :deputyOfMinistry :Ministry_of_Climate_Crisis_and_Civil_Protection .
 
 
-###  http://semweb.project.rdfs#Council_of_Party_Leaders
-:Council_of_Party_Leaders rdf:type owl:NamedIndividual ;
-                          :councilOfParliament :Hellenic_Parliament .
-
-
 ###  http://semweb.project.rdfs#Dimitrios_Koutsoumpas
 :Dimitrios_Koutsoumpas rdf:type owl:NamedIndividual ,
                                 :Parliamentary_Group_Representative ,
@@ -1178,8 +1194,7 @@ rdfs:Resource rdf:type owl:Class .
 
 
 ###  http://semweb.project.rdfs#Freedom_Sailing
-:Freedom_Sailing rdf:type owl:NamedIndividual ,
-                          :Party ;
+:Freedom_Sailing rdf:type owl:NamedIndividual ;
                  :opposedIn :Hellenic_Opposition ;
                  :partyOfParliament :Hellenic_Parliament ;
                  :colour "Purple" ;
@@ -1245,16 +1260,6 @@ rdfs:Resource rdf:type owl:Class .
 :Giorgos_Kotsiras rdf:type owl:NamedIndividual ,
                            :Deputy_Minister ;
                   :deputyOfMinistry :Ministry_of_Foreign_Affairs .
-
-
-###  http://semweb.project.rdfs#Government
-:Government rdf:type owl:NamedIndividual ;
-            :governmentOfParliament :Hellenic_Parliament .
-
-
-###  http://semweb.project.rdfs#Government_Representative
-:Government_Representative rdf:type owl:NamedIndividual ;
-                           :representsGovernment :Hellenic_Government .
 
 
 ###  http://semweb.project.rdfs#Hellenic_Council_of_State
@@ -1481,30 +1486,10 @@ rdfs:Resource rdf:type owl:Class .
                    :deputyOfMinistry :Ministry_of_Development .
 
 
-###  http://semweb.project.rdfs#Member_of_Government
-:Member_of_Government rdf:type owl:NamedIndividual ;
-                      :memberOfGovernment :Hellenic_Government .
-
-
-###  http://semweb.project.rdfs#Member_of_Parliament
-:Member_of_Parliament rdf:type owl:NamedIndividual ;
-                      :termInParliament 4 .
-
-
 ###  http://semweb.project.rdfs#Michalis_Chrysohoidis
 :Michalis_Chrysohoidis rdf:type owl:NamedIndividual ,
                                 :Minister ;
                        :headOfMinistry :Ministry_of_Health .
-
-
-###  http://semweb.project.rdfs#Minister
-:Minister rdf:type owl:NamedIndividual ;
-          :termInGovernment 4 .
-
-
-###  http://semweb.project.rdfs#Ministry
-:Ministry rdf:type owl:NamedIndividual ;
-          :ministryOfGovernment :Hellenic_Government .
 
 
 ###  http://semweb.project.rdfs#Ministry_of_Citizen_Protection
@@ -1625,7 +1610,8 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#Ministry_of_Tourism
 :Ministry_of_Tourism rdf:type owl:NamedIndividual ,
                               :Ministry ;
-                     :ministryOfGovernment :Hellenic_Government .
+                     :ministryOfGovernment :Hellenic_Government ;
+                     :suggests :New_Law .
 
 
 ###  http://semweb.project.rdfs#New_Democracy
@@ -1639,6 +1625,15 @@ rdfs:Resource rdf:type owl:Class .
                :numOfMembers 175 ;
                :numOfParliamentSeats 158 ;
                rdfs:label "ΝΔ" .
+
+
+###  http://semweb.project.rdfs#New_Law
+:New_Law rdf:type owl:NamedIndividual ;
+         :suggestedBy :New_Ministry .
+
+
+###  http://semweb.project.rdfs#New_Ministry
+:New_Ministry rdf:type owl:NamedIndividual .
 
 
 ###  http://semweb.project.rdfs#Nike
@@ -1697,6 +1692,8 @@ rdfs:Resource rdf:type owl:Class .
                :deputyOfMinistry :Ministry_of_Environment_and_Energy .
 
 
+<<<<<<< HEAD
+=======
 ###  http://semweb.project.rdfs#Nov2021Incident
 :Nov2021Incident rdf:type owl:NamedIndividual ,
                           :ViolenceIncident .
@@ -1707,6 +1704,7 @@ rdfs:Resource rdf:type owl:Class .
                      :oppositionOfParliament :Hellenic_Parliament .
 
 
+>>>>>>> dff8c6379f21509321d9ebfc9a0dc2e90a049e1d
 ###  http://semweb.project.rdfs#Olga_Kefalogianni
 :Olga_Kefalogianni rdf:type owl:NamedIndividual ,
                             :Minister ;
@@ -1739,8 +1737,7 @@ rdfs:Resource rdf:type owl:Class .
 :Pavlos_Marinakis rdf:type owl:NamedIndividual ,
                            :Government_Representative ,
                            :Member_of_Parliament ,
-                           :Party_Member ;
-                  :represents :Hellenic_Government .
+                           :Party_Member .
 
 
 ###  http://semweb.project.rdfs#Polity
@@ -1748,28 +1745,6 @@ rdfs:Resource rdf:type owl:Class .
                  :Law ;
         :suggestedBy :Ministry_of_Interior ;
         :hasStatement "Το πολίτευμα της Ελλάδας είναι η Προεδρευόμενη Κοινοβουλευτική Δημοκρατία." .
-
-
-###  http://semweb.project.rdfs#President
-:President rdf:type owl:NamedIndividual ;
-           :headOfState :Hellenic_Government ;
-           :termInPresidency 5 .
-
-
-###  http://semweb.project.rdfs#President_of_Parliament
-:President_of_Parliament rdf:type owl:NamedIndividual ;
-                         :termInParliament 4 .
-
-
-###  http://semweb.project.rdfs#Prime_Minister
-:Prime_Minister rdf:type owl:NamedIndividual ;
-                :headOfGovernment :Hellenic_Government ;
-                :termInGovernment 4 .
-
-
-###  http://semweb.project.rdfs#Prime_Minister_Office
-:Prime_Minister_Office rdf:type owl:NamedIndividual ;
-                       :officeOfGovernment :Hellenic_Government .
 
 
 ###  http://semweb.project.rdfs#SYRIZA
@@ -1937,6 +1912,8 @@ rdfs:Resource rdf:type owl:Class .
      :numOfParliamentSeats 21 .
 
 
+<<<<<<< HEAD
+=======
 ###  http://semweb.project.rdfs#07082015ParliamentHearing
 <http://semweb.project.rdfs#07082015ParliamentHearing> rdf:type owl:NamedIndividual ,
                                                                 :ParliamentHearing ;
@@ -1972,4 +1949,5 @@ rdfs:Resource rdf:type owl:Class .
 :viceOfGovernment rdfs:comment "Doesn't exist in the current government as of writing" .
 
 
+>>>>>>> dff8c6379f21509321d9ebfc9a0dc2e90a049e1d
 ###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
