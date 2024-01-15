@@ -97,6 +97,12 @@ xsd:date rdf:type rdfs:Datatype .
               rdfs:range :Minister .
 
 
+###  http://semweb.project.rdfs#hasIncomeClass
+:hasIncomeClass rdf:type owl:ObjectProperty ;
+                rdfs:domain :Person ;
+                rdfs:range :Salary .
+
+
 ###  http://semweb.project.rdfs#hasMember
 :hasMember rdf:type owl:ObjectProperty ;
            owl:inverseOf :memberOf .
@@ -173,6 +179,12 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#includes
 :includes rdf:type owl:ObjectProperty .
+
+
+###  http://semweb.project.rdfs#isEnrolledWith
+:isEnrolledWith rdf:type owl:ObjectProperty ;
+                rdfs:domain :Person ;
+                rdfs:range :EnrollmentType .
 
 
 ###  http://semweb.project.rdfs#isPoliticalOpponentTo
@@ -610,6 +622,20 @@ xsd:date rdf:type rdfs:Datatype .
            rdfs:subClassOf rdfs:Resource .
 
 
+###  http://semweb.project.rdfs#Employee
+:Employee rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :isEnrolledWith ;
+                                owl:hasValue :Employment
+                              ] ;
+          rdfs:subClassOf :Person .
+
+
+###  http://semweb.project.rdfs#EnrollmentType
+:EnrollmentType rdf:type owl:Class ;
+                rdfs:subClassOf rdfs:Resource .
+
+
 ###  http://semweb.project.rdfs#General_Ledger_of_State
 :General_Ledger_of_State rdf:type owl:Class ;
                          rdfs:subClassOf rdfs:Resource ;
@@ -652,6 +678,15 @@ xsd:date rdf:type rdfs:Datatype .
                                      rdfs:subClassOf :Citizen .
 
 
+###  http://semweb.project.rdfs#HighIncomeIndividual
+:HighIncomeIndividual rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasIncomeClass ;
+                                            owl:hasValue :LargeSalary
+                                          ] ;
+                      rdfs:subClassOf :Person .
+
+
 ###  http://semweb.project.rdfs#Incident
 :Incident rdf:type owl:Class ;
           rdfs:subClassOf rdfs:Resource .
@@ -680,6 +715,24 @@ xsd:date rdf:type rdfs:Datatype .
      rdfs:subClassOf rdfs:Resource ;
      owl:disjointWith :Person ;
      rdfs:comment "Laws get suggested and voted for/passed by the parliament and governing bodies, it's a common ground for interaction between the various government entities" .
+
+
+###  http://semweb.project.rdfs#LowIncomeIndividual
+:LowIncomeIndividual rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasIncomeClass ;
+                                           owl:hasValue :SmallSalary
+                                         ] ;
+                     rdfs:subClassOf :Person .
+
+
+###  http://semweb.project.rdfs#MediumIncomeIndividual
+:MediumIncomeIndividual rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty :hasIncomeClass ;
+                                              owl:hasValue :MediumSalary
+                                            ] ;
+                        rdfs:subClassOf :Person .
 
 
 ###  http://semweb.project.rdfs#Member_of_Government
@@ -922,6 +975,11 @@ xsd:date rdf:type rdfs:Datatype .
           rdfs:subClassOf rdfs:Resource .
 
 
+###  http://semweb.project.rdfs#Salary
+:Salary rdf:type owl:Class ;
+        rdfs:subClassOf rdfs:Resource .
+
+
 ###  http://semweb.project.rdfs#Secretary_General
 :Secretary_General rdf:type owl:Class ;
                    rdfs:subClassOf :Member_of_Government .
@@ -962,6 +1020,15 @@ xsd:date rdf:type rdfs:Datatype .
                                        owl:someValuesFrom :Violence_Incident
                                      ] ;
                  rdfs:subClassOf :Parliament_Hearing .
+
+
+###  http://semweb.project.rdfs#VotedIndividual
+:VotedIndividual rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isEnrolledWith ;
+                                       owl:hasValue :Term
+                                     ] ;
+                 rdfs:subClassOf :Person .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#Resource
@@ -1055,6 +1122,12 @@ rdfs:Resource rdf:type owl:Class .
 :Christina_Alexopoulou rdf:type owl:NamedIndividual ,
                                 :Deputy_Minister ;
                        :deputyOfMinistry :Ministry_of_Infrastructure_and_Transport .
+
+
+###  http://semweb.project.rdfs#Christos_Balaktsis
+:Christos_Balaktsis rdf:type owl:NamedIndividual ,
+                             :Person ;
+                    :hasIncomeClass :SmallSalary .
 
 
 ###  http://semweb.project.rdfs#Christos_Dimas
@@ -1174,6 +1247,11 @@ rdfs:Resource rdf:type owl:Class .
 :Elena_Rapti rdf:type owl:NamedIndividual ,
                       :Deputy_Minister ;
              :deputyOfMinistry :Ministry_of_Tourism .
+
+
+###  http://semweb.project.rdfs#Employment
+:Employment rdf:type owl:NamedIndividual ,
+                     :EnrollmentType .
 
 
 ###  http://semweb.project.rdfs#Evagelos_Tournas
@@ -1413,6 +1491,7 @@ rdfs:Resource rdf:type owl:Class .
                      :arguesWith :Stefanos_Kasselakis ;
                      :electedIn <http://semweb.project.rdfs#2023GeneralElections> ;
                      :headOfGovernment :Hellenic_Government ;
+                     :isEnrolledWith :Term ;
                      :memberOfGovernment :Hellenic_Government ;
                      :memberOfParliament :Hellenic_Parliament ;
                      :partOfParty :New_Democracy ;
@@ -1454,6 +1533,11 @@ rdfs:Resource rdf:type owl:Class .
                      :termInParliament 4 .
 
 
+###  http://semweb.project.rdfs#LargeSalary
+:LargeSalary rdf:type owl:NamedIndividual ,
+                      :Salary .
+
+
 ###  http://semweb.project.rdfs#Lefteris_Avgenakis
 :Lefteris_Avgenakis rdf:type owl:NamedIndividual ,
                              :Minister ;
@@ -1488,6 +1572,11 @@ rdfs:Resource rdf:type owl:Class .
 :Maximos_Senetakis rdf:type owl:NamedIndividual ,
                             :Deputy_Minister ;
                    :deputyOfMinistry :Ministry_of_Development .
+
+
+###  http://semweb.project.rdfs#MediumSalary
+:MediumSalary rdf:type owl:NamedIndividual ,
+                       :Salary .
 
 
 ###  http://semweb.project.rdfs#Michalis_Chrysohoidis
@@ -1618,6 +1707,11 @@ rdfs:Resource rdf:type owl:Class .
                      :suggests :New_Law .
 
 
+###  http://semweb.project.rdfs#Neron_Panagiotopoulos
+:Neron_Panagiotopoulos rdf:type owl:NamedIndividual ;
+                       :isEnrolledWith :Employment .
+
+
 ###  http://semweb.project.rdfs#New_Democracy
 :New_Democracy rdf:type owl:NamedIndividual ,
                         :Party ;
@@ -1714,6 +1808,7 @@ rdfs:Resource rdf:type owl:Class .
 :Nikolaos_Androulakis rdf:type owl:NamedIndividual ,
                                :Parliamentary_Group_Representative ,
                                :Party_Leader ;
+                      :hasIncomeClass :LargeSalary ;
                       :memberOfParliament :Hellenic_Parliament ;
                       :age 49 ;
                       :birthDate "1979-02-07"^^xsd:date ;
@@ -1734,6 +1829,7 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#Nikos_Papathanasis
 :Nikos_Papathanasis rdf:type owl:NamedIndividual ,
                              :Associate_Minister ;
+                    :hasIncomeClass :MediumSalary ;
                     :belongs_to :Hellenic_Ministry_of_National_Economy_And_Finance .
 
 
@@ -1808,6 +1904,11 @@ rdfs:Resource rdf:type owl:Class .
         :numOfParliamentSeats 36 .
 
 
+###  http://semweb.project.rdfs#SmallSalary
+:SmallSalary rdf:type owl:NamedIndividual ,
+                      :Salary .
+
+
 ###  http://semweb.project.rdfs#Sofia_Voultepsi
 :Sofia_Voultepsi rdf:type owl:NamedIndividual ,
                           :Deputy_Minister ;
@@ -1864,6 +1965,11 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#TTE
 :TTE rdf:type owl:NamedIndividual ,
               :Bank_of_Greece .
+
+
+###  http://semweb.project.rdfs#Term
+:Term rdf:type owl:NamedIndividual ,
+               :EnrollmentType .
 
 
 ###  http://semweb.project.rdfs#Thanasis_Kontogeorgis
