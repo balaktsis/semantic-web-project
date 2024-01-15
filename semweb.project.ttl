@@ -34,22 +34,6 @@ xsd:date rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://semweb.project.rdfs#ElectedIn
-:ElectedIn rdf:type owl:ObjectProperty ;
-           rdfs:domain :Person ;
-           rdfs:range :Elections .
-
-
-###  http://semweb.project.rdfs#RejectedAt
-:RejectedAt rdf:type owl:ObjectProperty ;
-            rdfs:domain :Law ;
-            rdfs:range :Parliament_Hearing .
-
-
-###  http://semweb.project.rdfs#viceOfParliament
-:viceOfParliament rdf:type owl:ObjectProperty .
-
-
 ###  http://semweb.project.rdfs#approvedAt
 :approvedAt rdf:type owl:ObjectProperty ;
             rdfs:domain :Law ;
@@ -93,6 +77,12 @@ xsd:date rdf:type rdfs:Datatype .
                   rdfs:range :Ministry .
 
 
+###  http://semweb.project.rdfs#electedIn
+:electedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Person ;
+           rdfs:range :Elections .
+
+
 ###  http://semweb.project.rdfs#governmentOfParliament
 :governmentOfParliament rdf:type owl:ObjectProperty ;
                         rdfs:domain :Government ;
@@ -105,6 +95,11 @@ xsd:date rdf:type rdfs:Datatype .
                        owl:TransitiveProperty ;
               rdfs:domain :Minister ;
               rdfs:range :Minister .
+
+
+###  http://semweb.project.rdfs#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:inverseOf :memberOf .
 
 
 ###  http://semweb.project.rdfs#hasSubordinate
@@ -122,7 +117,8 @@ xsd:date rdf:type rdfs:Datatype .
 
 
 ###  http://semweb.project.rdfs#headOf
-:headOf rdf:type owl:ObjectProperty .
+:headOf rdf:type owl:ObjectProperty ;
+        owl:inverseOf :headedBy .
 
 
 ###  http://semweb.project.rdfs#headOfGeneralLedger
@@ -165,6 +161,10 @@ xsd:date rdf:type rdfs:Datatype .
              rdfs:range :Republic .
 
 
+###  http://semweb.project.rdfs#headedBy
+:headedBy rdf:type owl:ObjectProperty .
+
+
 ###  http://semweb.project.rdfs#incidentOccurred
 :incidentOccurred rdf:type owl:ObjectProperty ;
                   rdfs:domain :Parliament_Hearing ;
@@ -194,6 +194,10 @@ xsd:date rdf:type rdfs:Datatype .
 :issues rdf:type owl:ObjectProperty ;
         rdfs:domain :General_Ledger_of_State ;
         rdfs:range :Budget .
+
+
+###  http://semweb.project.rdfs#memberOf
+:memberOf rdf:type owl:ObjectProperty .
 
 
 ###  http://semweb.project.rdfs#memberOfGovernment
@@ -268,6 +272,12 @@ xsd:date rdf:type rdfs:Datatype .
                     rdfs:range :Party_Leader .
 
 
+###  http://semweb.project.rdfs#rejectedAt
+:rejectedAt rdf:type owl:ObjectProperty ;
+            rdfs:domain :Law ;
+            rdfs:range :Parliament_Hearing .
+
+
 ###  http://semweb.project.rdfs#representsGovernment
 :representsGovernment rdf:type owl:ObjectProperty ,
                                owl:FunctionalProperty ;
@@ -300,6 +310,10 @@ xsd:date rdf:type rdfs:Datatype .
                            owl:FunctionalProperty ;
                   rdfs:domain :Vice_President ;
                   rdfs:range :Government .
+
+
+###  http://semweb.project.rdfs#viceOfParliament
+:viceOfParliament rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -476,13 +490,13 @@ xsd:date rdf:type rdfs:Datatype .
 #    Classes
 #################################################################
 
-###  http://semweb.project.rdfs#ActiveMinistry
-:ActiveMinistry rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                      owl:onProperty :ministryOfGovernment ;
-                                      owl:someValuesFrom :Government
-                                    ] ;
-                rdfs:subClassOf :Ministry .
+###  http://semweb.project.rdfs#Active_Ministry
+:Active_Ministry rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty :ministryOfGovernment ;
+                                       owl:someValuesFrom :Government
+                                     ] ;
+                 rdfs:subClassOf :Ministry .
 
 
 ###  http://semweb.project.rdfs#ApprovedLaw
@@ -504,7 +518,11 @@ xsd:date rdf:type rdfs:Datatype .
                                           owl:onProperty :subheadOf ;
                                           owl:allValuesFrom :Ministry
                                         ] ;
-                    rdfs:subClassOf :Member_of_Government .
+                    rdfs:subClassOf :Member_of_Government ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :associateOfMinistry ;
+                                      owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                    ] .
 
 
 ###  http://semweb.project.rdfs#Bank_of_Greece
@@ -542,7 +560,11 @@ xsd:date rdf:type rdfs:Datatype .
                                        owl:onProperty :subheadOf ;
                                        owl:allValuesFrom :Ministry
                                      ] ;
-                 rdfs:subClassOf :Member_of_Government .
+                 rdfs:subClassOf :Member_of_Government ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :deputyOfMinistry ;
+                                   owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                 ] .
 
 
 ###  http://semweb.project.rdfs#Deputy_Minister_of_Prime_Minister
@@ -550,17 +572,17 @@ xsd:date rdf:type rdfs:Datatype .
                                    rdfs:subClassOf :Member_of_Government .
 
 
-###  http://semweb.project.rdfs#ElectedIndividual
-:ElectedIndividual rdf:type owl:Class ;
-                   owl:equivalentClass [ owl:intersectionOf ( :Person
-                                                              [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :ElectedIn ;
-                                                                owl:someValuesFrom :Elections
-                                                              ]
-                                                            ) ;
-                                         rdf:type owl:Class
-                                       ] ;
-                   rdfs:subClassOf :Person .
+###  http://semweb.project.rdfs#Elected_Individual
+:Elected_Individual rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :electedIn ;
+                                                                 owl:someValuesFrom :Elections
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf :Person .
 
 
 ###  http://semweb.project.rdfs#Elected_Member_of_Government
@@ -571,15 +593,6 @@ xsd:date rdf:type rdfs:Datatype .
                                                     rdf:type owl:Class
                                                   ] ;
                               rdfs:subClassOf :Citizen .
-
-
-###  http://semweb.project.rdfs#Elected_Party
-:Elected_Party rdf:type owl:Class ;
-               owl:equivalentClass [ rdf:type owl:Restriction ;
-                                     owl:onProperty :partOf ;
-                                     owl:allValuesFrom :Parliament
-                                   ] ;
-               rdfs:subClassOf :Party .
 
 
 ###  http://semweb.project.rdfs#Elected_Party_Member
@@ -605,7 +618,19 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Government
 :Government rdf:type owl:Class ;
-            rdfs:subClassOf rdfs:Resource ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMember ;
+                                  owl:allValuesFrom :Member_of_Government
+                                ] ;
+            rdfs:subClassOf rdfs:Resource ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasMember ;
+                              owl:minCardinality "2"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasMember ;
+                              owl:maxCardinality "70"^^xsd:nonNegativeInteger
+                            ] ;
             owl:disjointWith :Person .
 
 
@@ -634,16 +659,16 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Interrupted_Hearing
 :Interrupted_Hearing rdf:type owl:Class ;
-                    owl:equivalentClass [ rdf:type owl:Restriction ;
-                                          owl:onProperty :incidentOccurred ;
-                                          owl:someValuesFrom :Interruption_Incident
-                                        ] ;
-                    rdfs:subClassOf :Parliament_Hearing .
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty :incidentOccurred ;
+                                           owl:someValuesFrom :Interruption_Incident
+                                         ] ;
+                     rdfs:subClassOf :Parliament_Hearing .
 
 
 ###  http://semweb.project.rdfs#Interruption_Incident
 :Interruption_Incident rdf:type owl:Class ;
-                      rdfs:subClassOf :Incident .
+                       rdfs:subClassOf :Incident .
 
 
 ###  http://semweb.project.rdfs#Law
@@ -691,7 +716,19 @@ xsd:date rdf:type rdfs:Datatype .
                                 owl:onProperty :suggests ;
                                 owl:allValuesFrom :Law
                               ] ;
-          rdfs:subClassOf rdfs:Resource ;
+          rdfs:subClassOf rdfs:Resource ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMember ;
+                            owl:minCardinality "2"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :headedBy ;
+                            owl:minCardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMember ;
+                            owl:maxCardinality "4"^^xsd:nonNegativeInteger
+                          ] ;
           owl:disjointWith :Person .
 
 
@@ -749,18 +786,26 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Parliament
 :Parliament rdf:type owl:Class ;
-            owl:equivalentClass [ rdf:type owl:Restriction ;
-                                  owl:onProperty :includes ;
-                                  owl:allValuesFrom :Elected_Party
-                                ] ;
-            rdfs:subClassOf rdfs:Resource ;
+            rdfs:subClassOf rdfs:Resource ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasMember ;
+                              owl:minCardinality "240"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :headedBy ;
+                              owl:minCardinality "1"^^xsd:nonNegativeInteger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasMember ;
+                              owl:maxCardinality "300"^^xsd:nonNegativeInteger
+                            ] ;
             owl:disjointWith :Person ;
             rdfs:comment "Represents the parliament as active" .
 
 
 ###  http://semweb.project.rdfs#Parliament_Hearing
 :Parliament_Hearing rdf:type owl:Class ;
-                   rdfs:subClassOf rdfs:Resource .
+                    rdfs:subClassOf rdfs:Resource .
 
 
 ###  http://semweb.project.rdfs#Parliamentary_Group_Representative
@@ -779,13 +824,13 @@ xsd:date rdf:type rdfs:Datatype .
        owl:disjointWith :Person .
 
 
-###  http://semweb.project.rdfs#PartyInParliament
-:PartyInParliament rdf:type owl:Class ;
-                   owl:equivalentClass [ rdf:type owl:Restriction ;
-                                         owl:onProperty :partyOfParliament ;
-                                         owl:someValuesFrom :Parliament
-                                       ] ;
-                   rdfs:subClassOf :Party .
+###  http://semweb.project.rdfs#Party_In_Parliament
+:Party_In_Parliament rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty :partyOfParliament ;
+                                           owl:someValuesFrom :Parliament
+                                         ] ;
+                     rdfs:subClassOf :Party .
 
 
 ###  http://semweb.project.rdfs#Party_Leader
@@ -838,7 +883,7 @@ xsd:date rdf:type rdfs:Datatype .
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty :headOfGovernment ;
-                                      owl:cardinality "1"^^xsd:nonNegativeInteger;
+                                      owl:cardinality "1"^^xsd:nonNegativeInteger
                                     ] ;
                 rdfs:subClassOf :Member_of_Government .
 
@@ -863,7 +908,7 @@ xsd:date rdf:type rdfs:Datatype .
 :RejectedLaw rdf:type owl:Class ;
              owl:equivalentClass [ owl:intersectionOf ( :Law
                                                         [ rdf:type owl:Restriction ;
-                                                          owl:onProperty :RejectedAt ;
+                                                          owl:onProperty :rejectedAt ;
                                                           owl:someValuesFrom :Parliament_Hearing
                                                         ]
                                                       ) ;
@@ -907,16 +952,16 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://semweb.project.rdfs#Violence_Incident
 :Violence_Incident rdf:type owl:Class ;
-                  rdfs:subClassOf :Incident .
+                   rdfs:subClassOf :Incident .
 
 
-###  http://semweb.project.rdfs#ViolentHearing
-:ViolentHearing rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                      owl:onProperty :incidentOccurred ;
-                                      owl:someValuesFrom :Violence_Incident
-                                    ] ;
-                rdfs:subClassOf :Parliament_Hearing .
+###  http://semweb.project.rdfs#Violent_Hearing
+:Violent_Hearing rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty :incidentOccurred ;
+                                       owl:someValuesFrom :Violence_Incident
+                                     ] ;
+                 rdfs:subClassOf :Parliament_Hearing .
 
 
 ###  http://www.w3.org/2000/01/rdf-schema#Resource
@@ -1140,7 +1185,7 @@ rdfs:Resource rdf:type owl:Class .
 ###  http://semweb.project.rdfs#FEK102-1982
 :FEK102-1982 rdf:type owl:NamedIndividual ,
                       :Law ;
-             :RejectedAt <http://semweb.project.rdfs#07082015ParliamentHearing> .
+             :rejectedAt <http://semweb.project.rdfs#07082015ParliamentHearing> .
 
 
 ###  http://semweb.project.rdfs#FEK91-1976
@@ -1235,6 +1280,7 @@ rdfs:Resource rdf:type owl:Class .
 :Hellenic_Government rdf:type owl:NamedIndividual ,
                               :Government ;
                      :governmentOfParliament :Hellenic_Parliament ;
+                     :hasMember :New_Politician ;
                      :opposes :Hellenic_Official_Opposition ;
                      :begin "2023-06-25"^^xsd:date .
 
@@ -1364,8 +1410,8 @@ rdfs:Resource rdf:type owl:Class .
                               :Party_Leader ,
                               :Party_Member ,
                               :Prime_Minister ;
-                     :ElectedIn <http://semweb.project.rdfs#2023GeneralElections> ;
                      :arguesWith :Stefanos_Kasselakis ;
+                     :electedIn <http://semweb.project.rdfs#2023GeneralElections> ;
                      :headOfGovernment :Hellenic_Government ;
                      :memberOfGovernment :Hellenic_Government ;
                      :memberOfParliament :Hellenic_Parliament ;
@@ -1629,9 +1675,12 @@ rdfs:Resource rdf:type owl:Class .
 
 
 ###  http://semweb.project.rdfs#New_Party
-:New_Party rdf:type owl:NamedIndividual ,
-                    :Elected_Party ;
+:New_Party rdf:type owl:NamedIndividual ;
            :partOf :New_Parliament .
+
+
+###  http://semweb.project.rdfs#New_Politician
+:New_Politician rdf:type owl:NamedIndividual .
 
 
 ###  http://semweb.project.rdfs#New_President
