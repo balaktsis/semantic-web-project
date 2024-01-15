@@ -678,6 +678,10 @@ xsd:date rdf:type rdfs:Datatype .
                                 owl:onProperty :headOf ;
                                 owl:allValuesFrom :Ministry
                               ] ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :headOfMinistry ;
+                                owl:cardinality 1
+                              ] ;
           rdfs:subClassOf :Member_of_Government .
 
 
@@ -810,6 +814,10 @@ xsd:date rdf:type rdfs:Datatype .
                                  owl:onProperty :headOf ;
                                  owl:allValuesFrom :Republic
                                ] ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :headOfState ;
+                                owl:cardinality 1
+                              ] ;
            rdfs:subClassOf :Citizen .
 
 
@@ -827,6 +835,10 @@ xsd:date rdf:type rdfs:Datatype .
                 owl:equivalentClass [ rdf:type owl:Restriction ;
                                       owl:onProperty :headOf ;
                                       owl:allValuesFrom :Government
+                                    ] ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :headOfGovernment ;
+                                      owl:cardinality 1
                                     ] ;
                 rdfs:subClassOf :Member_of_Government .
 
