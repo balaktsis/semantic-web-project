@@ -1749,12 +1749,22 @@ rdfs:Resource rdf:type owl:Class .
               :headOf :New_Ministry_2 .
 
 
+###  http://semweb.project.rdfs#New_Minister_2
+:New_Minister_2 rdf:type owl:NamedIndividual ,
+                         :Minister ;
+                :headOf :New_Ministry_3 .
+
+
 ###  http://semweb.project.rdfs#New_Ministry
 :New_Ministry rdf:type owl:NamedIndividual .
 
 
 ###  http://semweb.project.rdfs#New_Ministry_2
 :New_Ministry_2 rdf:type owl:NamedIndividual .
+
+
+###  http://semweb.project.rdfs#New_Ministry_3
+:New_Ministry_3 rdf:type owl:NamedIndividual .
 
 
 ###  http://semweb.project.rdfs#New_PM
