@@ -1438,8 +1438,7 @@ rdfs:Resource rdf:type owl:Class .
 
 ###  http://semweb.project.rdfs#Konstantinos_Tasoulas
 :Konstantinos_Tasoulas rdf:type owl:NamedIndividual ,
-                                :Party_Member ,
-                                :President_of_Parliament ;
+                                :Party_Member ;
                        :headOfParliament :Hellenic_Parliament .
 
 
